@@ -24,6 +24,9 @@ What we have learned building these assets, written so the next animal starts fr
   kit/viewer/                  the shared web viewer; each build copies it next to its own data
   docs/                        this knowledge base
   hub/server.py                the local server behind serve.sh: static files, plus the feedback notes
+  hub/publish.py               writes the public, display-only copy into _site/ (LOD1-3, 2K, the terms in every page
+                               and file); hub/publish_check.py opens every page of it, or of the live site
+  LICENSE.md, NOTICES.md       the terms (all rights reserved; full-detail models kept for sale) and third-party notices
   feedback/                    notes written on the landing-page cards, one text file per model
   feline_c07/ ... shisa_s01/   one folder per animal, built on the kit (see catalog.json for the list)
   torii_t01/                   the shrine gate; scene_guardian_gate/ sets two Shisa before it

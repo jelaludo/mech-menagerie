@@ -11,7 +11,7 @@ did not, and where things stand, so a fresh session can start from here. The rul
 | Built on the kit | Feline, Gorilla (G-02, and the first pass G-01), Malinois, Shisa, Horse, Humanoid, Bear, Komodo, Snake, Scorpion, Mantis, Jumping spider, Octopus, Torii |
 | Also built | Guardian Gate scene, Gate Procession film (59.5 s), Red Witness helmet and figure (before the kit) |
 | Concept only | 14 Velociraptor (15 Giant Mosquito was built later the same day: see the end of this page) |
-| Repository | github.com/jelaludo/Jela-Mech-Menagerie, private, shared with kai-denrei. Last commit `cb3892f`. The film, the feedback notes feature and this page are not committed yet |
+| Repository | github.com/jelaludo/mech-menagerie-source (named Jela-Mech-Menagerie until 2026-11-17), private. Last commit `cb3892f`. The film, the feedback notes feature and this page are not committed yet |
 | To do | the table in [Reuse plan](?doc=REUSE.md): the two new animals, floor contact in six older models, limb muscles against the rib cage, texture budget for the large models |
 | Feedback | notes written on the landing-page cards are saved in `feedback/<model>.txt`; read them before working on a model |
 

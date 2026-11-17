@@ -1,0 +1,65 @@
+{
+ "name": "WyvernWD01",
+ "title": "WYVERN / WVR-WD-01",
+ "subtitle": "HEAVY QUADRUPEDAL WING-LIMB PREDATOR \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Run",
+  "Roar",
+  "Unfurl",
+  "TakeOff",
+  "Fly",
+  "Sleep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Run",
+   6
+  ],
+  [
+   "Roar",
+   1
+  ],
+  [
+   "Unfurl",
+   1
+  ],
+  [
+   "TakeOff",
+   1
+  ],
+  [
+   "Fly",
+   6
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  8.0,
+  -1.08
+ ],
+ "distance": 51.52,
+ "shadow": [
+  46.9,
+  34.79
+ ],
+ "cell": 2.0,
+ "scale": 12.175
+}

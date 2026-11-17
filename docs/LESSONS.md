@@ -317,6 +317,17 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
 - **Beat shallower near the ground.** The first downstroke of the take-off put a wing tip 0.55 m under the floor while
   the body was still low; the beat now grows with the height.
 
+- **A wing that is also a leg is still built spread.** Standing, the wyvern's fan lies close against its forearm;
+  built that way its inner bay would stretch more than three times in flight. Built spread, the leg solver would have
+  bent each arm sideways (it keeps the rest bend), so the arm is reached to its hand by the wing's own `reach`, with
+  the elbow bent towards a pole, and the hand that stands on the ground is a bone of its own.
+- **An elbow above a hand placed far forward goes forward or out.** Square to the line from shoulder to hand, "up" is
+  up and forward; the sheet's high elbows are out to the side, and the pole says so.
+- **Lift a hand off the ground before it becomes a wing.** Blending the standing arm and the flying arm bone by bone
+  swung the hand a metre through the floor; raising the hand's target first, then blending, kept it clear.
+- **The check tools take the first script in `scripts/`.** A fitting script beside the animal's file was imported in
+  its place; helpers live in `scripts/fit/`.
+
 - **Garments are built closed, not sewn.** In the gi spike, two flat panels sewn shut across 0.8 m never closed (gaps
   of 9 to 24 cm, 94% stretch); the same panels wrapped round the body with their seams shared hung cleanly at 1%
   stretch. Blender's sewing springs only close short gaps.

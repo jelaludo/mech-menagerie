@@ -202,6 +202,16 @@
    "stats": "dragon_wd01/viewer/assets/stats.json"
   },
   {
+   "id": "21",
+   "name": "Mechanical Wyvern WVR-WD-01",
+   "class": "Wyvern · walks on its wings, 16.5 m",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "wyvern_wd01/viewer/thumb.jpg",
+   "href": "wyvern_wd01/viewer/",
+   "stats": "wyvern_wd01/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",

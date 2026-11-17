@@ -48,7 +48,7 @@ can always be rebuilt, and a change is a number in a file.
 - [ ] `scripts/build.py`: put `scripts/` and `kit/` on the path, `pipeline.run(<animal>, ROOT)`.
 - [ ] Clay rounds until the side and hero views match the sheet.
 - [ ] Clearance check of muscles against frames.
-- [ ] `kit/strip.py` for every clip, then `kit/ground.py` and `kit/overlap.py`; fix reach problems (feet leaving the ground, joints folding the wrong way) and try numbers with `kit/tune.py`.
+- [ ] `kit/strip.py` for every clip, then `kit/ground.py`, `kit/overlap.py` and `kit/snap.py` (a bone that jumps in one frame is a flash in the viewer); fix reach problems (feet leaving the ground, joints folding the wrong way) and try numbers with `kit/tune.py`.
 - [ ] Full build: `4096 render anim`.
 - [ ] Browser test of the viewer; re-import of the GLB.
 - [ ] `catalog.json` entry set to `built`; README in the animal folder; new lessons into `LESSONS.md`.
@@ -61,6 +61,6 @@ can always be rebuilt, and a change is a number in a file.
 | Did a kit change alter an existing animal? | build it both ways and compare vertices; the feline must match exactly |
 | Do muscles hit the frame? | sleeve vertices under a frame bar, gap to the bar's inner face, at rest |
 | Do textures still fit after a rebuild? | geometry unchanged → `nobake` is safe; otherwise rebake |
-| Do the motions work? | a contact sheet per clip from `kit/strip.py`: twelve or more frames, side, front and three-quarter views, and exact times for fast actions; then `kit/ground.py` and `kit/overlap.py` |
+| Do the motions work? | a contact sheet per clip from `kit/strip.py`: twelve or more frames, side, front and three-quarter views, and exact times for fast actions; then `kit/ground.py`, `kit/overlap.py` (`every=1` for anything fast) and `kit/snap.py` |
 | Does the page work? | headless Chromium: load, switch motions and LODs, open the export menu, start a download |
 | Is the export sound? | re-import the GLB: mesh count, triangles, textures, joints, animations |

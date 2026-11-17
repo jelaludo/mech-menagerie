@@ -346,7 +346,26 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
 - **Aim an arm by where its parts point, not by its joint angles.** A shield that must face forward and a spear that
   must lie level are each a direction and a roll; the Valkyrie's arms are written as the directions of the upper arm,
   forearm and hand, the shield's face and the spear's line, and the turns are derived (`Spearman.arm`). Every pose read
-  right on the first render.
+  right on the first render; the moves between them did not (next).
+- **A pose that reads right can still flip on the way to it.** The guard blended the hand's two directions (along the
+  fingers, across the palm) separately; from the carry they turn in opposite senses, pass through parallel, and the
+  hand turned over in one frame (180 degrees at 0.68 s, the flash the user saw). Blend a hand's frame as a whole, the
+  short way round, and run `kit/snap.py` on every clip: it flags a bone that turns much further in one frame than in
+  the frames either side, which a fast sweep never does.
+- **A rigid grip cannot change in the hand.** Carried with the thumb toward the tip, a spear held overhand by the head
+  needs to lie end for end in the fist; there is no way from one to the other but letting go. The Valkyrie tosses it
+  (`Spearman.flight`), and every clip starts and ends in the carry so the viewer's crossfade never has to turn the
+  hand half over either.
+- **A stance turns what the hand holds.** Arm directions live in the chest's frame: the thrower's stance turns the
+  shoulders 14 degrees and the javelin swung 14 degrees off line, its butt behind her head. Write a held line turned
+  back by the stance's twist.
+- **A falling prop must arrive along its length.** A ballistic arc keeps its sideways speed to the catch, and an
+  upright shaft moving sideways sweeps its lower half through the forearm behind the catching hand; finishing the turn
+  early did not help while the drift went on, nor while the stance was still straightening. Drift and turn in the
+  first 70% of the flight, then drop; have the hand waiting and the body still; swing the butt out past the arm, and
+  let the empty hand drop in out of the way after it lets go.
+- **Test every frame for anything fast.** Every third frame (the overlap check's default) missed a shaft crossing the
+  arm for one or two frames; `overlap.py every=1` found it.
 - **Recorded motion carries to a larger figure by its rotations.** Only the pelvis's travel and the speeds need
   scaling (by the legs' length, not the height); the feet then float about a centimetre, which is near enough.
 - **What is held hangs from one side.** The spear's bone names `forepaw.R` as its parent; the rig and the pipeline take

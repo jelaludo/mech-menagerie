@@ -436,6 +436,13 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
 
 ## Web viewer
 
+- **One NaN can black out the whole canvas.** Decimating a level of detail can leave a triangle with no UV area, and the
+  glTF exporter writes a zero tangent for its corners; three.js normalises it into NaN, and the glow (bloom) spreads it
+  into black squares that flicker over everything. Thirty published files had a few such vertices; the Wyvern's LOD1,
+  which the public site opens on, showed it first. The pipeline now mends every export (`menagerie/gltfmend.py`) and
+  the publisher refuses a file with a zero tangent.
+- **Test the copy people see, at the level it opens on.** The local checks used LOD0; the public viewer starts at LOD1.
+
 - Artifacts do not serve `.glb`; a local server does. The local viewer loads GLB directly.
 - A missing `<meta charset>` turns `·` into `Â·`.
 - A long control bar must be allowed to wrap, or its last buttons fall off a phone screen.

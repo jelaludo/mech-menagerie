@@ -242,6 +242,16 @@
    "stats": "eagle_ae01/viewer/assets/stats.json"
   },
   {
+   "id": "23",
+   "name": "Valkyrie V-01",
+   "class": "Battle platform · spear and shield, 2.38 m",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "valkyrie_v01/viewer/thumb.jpg",
+   "href": "valkyrie_v01/viewer/",
+   "stats": "valkyrie_v01/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",

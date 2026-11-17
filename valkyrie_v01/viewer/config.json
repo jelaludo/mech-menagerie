@@ -1,0 +1,65 @@
+{
+ "name": "ValkyrieV01",
+ "title": "VALKYRIE / V-01",
+ "subtitle": "ODINIC BATTLE PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Jog",
+  "Run",
+  "Guard",
+  "Thrust",
+  "Raise",
+  "Jump"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Jog",
+   3
+  ],
+  [
+   "Run",
+   3
+  ],
+  [
+   "Guard",
+   1
+  ],
+  [
+   "Thrust",
+   2
+  ],
+  [
+   "Raise",
+   1
+  ],
+  [
+   "Jump",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.65,
+  0.114
+ ],
+ "distance": 10.63,
+ "shadow": [
+  2.5,
+  4.43
+ ],
+ "cell": 0.5,
+ "scale": 4.203
+}

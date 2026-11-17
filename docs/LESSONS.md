@@ -343,6 +343,14 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   which points back; the eagle's tail went 25 cm into the floor whenever it reared until the sign was fixed.
 - **A feather turns on its root as the wing folds.** With the secondaries fixed to the forearm, the folded wing's
   feathers would stand out sideways or up; a bone each, at an angle that changes with the fold, lays them back.
+- **Aim an arm by where its parts point, not by its joint angles.** A shield that must face forward and a spear that
+  must lie level are each a direction and a roll; the Valkyrie's arms are written as the directions of the upper arm,
+  forearm and hand, the shield's face and the spear's line, and the turns are derived (`Spearman.arm`). Every pose read
+  right on the first render.
+- **Recorded motion carries to a larger figure by its rotations.** Only the pelvis's travel and the speeds need
+  scaling (by the legs' length, not the height); the feet then float about a centimetre, which is near enough.
+- **What is held hangs from one side.** The spear's bone names `forepaw.R` as its parent; the rig and the pipeline take
+  a mirrored bone's side by name.
 - **The check tools take the first script in `scripts/`.** A fitting script beside the animal's file was imported in
   its place; helpers live in `scripts/fit/`.
 

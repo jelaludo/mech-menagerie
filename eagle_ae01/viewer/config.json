@@ -1,0 +1,70 @@
+{
+ "name": "EagleAE01",
+ "title": "EAGLE / AE-01",
+ "subtitle": "AERIAL PREDATOR PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Mantle",
+  "TakeOff",
+  "Fly",
+  "Glide",
+  "Strike",
+  "Talons",
+  "Sleep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Mantle",
+   1
+  ],
+  [
+   "TakeOff",
+   1
+  ],
+  [
+   "Fly",
+   6
+  ],
+  [
+   "Glide",
+   3
+  ],
+  [
+   "Strike",
+   1
+  ],
+  [
+   "Talons",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  2.1,
+  -0.223
+ ],
+ "distance": 13.52,
+ "shadow": [
+  10.63,
+  6.94
+ ],
+ "cell": 1.0,
+ "scale": 2.777
+}

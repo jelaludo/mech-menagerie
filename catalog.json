@@ -232,6 +232,16 @@
    "stats": "rokuro_rkw01/viewer/assets/stats.json"
   },
   {
+   "id": "22",
+   "name": "Mechanical Eagle AE-01",
+   "class": "Bird of prey · feathered wings, grasping talons",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "eagle_ae01/viewer/thumb.jpg",
+   "href": "eagle_ae01/viewer/",
+   "stats": "eagle_ae01/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",

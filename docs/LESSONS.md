@@ -334,6 +334,15 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   of numbers only if every per-bone amount is checked again.
 - **A variant can change proportions too.** A host that reads its neck, tail or body line through `modules.loadout`
   takes a longer one from a four-line file, and built with its own numbers stays identical to its baseline.
+- **A bird's foot is a hand.** Three fingers splayed forward and the thumb turned back as the hallux gave the eagle
+  its talons with every actuator, tendon and knuckle of the dexterous hand; what was new was splay, a claw and turning
+  each toe about its own axis.
+- **A standing foot cannot curl its toes.** The claws rest on the ground, so any curl drives them in (14 to 20 cm in the
+  first idle and walk). Lift the claws to knead, and curl only once the foot is clear of the ground.
+- **Check the sign of a new bone's turn against the rule.** "Positive lowers whatever points forward" lifts a tail,
+  which points back; the eagle's tail went 25 cm into the floor whenever it reared until the sign was fixed.
+- **A feather turns on its root as the wing folds.** With the secondaries fixed to the forearm, the folded wing's
+  feathers would stand out sideways or up; a bone each, at an angle that changes with the fold, lays them back.
 - **The check tools take the first script in `scripts/`.** A fitting script beside the animal's file was imported in
   its place; helpers live in `scripts/fit/`.
 

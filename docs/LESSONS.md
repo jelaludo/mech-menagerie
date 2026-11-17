@@ -329,6 +329,11 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   edge from the last finger to it, bowed inward as a bat's is, ran along the humerus: from above there was no inner
   wing. Meeting the body 2 m behind the shoulder, on the axis the wing beats about, gave the whole inner wing and keeps
   still in flight.
+- **What is per bone adds up over a longer chain.** The Kami Dragon's flight lifts each tail bone a little more towards
+  the tip; on the Kami-Ryu's tail, twice as long, that curled it up like a scorpion's. Lengthening a chain is a change
+  of numbers only if every per-bone amount is checked again.
+- **A variant can change proportions too.** A host that reads its neck, tail or body line through `modules.loadout`
+  takes a longer one from a four-line file, and built with its own numbers stays identical to its baseline.
 - **The check tools take the first script in `scripts/`.** A fitting script beside the animal's file was imported in
   its place; helpers live in `scripts/fit/`.
 

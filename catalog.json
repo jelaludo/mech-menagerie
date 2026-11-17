@@ -192,6 +192,16 @@
    "stats": "dragon_kd01/viewer/assets/stats.json"
   },
   {
+   "id": "19B",
+   "name": "Kami-Ryu KR-01",
+   "class": "Dragon · Chinese proportions, 13.7 m",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "kamiryu_kr01/viewer/thumb.jpg",
+   "href": "kamiryu_kr01/viewer/",
+   "stats": "kamiryu_kr01/viewer/assets/stats.json"
+  },
+  {
    "id": "20",
    "name": "Western Dragon DRK-WD-01",
    "class": "Winged dragon · 28 m, 42 m span",
@@ -210,6 +220,16 @@
    "thumb": "wyvern_wd01/viewer/thumb.jpg",
    "href": "wyvern_wd01/viewer/",
    "stats": "wyvern_wd01/viewer/assets/stats.json"
+  },
+  {
+   "id": "21B",
+   "name": "Rokuro-Wyvern RKW-01",
+   "class": "Wyvern · long neck and tail, 33.8 m",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "rokuro_rkw01/viewer/thumb.jpg",
+   "href": "rokuro_rkw01/viewer/",
+   "stats": "rokuro_rkw01/viewer/assets/stats.json"
   },
   {
    "id": "18",

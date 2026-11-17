@@ -1,0 +1,60 @@
+{
+ "name": "KamiRyuKR01",
+ "title": "KAMI-RYU / KR-01",
+ "subtitle": "CHINESE DIVINE DRAGON \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Run",
+  "Roar",
+  "Ascend",
+  "Soar",
+  "Sleep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Run",
+   6
+  ],
+  [
+   "Roar",
+   1
+  ],
+  [
+   "Ascend",
+   1
+  ],
+  [
+   "Soar",
+   4
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  1.8,
+  -0.677
+ ],
+ "distance": 16.7,
+ "shadow": [
+  9.26,
+  19.27
+ ],
+ "cell": 0.5,
+ "scale": 6.847
+}

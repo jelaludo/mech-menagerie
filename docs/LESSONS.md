@@ -325,6 +325,10 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   up and forward; the sheet's high elbows are out to the side, and the pole says so.
 - **Lift a hand off the ground before it becomes a wing.** Blending the standing arm and the flying arm bone by bone
   swung the hand a metre through the floor; raising the hand's target first, then blending, kept it clear.
+- **A sail tied to the shoulder joint is a sliver.** The shoulder lies on the wing's leading edge, so an inner trailing
+  edge from the last finger to it, bowed inward as a bat's is, ran along the humerus: from above there was no inner
+  wing. Meeting the body 2 m behind the shoulder, on the axis the wing beats about, gave the whole inner wing and keeps
+  still in flight.
 - **The check tools take the first script in `scripts/`.** A fitting script beside the animal's file was imported in
   its place; helpers live in `scripts/fit/`.
 

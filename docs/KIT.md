@@ -169,8 +169,10 @@ The wing is built in its `rest` state. `pose(state, side)` gives each bone's loc
 `wing_hand`, `wing_f1..`) for any other state, the right wing mirrored; `blend(a, b, e)` mixes two states; `points(state)`
 gives the shoulder, elbow, wrist, tips and heel, which is what a fit uses; `reach(target, pole, base)` is the state that
 puts the wrist on a point with the elbow bent towards a pole (a wyvern stands on its wrists by it). `heel_on="fore"`
-runs the last bay back along the forearm instead of a heel spar on the hand (the wyvern's inner wing); `thumb=False`
-leaves out the hooked thumb. Every vertex of a bay's sail and frame is
+runs the last bay back along the forearm instead of a heel spar on the hand; `heel_on="shoulder"` runs it along the
+forearm and the humerus to the body, its trailing edge meeting the flank `root` metres behind the shoulder (a bat's
+wing, the wyvern's), skinned from the last finger to the forearm by angle and to the humerus past the elbow;
+`thumb=False` leaves out the hooked thumb. Every vertex of a bay's sail and frame is
 weighted by its angle between the two spars of the bay (through `MD.vw`), and each bundle by the angle of its axis, so
 closing the fingers closes the sail like a fan. Build it spread: closing compresses the sail, opening a sail built
 closed would stretch it and its texture. The Western Dragon's rest and folded states were fitted to the wrist and four

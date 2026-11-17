@@ -1,0 +1,60 @@
+{
+ "name": "ValkyrMK07",
+ "title": "VALKYR / MK-07B",
+ "subtitle": "PILOTED COMBAT FRAME \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Run",
+  "Squat",
+  "Box",
+  "Hatch",
+  "HatchDriver"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Run",
+   6
+  ],
+  [
+   "Squat",
+   1
+  ],
+  [
+   "Box",
+   1
+  ],
+  [
+   "Hatch",
+   1
+  ],
+  [
+   "HatchDriver",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  4.912,
+  -0.037
+ ],
+ "distance": 31.64,
+ "shadow": [
+  9.27,
+  5.9
+ ],
+ "cell": 1.0,
+ "scale": 16.532
+}

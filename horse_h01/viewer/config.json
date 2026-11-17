@@ -1,0 +1,65 @@
+{
+ "name": "HorseH01",
+ "title": "HORSE / H-01",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Trot",
+  "Canter",
+  "Gallop",
+  "Piaffe",
+  "Paw",
+  "Rear"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Trot",
+   6
+  ],
+  [
+   "Canter",
+   7
+  ],
+  [
+   "Gallop",
+   9
+  ],
+  [
+   "Piaffe",
+   5
+  ],
+  [
+   "Paw",
+   1
+  ],
+  [
+   "Rear",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.053,
+  0.028
+ ],
+ "distance": 6.78,
+ "shadow": [
+  2.48,
+  4.45
+ ],
+ "cell": 0.5,
+ "scale": 3.543
+}

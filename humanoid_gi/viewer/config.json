@@ -1,0 +1,90 @@
+{
+ "name": "HumanoidGi",
+ "title": "HUMANOID / GI",
+ "subtitle": "H-01 IN THE JIU-JITSU GI J-01 \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Jog",
+  "Run",
+  "Jump",
+  "Crouch",
+  "Ukemi_Front",
+  "Ukemi_Left",
+  "Ukemi_Right",
+  "Ukemi_Back",
+  "Box",
+  "Wave",
+  "Grasp"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   2
+  ],
+  [
+   "Jog",
+   2
+  ],
+  [
+   "Run",
+   2
+  ],
+  [
+   "Jump",
+   1
+  ],
+  [
+   "Crouch",
+   1
+  ],
+  [
+   "Ukemi_Front",
+   1
+  ],
+  [
+   "Ukemi_Left",
+   1
+  ],
+  [
+   "Ukemi_Right",
+   1
+  ],
+  [
+   "Ukemi_Back",
+   1
+  ],
+  [
+   "Box",
+   1
+  ],
+  [
+   "Wave",
+   1
+  ],
+  [
+   "Grasp",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.945,
+  -0.001
+ ],
+ "distance": 6.08,
+ "shadow": [
+  1.15,
+  0.95
+ ],
+ "cell": 0.5,
+ "scale": 3.18
+}

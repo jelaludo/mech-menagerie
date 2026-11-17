@@ -1,0 +1,67 @@
+{
+ "name": "ShisaS01",
+ "title": "SHISA / S-01",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Trot",
+  "Run",
+  "Roar",
+  "Guard",
+  "Bow",
+  "Sleep",
+  "SitOpen",
+  "SitShut"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Trot",
+   6
+  ],
+  [
+   "Run",
+   8
+  ],
+  [
+   "Roar",
+   1
+  ],
+  [
+   "Guard",
+   1
+  ],
+  [
+   "Bow",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  0.6,
+  0.114
+ ],
+ "distance": 3.86,
+ "shadow": [
+  1.8,
+  2.83
+ ],
+ "cell": 0.5,
+ "scale": 1.686
+}

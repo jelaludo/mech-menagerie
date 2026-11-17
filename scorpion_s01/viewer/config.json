@@ -1,0 +1,55 @@
+{
+ "name": "ScorpionS01",
+ "title": "SCORPION / S-01",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Run",
+  "Threat",
+  "Grab",
+  "Strike"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   6
+  ],
+  [
+   "Run",
+   10
+  ],
+  [
+   "Threat",
+   1
+  ],
+  [
+   "Grab",
+   1
+  ],
+  [
+   "Strike",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.575,
+  0.058
+ ],
+ "distance": 3.7,
+ "shadow": [
+  2.49,
+  3.06
+ ],
+ "cell": 0.5,
+ "scale": 1.58
+}

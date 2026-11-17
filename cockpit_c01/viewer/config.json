@@ -1,0 +1,30 @@
+{
+ "name": "CockpitCP01",
+ "title": "COCKPIT / CP-01",
+ "subtitle": "COCKPIT MODULE \u00b7 FITS H-01 \u00b7 VALKYR CHEST",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Still"
+ ],
+ "start": "Still",
+ "playlist": [
+  [
+   "Still",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.802,
+  0.071
+ ],
+ "distance": 5.17,
+ "shadow": [
+  2.09,
+  2.27
+ ],
+ "cell": 0.25,
+ "scale": 2.699
+}

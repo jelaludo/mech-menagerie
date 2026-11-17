@@ -1,0 +1,55 @@
+{
+ "name": "MosquitoIN006",
+ "title": "MOSQUITO / IN-006",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45d8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Flight",
+  "Hover",
+  "Fly",
+  "Probe"
+ ],
+ "start": "Hover",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Flight",
+   1
+  ],
+  [
+   "Hover",
+   3
+  ],
+  [
+   "Fly",
+   8
+  ],
+  [
+   "Probe",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.35,
+  -0.348
+ ],
+ "distance": 8.69,
+ "shadow": [
+  5.35,
+  5.89
+ ],
+ "cell": 0.5,
+ "scale": 3.701
+}

@@ -1,0 +1,60 @@
+{
+ "name": "RaptorV01",
+ "title": "VELOCIRAPTOR / VRP-01",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45d8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Run",
+  "Screech",
+  "Slash",
+  "Pounce",
+  "Sleep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Run",
+   10
+  ],
+  [
+   "Screech",
+   1
+  ],
+  [
+   "Slash",
+   1
+  ],
+  [
+   "Pounce",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  1.3,
+  -0.581
+ ],
+ "distance": 8.37,
+ "shadow": [
+  4.42,
+  9.04
+ ],
+ "cell": 0.5,
+ "scale": 3.106
+}

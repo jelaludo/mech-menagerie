@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gi J-01 Results</title>
+<meta name="copyright" content="© 2026 Jelaludo. All rights reserved.">
+<meta name="robots" content="noai, noimageai">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://jelaludo.github.io/mech-menagerie/terms.html">
+<link rel="license" href="../terms.html">
+<style>
+  :root { --bg: #0d0f12; --fg: #e8eaed; --dim: #9aa0a6; --line: #262a30; --accent: #45b8ff; }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --bg: #f4f5f6; --fg: #15171a; --dim: #5f6368; --line: #d9dce0; } }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, sans-serif; }
+  main { max-width: 1280px; margin: 0 auto; padding: 24px 16px 64px; }
+  a { color: var(--accent); }
+  h1 { font-size: 22px; letter-spacing: 0.06em; margin: 0 0 4px; }
+  h2 { font-size: 15px; letter-spacing: 0.08em; text-transform: uppercase; margin: 40px 0 6px; border-top: 1px solid var(--line); padding-top: 18px; }
+  p { color: var(--dim); margin: 4px 0 12px; max-width: 80ch; }
+  .row { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 6px; }
+  .row img { height: 360px; width: auto; border: 1px solid var(--line); border-radius: 4px; background: #9fa3a8; flex: none; }
+  .row.small img { height: 260px; }
+  figure { margin: 0; flex: none; }
+  figcaption { font-size: 12px; color: var(--dim); text-align: center; }
+  table { border-collapse: collapse; font-size: 14px; margin: 6px 0 12px; }
+  td, th { border-bottom: 1px solid var(--line); padding: 4px 12px 4px 0; text-align: left; }
+  th { color: var(--dim); font-weight: 500; }
+</style>
+</head>
+<body>
+<main>
+  <h1>JIU-JITSU GI J-01 · RESULTS</h1>
+  <p>Third iteration, 2026-11-16, and the same evening a second host, the Red Witness (below). Pictures from headless
+    Blender (viewport renderer, no textures, unless they say otherwise). The research, the plan and the numbers:
+    <a href="../docs/?doc=STUDY-GI.md">Study: jiu-jitsu gi</a> (sections 11 and 12 for H-01's round, 13 for the Red
+    Witness); the QA gate: <a href="../docs/?doc=QA.md">QA</a>.</p>
+
+  <h2>In the 3D viewer</h2>
+  <p>The gi exported with H-01 as a rigged game asset, with all of H-01's motions: <a href="../humanoid_gi/viewer/">Humanoid in a Gi</a>
+    (also on the landing page, under WARDROBE).</p>
+
+  <h2>In motion: third iteration</h2>
+  <p>Skinned with the robust transfer (after Abdrashitov et al., Epic Games, 2023) layer by layer: the pants from the
+    body, the jacket from the body and the pants, the collar band and belt from the jacket; the covered body and the
+    pants under the skirt removed. Walk, run, guard and wave, as an engine plays them: nothing of the body or the pants
+    comes through.</p>
+  <div class="row">
+    <figure><img src="renders/motion/big_Walk_wide.png" alt="walk"><figcaption>Walk 0.87 s</figcaption></figure>
+    <figure><img src="renders/motion/big_Run_wide.png" alt="run"><figcaption>Run 0.40 s</figcaption></figure>
+    <figure><img src="renders/motion/big_Box_wide.png" alt="box"><figcaption>Box 2.13 s</figcaption></figure>
+    <figure><img src="renders/motion/big_Wave_wide.png" alt="wave"><figcaption>Wave 1.20 s</figcaption></figure>
+  </div>
+  <div class="row small">
+    <img src="renders/motion/HumanoidGi_Walk_wide.png" alt=""><img src="renders/motion/HumanoidGi_Run_wide.png" alt="">
+    <img src="renders/motion/HumanoidGi_Box_wide.png" alt=""><img src="renders/motion/HumanoidGi_Wave_wide.png" alt="">
+    <img src="renders/motion/HumanoidGi_Crouch_wide.png" alt=""><img src="renders/motion/HumanoidGi_Ukemi_Front_wide.png" alt="">
+  </div>
+  <p>Measured with <code>gi_j01/tools/motion_check.py</code> on every clip, against yesterday's version
+    (<a href="renders/motion/motion_check_before_12f178b.txt">before</a>, <a href="renders/motion/motion_check_2026-11-16.txt">now</a>):</p>
+  <table>
+    <tr><th></th><th>yesterday</th><th>now</th></tr>
+    <tr><td>body through the cloth at rest, where it shows</td><td>23 points, 29 mm</td><td>none</td></tr>
+    <tr><td>pants through the jacket, walk / run / crouch / guard</td><td>117 / 128 / 188 / 103 mm</td><td>0 / 0 / 0 / 2 mm</td></tr>
+    <tr><td>pants through the jacket, rolls</td><td>83 to 112 points, 181 to 248 mm</td><td>8 to 15 points, 28 to 57 mm</td></tr>
+    <tr><td>body through the gi, walk / run / guard</td><td>0 / 21 / 73 mm</td><td>0 / 3 / 12 mm</td></tr>
+    <tr><td>stretch (99th percentile), pants in the walk / jacket in the wave</td><td>3.1 / 6.3</td><td>1.6 / 2.5</td></tr>
+  </table>
+
+  <h2>QA verdict: SHIP WITH NOTES</h2>
+  <p>The gate of <a href="../docs/?doc=QA.md">docs/QA.md</a> (adapted from the arjun988/blender-skills QA, LOD and
+    budget skills, MIT). No blockers. Majors: 121k triangles against a 50k to 100k hero budget (LOD1 at 61k is the
+    in-game candidate); a few pants points through the front flaps at the waist in the rolls (white on white, up to
+    6 cm); H-01's neck parts through the back of the collar for a moment in the wave (up to 2 cm); and against the
+    reference sculpt the shoulders and back read bulky and lumpy. The verdict in full is in the
+    <a href="../humanoid_gi/README.md">model's README</a>.</p>
+  <div class="row">
+    <figure><img src="renders/reference_compare.png" alt="against the reference"><figcaption>Top: "Brazilian Jiu-jitsu BJJ Kimono Free" by Tulio Portela (CC BY 4.0; see reference/external/CREDITS.md). Bottom: H-01 in the gi, same angles</figcaption></figure>
+  </div>
+  <div class="row">
+    <figure><img src="renders/qa/lod_check.png" alt="LODs"><figcaption>LOD0 to LOD3 (121k, 61k, 30k, 14k): silhouette overlap 1.000 / 0.999 / 0.997 / 0.993</figcaption></figure>
+    <figure><img src="renders/qa/viewer_guard_close.png" alt="guard in the viewer"><figcaption>The guard (Box) in the viewer</figcaption></figure>
+    <figure><img src="renders/qa/viewer_wire.png" alt="wireframe"><figcaption>Wireframe</figcaption></figure>
+  </div>
+
+  <h2>The belt's tails (after the user's note on the walk)</h2>
+  <p>"Only a bit of clipping of the pieces going down while walking": the belt's tails. Solved smoothly down from the
+    knot, they lagged the skirt they lie on, and its front swung through them; now they copy the skirt's weights below
+    the hip. And the collar band running down the front edge came through the tail lying across it; it is now removed
+    under the belt. Tails sinking into the skirt in the walk, jog and run: 1 to 2 points (8 to 12 mm) before, none now
+    (<a href="renders/motion/belt_tails_before_after.txt">numbers</a>).</p>
+  <div class="row small">
+    <figure><img src="renders/qa/h01_belt_tails_before.png" alt="before"><figcaption>Before: the left tail's end into the skirt (walk 0.30 s; pants red)</figcaption></figure>
+    <figure><img src="renders/qa/h01_belt_tails_after.png" alt="after"><figcaption>After, same frame</figcaption></figure>
+  </div>
+
+  <h2>A second host: the Red Witness</h2>
+  <p>The same gi, drafted afresh for the Red Witness (rigged on the kit for it, with the action showcase's motions,
+    which were recorded on this figure). In the viewer: <a href="../red_witness_gi/viewer/">Red Witness in a Gi</a>.
+    Not an easier body after all: its forearms hang 4 cm from its thighs, so it holds its arms 10 degrees out; its
+    barrel chest makes the jacket boxy. Nothing of the body comes through in any clip but the back roll (2 points,
+    probably the check); pants through the jacket 1 to 3 points in the gaits, behind two layers; 98,657 triangles
+    (inside the hero budget). The verdict: <a href="../red_witness_gi/README.md">its README</a> (SHIP WITH NOTES);
+    the story and the numbers: the study, section 13
+    (<a href="renders/motion/motion_check_redwitness_2026-11-16.txt">motion check</a>).</p>
+  <div class="row">
+    <figure><img src="../red_witness_gi/renders/RedWitnessGi_front.png" alt="front"><figcaption>Front</figcaption></figure>
+    <figure><img src="../red_witness_gi/renders/RedWitnessGi_left.png" alt="side"><figcaption>Side</figcaption></figure>
+    <figure><img src="../red_witness_gi/renders/RedWitnessGi_head.png" alt="helmet and collar"><figcaption>The collar round the helmet's base</figcaption></figure>
+  </div>
+  <div class="row small">
+    <img src="renders/motion/RedWitnessGi_Walk_wide.png" alt="walk"><img src="renders/motion/RedWitnessGi_Run_wide.png" alt="run">
+    <img src="renders/motion/RedWitnessGi_Ukemi_Back_wide.png" alt="back roll"><img src="renders/motion/RedWitnessGi_Wave_wide.png" alt="wave">
+  </div>
+  <div class="row">
+    <figure><img src="renders/reference_compare_rw.png" alt="against the reference"><figcaption>Top: "Brazilian Jiu-jitsu BJJ Kimono Free" by Tulio Portela (CC BY 4.0). Bottom: the Red Witness in its gi, the same angles: the front reads right, the back and shoulders are bulky and lumpy</figcaption></figure>
+  </div>
+  <div class="row small">
+    <figure><img src="renders/qa/rw_chest_in_the_v.png" alt="chest in the V"><figcaption>The chest seen through the V (kept: the lapels stand 11 to 13 cm off it)</figcaption></figure>
+    <figure><img src="renders/qa/rw_collar_back.png" alt="collar"><figcaption>The collar at the back of the helmet</figcaption></figure>
+    <figure><img src="../red_witness_gi/renders/lod_check.png" alt="LODs"><figcaption>LOD0 to LOD3</figcaption></figure>
+  </div>
+
+  <h2>H-01 in the gi: the drape</h2>
+  <p>The jacket rebuilt the way a gi is cut: the shape measured from photographs (senshu-jerseys), straight sleeves set on
+    along a slit in the body's side, the skirt cut and draped over the pants' envelope, and a solid collar band and belt.
+    Third iteration: a closer fit (3 cm of ease a side, not 6), the lapels crossing part way up the armhole and held there
+    by an inside tie, the collar one row up the neck, soft pins.</p>
+  <div class="row">
+    <img src="renders/dressed/HumanoidH01_pants_jacket_front.png" alt="front">
+    <img src="renders/dressed/HumanoidH01_pants_jacket_wide.png" alt="three-quarter">
+    <img src="renders/dressed/HumanoidH01_pants_jacket_left.png" alt="side">
+    <img src="renders/dressed/HumanoidH01_pants_jacket_back34.png" alt="back">
+  </div>
+
+  <h2>Pants: built, then draped</h2>
+  <p>Top: built closed round the body with the legs spread 12°. Bottom: after the drape (legs back to rest, drawstring
+    cinched). Stretch worst 1.31×; body poking through 3 points, worst 2.6 mm; 20 s.</p>
+  <div class="row small">
+    <img src="renders/drape/HumanoidH01_pants_f001_front.png" alt="">
+    <img src="renders/drape/HumanoidH01_pants_f001_wide.png" alt="">
+    <img src="renders/drape/HumanoidH01_pants_f001_left.png" alt="">
+  </div>
+  <div class="row small">
+    <img src="renders/drape/HumanoidH01_pants_f110_front.png" alt="">
+    <img src="renders/drape/HumanoidH01_pants_f110_wide.png" alt="">
+    <img src="renders/drape/HumanoidH01_pants_f110_left.png" alt="">
+  </div>
+
+  <h2>Jacket: the drape over time</h2>
+  <p>Frame 1: built closed with the arms raised 25° (pants not shown: the jacket drapes over their envelope). Frames 20
+    to 70: the belt cinches, the arms come down to 8° open. Frame 110: settled. Collar pinned at the neck, belt rows
+    pinned at the waist.</p>
+  <div class="row small">
+    <figure><img src="renders/drape/tl_HumanoidH01_jacket_f001_front.png" alt=""><figcaption>frame 1</figcaption></figure>
+    <figure><img src="renders/drape/tl_HumanoidH01_jacket_f020_front.png" alt=""><figcaption>20</figcaption></figure>
+    <figure><img src="renders/drape/tl_HumanoidH01_jacket_f045_front.png" alt=""><figcaption>45</figcaption></figure>
+    <figure><img src="renders/drape/tl_HumanoidH01_jacket_f070_front.png" alt=""><figcaption>70</figcaption></figure>
+    <figure><img src="renders/drape/tl_HumanoidH01_jacket_f110_front.png" alt=""><figcaption>110</figcaption></figure>
+  </div>
+  <div class="row small">
+    <figure><img src="renders/drape/tl_HumanoidH01_jacket_f001_left.png" alt=""><figcaption>frame 1</figcaption></figure>
+    <figure><img src="renders/drape/tl_HumanoidH01_jacket_f020_left.png" alt=""><figcaption>20</figcaption></figure>
+    <figure><img src="renders/drape/tl_HumanoidH01_jacket_f045_left.png" alt=""><figcaption>45</figcaption></figure>
+    <figure><img src="renders/drape/tl_HumanoidH01_jacket_f070_left.png" alt=""><figcaption>70</figcaption></figure>
+    <figure><img src="renders/drape/tl_HumanoidH01_jacket_f110_left.png" alt=""><figcaption>110</figcaption></figure>
+  </div>
+  <div class="row small">
+    <img src="renders/drape/HumanoidH01_jacket_f110_front.png" alt="">
+    <img src="renders/drape/HumanoidH01_jacket_f110_wide.png" alt="">
+    <img src="renders/drape/HumanoidH01_jacket_f110_left.png" alt="">
+  </div>
+
+  <h2>Collision bodies for three hosts</h2>
+  <p>The smooth stand-in the cloth lies on, in blue over each model: H-01, the gorilla G-02, the toad. Body outside it:
+    1.1%, 1.5%, 3.0%.</p>
+  <div class="row small">
+    <img src="renders/proxy/HumanoidH01_proxy.png" alt=""><img src="renders/proxy/HumanoidH01_proxy_side.png" alt="">
+    <img src="renders/proxy/GorillaG02_proxy.png" alt=""><img src="renders/proxy/GorillaG02_proxy_side.png" alt="">
+    <img src="renders/proxy/ToadT01_proxy.png" alt=""><img src="renders/proxy/ToadT01_proxy_side.png" alt="">
+  </div>
+
+  <h2>The spike: sewing against building closed</h2>
+  <p>Top row: flat panels sewn shut from 0.8 m apart (never closed, crumpled). Bottom row: the same panels built closed
+    round the body (seams welded, 1% stretch). Frames 1, 10, 25, 90.</p>
+  <div class="row"><img src="renders/spike_wrap_vs_sew.png" alt="spike"></div>
+
+  <h2>The look we are aiming for</h2>
+  <p>"MartialArtsGi" by EdgeForge, generated with Sloyd, CC BY 4.0: a free static shell used only as a silhouette reference.</p>
+  <div class="row small"><img src="reference/external/sloyd_martialartsgi.png" alt="Sloyd gi"></div>
+
+  <h2>Reference</h2>
+  <p>The measurements of the size chart supplied, in centimetres (its drawings are not reproduced here). The gi was
+    drafted from the host's own body, with these as a check on proportion.</p>
+  <div style="overflow-x: auto">
+  <table>
+    <tr><th>Jacket</th><th>M0</th><th>M1</th><th>M2</th><th>M3</th><th>M4</th><th>A0</th><th>A1</th><th>A2</th><th>A3</th><th>A4</th><th>A5</th></tr>
+    <tr><td>A · length</td><td>55</td><td>58.5</td><td>63</td><td>67</td><td>70</td><td>72</td><td>76</td><td>80</td><td>84</td><td>88</td><td>92</td></tr>
+    <tr><td>B · chest</td><td>40</td><td>41</td><td>45</td><td>47</td><td>50</td><td>51</td><td>55</td><td>60</td><td>65</td><td>70</td><td>74</td></tr>
+    <tr><td>C · arm to arm</td><td>121</td><td>128</td><td>135</td><td>141</td><td>149</td><td>153</td><td>161</td><td>167</td><td>174</td><td>182</td><td>190</td></tr>
+    <tr><td>D · cuff opening</td><td>13.5</td><td>14</td><td>14.5</td><td>15</td><td>16</td><td>15.5</td><td>16.5</td><td>17</td><td>17.5</td><td>18</td><td>18.5</td></tr>
+    <tr><th>Pants</th><th>M0</th><th>M1</th><th>M2</th><th>M3</th><th>M4</th><th>A0</th><th>A1</th><th>A2</th><th>A3</th><th>A4</th><th>A5</th></tr>
+    <tr><td>E · waist width</td><td>40</td><td>42</td><td>44</td><td>48</td><td>50</td><td>49</td><td>51</td><td>54</td><td>57</td><td>60</td><td>63</td></tr>
+    <tr><td>F · length</td><td>71</td><td>76</td><td>81</td><td>85</td><td>89</td><td>91</td><td>94</td><td>98</td><td>102</td><td>106</td><td>110</td></tr>
+    <tr><td>G · cuff opening</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>22</td><td>22</td><td>24</td><td>25</td><td>26</td><td>27</td></tr>
+  </table>
+  </div>
+<p style="margin-top:40px;border-top:1px solid var(--line);padding-top:12px">© 2026 Jelaludo. All rights reserved. Shown for viewing only. <a href="../terms.html">Terms of use and third-party notices</a></p>
+</main>
+</body>
+</html>

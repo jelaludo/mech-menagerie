@@ -1,0 +1,65 @@
+{
+ "name": "MalinoisRMK9",
+ "title": "MALINOIS / RMK-9",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Trot",
+  "Run",
+  "Bark",
+  "Sit",
+  "Sleep",
+  "Roll"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Trot",
+   6
+  ],
+  [
+   "Run",
+   8
+  ],
+  [
+   "Bark",
+   1
+  ],
+  [
+   "Sit",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ],
+  [
+   "Roll",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  0.469,
+  0.026
+ ],
+ "distance": 3.02,
+ "shadow": [
+  1.49,
+  2.62
+ ],
+ "cell": 0.5,
+ "scale": 1.58
+}

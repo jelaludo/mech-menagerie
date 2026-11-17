@@ -1,0 +1,75 @@
+{
+ "name": "BearU01",
+ "title": "BEAR / URSUS-01",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Run",
+  "Roar",
+  "Stand",
+  "BipedWalk",
+  "Swipe",
+  "Sit",
+  "Sleep",
+  "Roll"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Run",
+   8
+  ],
+  [
+   "Roar",
+   1
+  ],
+  [
+   "Stand",
+   1
+  ],
+  [
+   "BipedWalk",
+   5
+  ],
+  [
+   "Swipe",
+   1
+  ],
+  [
+   "Sit",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ],
+  [
+   "Roll",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  1.0,
+  0.125
+ ],
+ "distance": 6.44,
+ "shadow": [
+  2.85,
+  4.15
+ ],
+ "cell": 0.5,
+ "scale": 2.383
+}

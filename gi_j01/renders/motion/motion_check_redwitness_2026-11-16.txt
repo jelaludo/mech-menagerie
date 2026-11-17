@@ -1,0 +1,28 @@
+GI pants        D 0.061, matched 2920, n 4954, forced 0, cg_iters 114, cg_res 0.000, smoothed 4451, by_source [2920]
+GI jacket       D 0.077, matched 3816, n 8276, forced 304, cg_iters 329, cg_res 0.000, smoothed 7928, by_source [2269, 1561], skirt_from_pants 1670, sleeve_vertices 3680
+GI collar       D 0.060, matched 277, n 1296, forced 0, cg_iters 145, cg_res 0.000, smoothed 1296, by_source [277]
+GI belt         D 0.043, matched 298, n 1840, forced 0, cg_iters 292, cg_res 0.000, smoothed 1840, by_source [298], tails_from_skirt 112
+GI pants_hidden faces_before 4878, faces_after 4465, vertices_covered 517
+GI band_under_belt faces_before 1290, faces_after 1258
+GI openings     pants 104 of 296 edge points, jacket 257 of 486 edge points
+GI the body under the gi: 22429 faces removed
+CHECK built in 5.0s: gi 29596 vertices; body points 6944, of them under the gi at rest 3693; pants points drawn 4610, of them under the jacket 493; belt tail points on the skirt 108
+CHECK at rest, body through the cloth where it shows: 0 points
+CLIP Idle             body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | belt tails into the skirt   0 pts (worst   0.0 mm) | stretch p99 pants 1.04 jacket 1.14
+CLIP Walk             body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    3 pts (worst  51.3 mm at 0.20s) | belt tails into the skirt   0 pts (worst   0.0 mm) | stretch p99 pants 2.49 jacket 2.10
+CLIP Jog              body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    1 pts (worst  41.8 mm at 0.40s) | belt tails into the skirt   0 pts (worst   0.0 mm) | stretch p99 pants 2.38 jacket 2.94
+CLIP Run              body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    1 pts (worst  42.7 mm at 0.13s) | belt tails into the skirt   0 pts (worst   0.0 mm) | stretch p99 pants 2.21 jacket 2.68
+CLIP Jump             body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    1 pts (worst  23.5 mm at 0.13s) | belt tails into the skirt  64 pts (worst  11.4 mm) | stretch p99 pants 2.16 jacket 5.15
+CLIP Crouch           body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | belt tails into the skirt  14 pts (worst   9.4 mm) | stretch p99 pants 1.60 jacket 2.24
+CLIP Ukemi_Front      body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    5 pts (worst  27.1 mm at 0.93s) | belt tails into the skirt  59 pts (worst  15.2 mm) | stretch p99 pants 3.62 jacket 5.44
+CLIP Ukemi_Left       body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    6 pts (worst  29.0 mm at 1.73s) | belt tails into the skirt  57 pts (worst  15.2 mm) | stretch p99 pants 3.08 jacket 3.96
+CLIP Ukemi_Right      body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    4 pts (worst  47.8 mm at 2.07s) | belt tails into the skirt  64 pts (worst  14.9 mm) | stretch p99 pants 2.61 jacket 4.18
+CLIP Ukemi_Back       body through gi    2 pts (worst  95.1 mm at 1.33s) | pants through jacket    3 pts (worst  34.8 mm at 1.73s) | belt tails into the skirt  64 pts (worst  11.7 mm) | stretch p99 pants 2.39 jacket 5.97
+CLIP Box              body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    3 pts (worst  11.8 mm at 0.47s) | belt tails into the skirt   0 pts (worst   0.0 mm) | stretch p99 pants 1.41 jacket 3.63
+CLIP Wave             body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | belt tails into the skirt   0 pts (worst   0.0 mm) | stretch p99 pants 1.04 jacket 3.47
+CLIP Stress_ArmsUp    body through gi   32 pts (worst  47.8 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | belt tails into the skirt   0 pts (worst   0.0 mm) | stretch p99 pants 1.00 jacket 6.03
+CLIP Stress_ArmsOut   body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | belt tails into the skirt   0 pts (worst   0.0 mm) | stretch p99 pants 1.00 jacket 4.39
+CLIP Stress_ArmsForward body through gi    1 pts (worst  79.5 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | belt tails into the skirt   0 pts (worst   0.0 mm) | stretch p99 pants 1.00 jacket 4.50
+CLIP Stress_KneeUp    body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    1 pts (worst  46.2 mm at 0.00s) | belt tails into the skirt  27 pts (worst  15.3 mm) | stretch p99 pants 3.99 jacket 2.24
+CLIP Stress_HeadTurn  body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | belt tails into the skirt   0 pts (worst   0.0 mm) | stretch p99 pants 1.00 jacket 1.17
+CHECK 12 clips: 9 with something through; worst body 2 pts / 95.1 mm, worst pants 6 pts / 51.3 mm, worst belt tails 64 pts / 15.2 mm; done in 25s

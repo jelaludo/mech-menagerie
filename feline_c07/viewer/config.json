@@ -1,0 +1,65 @@
+{
+ "name": "FelineC07",
+ "title": "FELINE / C-07",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Stalk",
+  "Run",
+  "Roar",
+  "Sit",
+  "Sleep",
+  "Roll"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Stalk",
+   2
+  ],
+  [
+   "Run",
+   8
+  ],
+  [
+   "Roar",
+   1
+  ],
+  [
+   "Sit",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ],
+  [
+   "Roll",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  0.269,
+  -0.213
+ ],
+ "distance": 2.51,
+ "shadow": [
+  1.5,
+  2.9
+ ],
+ "cell": 0.25,
+ "scale": 1.007
+}

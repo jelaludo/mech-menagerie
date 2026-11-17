@@ -1,0 +1,21 @@
+CHECK built in 4.1s: gi 29718 vertices; body points 36524, of them under the gi at rest 471; pants points drawn 5527, of them under the jacket 660
+CHECK at rest, body through the cloth where it shows: 0 points
+CLIP Idle             body through gi    3 pts (worst   2.3 mm at 2.93s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | stretch p99 pants 1.06 jacket 1.12
+CLIP Walk             body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | stretch p99 pants 1.58 jacket 1.81
+CLIP Jog              body through gi    1 pts (worst   8.3 mm at 0.13s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | stretch p99 pants 1.75 jacket 2.56
+CLIP Run              body through gi    1 pts (worst   2.9 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | stretch p99 pants 1.61 jacket 2.38
+CLIP Jump             body through gi    9 pts (worst  28.2 mm at 0.67s) | pants through jacket    6 pts (worst  34.6 mm at 0.67s) | stretch p99 pants 2.61 jacket 3.62
+CLIP Crouch           body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | stretch p99 pants 2.23 jacket 1.73
+CLIP Ukemi_Front      body through gi   11 pts (worst  23.7 mm at 1.13s) | pants through jacket    8 pts (worst  28.4 mm at 1.87s) | stretch p99 pants 2.43 jacket 3.90
+CLIP Ukemi_Left       body through gi   16 pts (worst  39.1 mm at 2.33s) | pants through jacket   14 pts (worst  56.6 mm at 1.73s) | stretch p99 pants 2.63 jacket 3.01
+CLIP Ukemi_Right      body through gi   13 pts (worst  27.6 mm at 2.13s) | pants through jacket   15 pts (worst  49.3 mm at 2.73s) | stretch p99 pants 2.62 jacket 3.39
+CLIP Ukemi_Back       body through gi   10 pts (worst  22.6 mm at 1.13s) | pants through jacket   12 pts (worst  46.6 mm at 1.33s) | stretch p99 pants 2.52 jacket 4.24
+CLIP Box              body through gi    3 pts (worst  12.2 mm at 1.33s) | pants through jacket    1 pts (worst   2.1 mm at 0.53s) | stretch p99 pants 1.51 jacket 2.91
+CLIP Wave             body through gi    5 pts (worst  21.0 mm at 2.87s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | stretch p99 pants 1.06 jacket 2.46
+CLIP Grasp            body through gi    3 pts (worst   3.2 mm at 2.73s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | stretch p99 pants 1.06 jacket 2.13
+CLIP Stress_ArmsUp    body through gi    6 pts (worst  18.1 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | stretch p99 pants 1.00 jacket 3.93
+CLIP Stress_ArmsOut   body through gi    4 pts (worst  11.9 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | stretch p99 pants 1.00 jacket 2.77
+CLIP Stress_ArmsForward body through gi    5 pts (worst  44.0 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | stretch p99 pants 1.00 jacket 3.21
+CLIP Stress_KneeUp    body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket   17 pts (worst  48.2 mm at 0.00s) | stretch p99 pants 2.26 jacket 2.05
+CLIP Stress_HeadTurn  body through gi    0 pts (worst   0.0 mm at 0.00s) | pants through jacket    0 pts (worst   0.0 mm at 0.00s) | stretch p99 pants 1.00 jacket 1.00
+CHECK 13 clips: 11 with something through; worst body 16 pts / 39.1 mm, worst pants 15 pts / 56.6 mm; done in 34s

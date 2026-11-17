@@ -1,0 +1,60 @@
+{
+ "name": "KomodoK01",
+ "title": "KOMODO / K-01",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Run",
+  "Threat",
+  "TailWhip",
+  "Tripod",
+  "Bask"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Run",
+   8
+  ],
+  [
+   "Threat",
+   1
+  ],
+  [
+   "TailWhip",
+   1
+  ],
+  [
+   "Tripod",
+   1
+  ],
+  [
+   "Bask",
+   1
+  ]
+ ],
+ "sleep": "Bask",
+ "center": [
+  0.0,
+  0.287,
+  0.056
+ ],
+ "distance": 4.45,
+ "shadow": [
+  2.88,
+  5.13
+ ],
+ "cell": 0.5,
+ "scale": 2.052
+}

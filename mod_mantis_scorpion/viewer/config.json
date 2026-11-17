@@ -1,0 +1,50 @@
+{
+ "name": "MantisScorpion",
+ "title": "MANTIS / PINCERS + STING",
+ "subtitle": "EQUIPPED BODY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Strike",
+  "Threat",
+  "Groom"
+ ],
+ "start": "Strike",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Strike",
+   1
+  ],
+  [
+   "Threat",
+   1
+  ],
+  [
+   "Groom",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.0,
+  -0.291
+ ],
+ "distance": 6.44,
+ "shadow": [
+  2.52,
+  4.47
+ ],
+ "cell": 0.5,
+ "scale": 2.661
+}

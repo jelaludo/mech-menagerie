@@ -1,0 +1,50 @@
+{
+ "name": "ModuleTentacle",
+ "title": "TENTACLE / MOD-T1",
+ "subtitle": "MODULE \u00b7 SHOULDER, WRIST OR TAIL SOCKET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Reach",
+  "Coil",
+  "Grip",
+  "Ripple"
+ ],
+ "start": "Coil",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Reach",
+   1
+  ],
+  [
+   "Coil",
+   1
+  ],
+  [
+   "Grip",
+   1
+  ],
+  [
+   "Ripple",
+   2
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.463,
+  0.05
+ ],
+ "distance": 2.98,
+ "shadow": [
+  0.25,
+  0.35
+ ],
+ "cell": 0.1,
+ "scale": 1.557
+}

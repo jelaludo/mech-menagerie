@@ -1,0 +1,227 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>3D Assets</title>
+<meta name="copyright" content="© 2026 Jelaludo. All rights reserved.">
+<meta name="robots" content="noai, noimageai">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://jelaludo.github.io/mech-menagerie/terms.html">
+<link rel="license" href="terms.html">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* layout: a header, then one grid of model cards per collection */
+:root {
+  color-scheme: dark;
+  --bg: #0c0e11;
+  --panel: #14171c;
+  --fg: #dfe3e8;
+  --dim: #808a96;
+  --line: rgba(223, 227, 232, 0.16);
+  --accent: #45b8ff;       /* built: opens a viewer */
+  --next: #f2a31c;         /* in progress */
+  --font-display: "Saira Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 13px/1.55 var(--font-mono); }
+main { max-width: 1320px; margin: 0 auto; padding: 28px max(16px, env(safe-area-inset-right, 0px)) 64px max(16px, env(safe-area-inset-left, 0px)); }
+header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 24px; padding-bottom: 20px;
+  border-bottom: 1px solid var(--line); }
+h1 { margin: 0; font: 600 34px/1 var(--font-display); letter-spacing: 0.14em; }
+h1 i { font-style: normal; color: var(--accent); }
+header p { margin: 8px 0 0; color: var(--dim); letter-spacing: 0.04em; max-width: 62ch; }
+nav { display: flex; flex-wrap: wrap; gap: 8px; }
+nav a { display: block; padding: 0 12px; border: 1px solid var(--line); color: var(--fg); text-decoration: none;
+  font: 500 11px/32px var(--font-mono); letter-spacing: 0.12em; }
+nav a:hover, nav a:focus-visible { background: var(--fg); color: var(--bg); outline: none; }
+h2 { margin: 40px 0 4px; font: 600 20px/1.1 var(--font-display); letter-spacing: 0.2em; }
+h2 + p { margin: 0 0 16px; color: var(--dim); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; align-items: start; }
+.card { display: flex; flex-direction: column; background: var(--panel); border: 1px solid var(--line); color: inherit; text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease; }
+.card:has(.open:hover), .card:has(.open:focus-visible) { border-color: var(--accent); transform: translateY(-2px); }
+.card.planned:has(.open:hover), .card.planned:has(.open:focus-visible), .card.next:has(.open:hover) { border-color: var(--dim); }
+.open { display: flex; flex-direction: column; flex: 1; color: inherit; text-decoration: none; outline: none; }
+/* feedback: a fold at the foot of each card; notes are saved by the local server into feedback/<model>.txt */
+.fb { border-top: 1px solid var(--line); }
+.fb[hidden] { display: none; }
+.fb summary { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 14px; cursor: pointer; list-style: none;
+  font: 500 10px/1.4 var(--font-mono); letter-spacing: 0.18em; color: var(--dim); }
+.fb summary::-webkit-details-marker { display: none; }
+.fb summary:hover, .fb summary:focus-visible { color: var(--fg); outline: none; }
+.fb summary b { font-weight: 500; letter-spacing: 0.06em; }
+.fb.has summary b { color: var(--accent); }
+.fb .in { display: grid; gap: 8px; padding: 0 14px 14px; }
+.fb .log { display: grid; gap: 8px; max-height: 220px; overflow: auto; }
+.fb .note { border-left: 2px solid var(--line); padding-left: 9px; }
+.fb .note time { display: block; color: var(--dim); font-size: 10px; letter-spacing: 0.06em; }
+.fb .note p { margin: 2px 0 0; font-size: 12px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.fb textarea { width: 100%; min-height: 78px; resize: vertical; padding: 8px 9px; background: var(--bg); color: var(--fg); border: 1px solid var(--line);
+  font: 400 12px/1.5 var(--font-mono); }
+.fb textarea:focus-visible { outline: none; border-color: var(--accent); }
+.fb .row { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.fb button { all: unset; box-sizing: border-box; padding: 0 12px; border: 1px solid var(--line); cursor: pointer;
+  font: 500 11px/28px var(--font-mono); letter-spacing: 0.12em; color: var(--fg); white-space: nowrap; }
+.fb button:hover, .fb button:focus-visible { background: var(--fg); color: var(--bg); }
+.fb button[disabled] { opacity: 0.4; pointer-events: none; }
+.fb .state { color: var(--dim); font-size: 11px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.shot { aspect-ratio: 900 / 560; background: #1b1f25 center / cover no-repeat; border-bottom: 1px solid var(--line); }
+.planned .shot, .next .shot { filter: grayscale(1) contrast(0.92) brightness(0.72); }
+.body { display: grid; gap: 4px; padding: 12px 14px 14px; }
+.top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+.num { font: 600 13px/1 var(--font-display); letter-spacing: 0.2em; color: var(--dim); }
+.chip { font: 500 10px/18px var(--font-mono); letter-spacing: 0.16em; padding: 0 7px; border: 1px solid var(--line); color: var(--dim); white-space: nowrap; }
+.built .chip { color: #03121c; background: var(--accent); border-color: var(--accent); }
+.next .chip { color: #1c1200; background: var(--next); border-color: var(--next); }
+.name { font: 600 21px/1.15 var(--font-display); letter-spacing: 0.08em; }
+.class, .spec { color: var(--dim); font-size: 12px; }
+.spec { min-height: 3.1em; font-variant-numeric: tabular-nums; }    /* two lines, so cards in a row stay the same height */
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--dim); font-size: 12px; }
+code { color: var(--fg); }
+footer a { color: var(--fg); }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+</style>
+
+<main>
+  <header>
+    <div>
+      <h1>3D <i>/</i> ASSETS</h1>
+      <p>Game assets built by script in Blender: a bare skeleton or exoskeleton, driven by braided muscle-actuators.</p>
+    </div>
+    <nav aria-label="Workshop">
+      <a href="docs/">KNOWLEDGE BASE</a>
+      <a href="docs/?doc=REUSE.md">REUSE PLAN</a>
+      <a href="terms.html">TERMS</a>
+    </nav>
+  </header>
+
+  <h2>MECHANICAL MENAGERIE</h2>
+  <p>One shared kit of parts, one body plan per animal.</p>
+  <div class="grid" id="menagerie"></div>
+
+  <h2>HANDS, FEET AND PAWS</h2>
+  <p>Studies of the extremities in the same language, to be mounted on the models.</p>
+  <div class="grid" id="parts"></div>
+
+  <h2>MODULES</h2>
+  <p>Parts taken out of the animals that fit more than one body, and bodies wearing them. First hosts: the humanoid and the mantis.</p>
+  <div class="grid" id="modules"></div>
+
+  <h2>WARDROBE</h2>
+  <p>Clothes drafted from each body's own measurements and draped with cloth simulation. First: the jiu-jitsu gi on the humanoid.</p>
+  <div class="grid" id="wardrobe"></div>
+
+  <h2>SCENES</h2>
+  <p>Built models set together, and the things they stand beside.</p>
+  <div class="grid" id="scenes"></div>
+
+  <h2>RED WITNESS</h2>
+  <p>The first builds: a helmet, then a full figure wearing it.</p>
+  <div class="grid" id="red-witness"></div>
+
+  <footer>© 2026 Jelaludo. All rights reserved. The models, textures, animations and renders are shown for viewing only, as reduced copies: they may not be downloaded, reused, resold or used to train AI. The full-detail models are sold separately. <a href="terms.html">Terms of use and third-party notices</a></footer>
+</main>
+
+<script type="module">
+const LABEL = { built: "OPEN", next: "NEXT", planned: "CONCEPT" };
+const n = (v) => v.toLocaleString("en-US");
+
+function specLine(m, s) {
+  if (m.spec) return m.spec;
+  if (!s) return m.status === "built" ? "" : (m.status === "next" ? "In progress · concept sheet" : "Not built yet · concept sheet");
+  const bits = [];
+  if (s.LOD0) bits.push(n(s.LOD0.triangles) + " tris");
+  if (s.rig) bits.push(s.rig.bones + " bones", Object.keys(s.rig.clips).length + " motions");
+  else bits.push("static");
+  if (s.size_m) bits.push(s.size_m.height > s.size_m.length ? s.size_m.height.toFixed(2) + " m tall" : s.size_m.length.toFixed(2) + " m long");
+  else if (s.height_m) bits.push(s.height_m.toFixed(2) + " m tall");
+  return bits.join(" · ");
+}
+
+// ---- feedback: notes on a model, kept as plain text in feedback/<model>.txt by hub/server.py ----
+const notesReady = Promise.resolve(null);   // public copy: no feedback notes
+
+function showNotes(fb, notes) {
+  const log = fb.querySelector(".log");
+  log.replaceChildren(...notes.map((n) => {
+    const d = document.createElement("div");
+    d.className = "note";
+    const t = document.createElement("time");
+    t.textContent = n.when;
+    const p = document.createElement("p");
+    p.textContent = n.text;
+    d.append(t, p);
+    return d;
+  }));
+  log.scrollTop = log.scrollHeight;
+  fb.querySelector("summary b").textContent = notes.length ? notes.length + (notes.length === 1 ? " NOTE" : " NOTES") : "ADD A NOTE";
+  fb.classList.toggle("has", notes.length > 0);
+}
+
+function feedback(m) {
+  const fb = document.createElement("details");
+  fb.className = "fb";
+  fb.hidden = true;                                                   // shown only when the local server answers
+  fb.innerHTML = `<summary><span>FEEDBACK</span><b></b></summary><div class="in"><div class="log"></div>
+    <textarea aria-label="Feedback on this model" placeholder="What works, what is off, what to change."></textarea>
+    <div class="row"><button type="button">SAVE NOTE</button><span class="state" role="status"></span></div></div>`;
+  const box = fb.querySelector("textarea"), btn = fb.querySelector("button"), state = fb.querySelector(".state");
+  const draft = "feedback-draft:" + m.id + "|" + m.name;              // an unsent note survives a reload
+  try { box.value = localStorage.getItem(draft) || ""; } catch (e) {}
+  box.addEventListener("input", () => { try { localStorage.setItem(draft, box.value); } catch (e) {} });
+  async function save() {
+    const text = box.value.trim();
+    if (!text) { state.textContent = "Nothing to save yet."; return; }
+    btn.disabled = true;
+    state.textContent = "Saving…";
+    try {
+      const r = await fetch("api/feedback", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id: m.id, name: m.name, text }) });
+      const j = await r.json();
+      if (!r.ok) throw new Error(j.error || r.status);
+      box.value = "";
+      try { localStorage.removeItem(draft); } catch (e) {}
+      showNotes(fb, j.notes);
+      state.textContent = "Saved to " + j.file;
+    } catch (err) {
+      state.textContent = "Not saved: " + (err.message || err) + ". Your text is still here.";
+    }
+    btn.disabled = false;
+  }
+  btn.addEventListener("click", save);
+  box.addEventListener("keydown", (e) => { if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) save(); });
+  notesReady.then((all) => {
+    if (!all) return;
+    const mine = all[m.id + "|" + m.name];
+    if (!mine) return;
+    showNotes(fb, mine.notes);
+    fb.hidden = false;
+    if (box.value) { fb.open = true; state.textContent = "Unsent draft restored."; }
+  });
+  return fb;
+}
+
+function card(m) {
+  const href = m.status === "built" ? m.href : m.concept;
+  const card = document.createElement("div");
+  card.className = "card " + m.status;
+  const el = document.createElement(href ? "a" : "div");
+  el.className = "open";
+  if (href) el.href = href;
+  card.append(el, feedback(m));
+  el.innerHTML = `<div class="shot"></div><div class="body"><div class="top"><span class="num"></span><span class="chip"></span></div>
+    <div class="name"></div><div class="class"></div><div class="spec"></div></div>`;
+  el.querySelector(".shot").style.backgroundImage = `url("${m.thumb}")`;
+  el.querySelector(".num").textContent = m.id;
+  el.querySelector(".chip").textContent = LABEL[m.status];
+  el.querySelector(".name").textContent = m.name;
+  el.querySelector(".class").textContent = m.class;
+  el.querySelector(".spec").textContent = specLine(m, null);
+  if (m.stats) fetch(m.stats).then((r) => r.ok ? r.json() : null).then((s) => { if (s) el.querySelector(".spec").textContent = specLine(m, s); }).catch(() => {});
+  return card;
+}
+
+fetch("catalog.json").then((r) => r.json()).then((cat) => {
+  for (const m of cat.models) document.getElementById(m.collection).appendChild(card(m));
+}).catch(() => { document.querySelector("main").insertAdjacentHTML("beforeend", "<p>Could not read catalog.json. Open this page through serve.sh, not as a file.</p>"); });
+</script>

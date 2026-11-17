@@ -1,0 +1,65 @@
+{
+ "name": "SpiderJ01",
+ "title": "SPIDER / J-01",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Sense",
+  "Wave",
+  "Hesitate",
+  "Scuttle",
+  "Jump",
+  "LongJump"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   6
+  ],
+  [
+   "Sense",
+   1
+  ],
+  [
+   "Wave",
+   1
+  ],
+  [
+   "Hesitate",
+   1
+  ],
+  [
+   "Scuttle",
+   3
+  ],
+  [
+   "Jump",
+   2
+  ],
+  [
+   "LongJump",
+   2
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.625,
+  0.081
+ ],
+ "distance": 4.02,
+ "shadow": [
+  2.68,
+  2.53
+ ],
+ "cell": 1.0,
+ "scale": 1.451
+}

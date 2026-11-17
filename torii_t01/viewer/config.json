@@ -1,0 +1,30 @@
+{
+ "name": "ToriiT01",
+ "title": "TORII / T-01",
+ "subtitle": "SHRINE GATE \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Still"
+ ],
+ "start": "Still",
+ "playlist": [
+  [
+   "Still",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  2.053,
+  0.871
+ ],
+ "distance": 13.22,
+ "shadow": [
+  9.98,
+  6.34
+ ],
+ "cell": 1.0,
+ "scale": 6.908
+}

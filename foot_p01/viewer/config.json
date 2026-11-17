@@ -1,0 +1,60 @@
+{
+ "name": "FootP01",
+ "title": "FOOT / PES-01",
+ "subtitle": "FOOT STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Showcase",
+  "Step",
+  "Toes",
+  "Tiptoe",
+  "Grasp",
+  "Ankle"
+ ],
+ "start": "Showcase",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Showcase",
+   1
+  ],
+  [
+   "Step",
+   4
+  ],
+  [
+   "Toes",
+   1
+  ],
+  [
+   "Tiptoe",
+   1
+  ],
+  [
+   "Grasp",
+   1
+  ],
+  [
+   "Ankle",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.15,
+  0.062
+ ],
+ "distance": 0.97,
+ "shadow": [
+  0.31,
+  0.42
+ ],
+ "cell": 0.05,
+ "scale": 0.311
+}

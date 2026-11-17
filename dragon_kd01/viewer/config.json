@@ -1,0 +1,60 @@
+{
+ "name": "DragonKD01",
+ "title": "KAMI DRAGON / KD-01",
+ "subtitle": "JAPANESE DIVINE DRAGON \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Run",
+  "Roar",
+  "Ascend",
+  "Soar",
+  "Rest"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Run",
+   6
+  ],
+  [
+   "Roar",
+   1
+  ],
+  [
+   "Ascend",
+   1
+  ],
+  [
+   "Soar",
+   4
+  ],
+  [
+   "Rest",
+   1
+  ]
+ ],
+ "sleep": "Rest",
+ "center": [
+  0.0,
+  1.6,
+  0.525
+ ],
+ "distance": 10.3,
+ "shadow": [
+  4.58,
+  6.98
+ ],
+ "cell": 0.5,
+ "scale": 3.816
+}

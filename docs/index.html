@@ -1,0 +1,90 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Knowledge Base</title>
+<meta name="copyright" content="© 2026 Jelaludo. All rights reserved.">
+<meta name="robots" content="noai, noimageai">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://jelaludo.github.io/mech-menagerie/terms.html">
+<link rel="license" href="../terms.html">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* layout: a narrow list of pages on the left, one reading column on the right; the Markdown files next to this page are the content */
+:root {
+  color-scheme: dark;
+  --bg: #0c0e11;
+  --panel: #14171c;
+  --fg: #dfe3e8;
+  --text: #c9cfd6;
+  --dim: #808a96;
+  --line: rgba(223, 227, 232, 0.16);
+  --accent: #45b8ff;
+  --font-display: "Saira Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-text: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 400 17px/1.62 var(--font-text); }
+.wrap { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 48px; max-width: 1180px; margin: 0 auto;
+  padding: 28px max(16px, env(safe-area-inset-right, 0px)) 80px max(16px, env(safe-area-inset-left, 0px)); }
+nav { position: sticky; top: 28px; align-self: start; font: 500 11px/1.4 var(--font-mono); letter-spacing: 0.12em; }
+nav a { display: block; padding: 9px 12px; color: var(--dim); text-decoration: none; border-left: 2px solid var(--line); }
+nav a:hover, nav a:focus-visible { color: var(--fg); outline: none; }
+nav a[aria-current="page"] { color: var(--fg); border-left-color: var(--accent); }
+nav a.home { border: 1px solid var(--line); margin-bottom: 18px; color: var(--fg); }
+article { max-width: 920px; min-width: 0; }
+article > p, article > ul, article > ol, article > h1, article > h2, article > h3, article > pre { max-width: 76ch; }
+h1, h2, h3 { font-family: var(--font-display); color: var(--fg); font-weight: 600; line-height: 1.15; }
+h1 { font-size: 40px; letter-spacing: 0.06em; margin: 0 0 20px; }
+h2 { font-size: 25px; letter-spacing: 0.06em; margin: 44px 0 12px; padding-top: 18px; border-top: 1px solid var(--line); }
+h3 { font-size: 19px; letter-spacing: 0.05em; margin: 28px 0 8px; }
+p, ul, ol { margin: 0 0 16px; }
+ul, ol { padding-left: 1.3em; }
+li { margin-bottom: 6px; }
+a { color: var(--accent); }
+strong { color: var(--fg); font-weight: 600; }
+code { font: 400 0.82em/1.4 var(--font-mono); color: var(--fg); background: var(--panel); padding: 1px 5px; border: 1px solid var(--line); }
+pre { background: var(--panel); border: 1px solid var(--line); padding: 14px 16px; overflow-x: auto; margin: 0 0 18px; }
+pre code { background: none; border: 0; padding: 0; font-size: 13px; line-height: 1.6; }
+.table { overflow-x: auto; margin: 0 0 20px; }
+table { border-collapse: collapse; width: 100%; font: 400 13px/1.5 var(--font-mono); }
+th, td { text-align: left; vertical-align: top; padding: 7px 10px; border-bottom: 1px solid var(--line); }
+th { color: var(--dim); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; font-size: 11px; white-space: nowrap; }
+td code { font-size: 0.95em; }
+input[type="checkbox"] { accent-color: var(--accent); margin-right: 6px; }
+li:has(> input[type="checkbox"]) { list-style: none; margin-left: -1.3em; }
+@media (max-width: 760px) {
+  .wrap { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  nav { position: static; display: flex; flex-wrap: wrap; gap: 6px; }
+  nav a, nav a.home { border: 1px solid var(--line); margin: 0; padding: 7px 10px; }
+  nav a[aria-current="page"] { border-color: var(--accent); }
+  body { font-size: 16px; }
+  h1 { font-size: 32px; }
+}
+</style>
+<div class="wrap">
+  <nav aria-label="Knowledge base pages" id="nav"><a class="home" href="../">‹ ALL MODELS</a></nav>
+  <article id="doc">Loading…</article>
+</div>
+<footer style="max-width:1180px;margin:0 auto;padding:0 max(16px, env(safe-area-inset-right, 0px)) 40px max(16px, env(safe-area-inset-left, 0px));color:var(--dim);font:400 12px/1.6 var(--font-mono)">© 2026 Jelaludo. All rights reserved. <a href="../terms.html">Terms of use</a></footer>
+<script src="vendor/marked.min.js"></script>
+<script>
+const PAGES = [["README.md", "OVERVIEW"], ["METHOD.md", "METHOD"], ["REUSE.md", "REUSE PLAN"], ["KIT.md", "KIT REFERENCE"], ["RIG.md", "RIG STANDARD"], ["LESSONS.md", "LESSONS"], ["QA.md", "QA GATE"], ["RETROSPECTIVE.md", "RETROSPECTIVE"], ["STUDY-KOMODO.md", "STUDY · KOMODO"], ["STUDY-GI.md", "STUDY · GI"]];
+const want = new URLSearchParams(location.search).get("doc") || "README.md";
+const page = PAGES.some(([f]) => f === want) ? want : "README.md";     // only the listed files can be opened
+const nav = document.getElementById("nav");
+for (const [file, label] of PAGES) {
+  const a = document.createElement("a");
+  a.href = "?doc=" + file;
+  a.textContent = label;
+  if (file === page) a.setAttribute("aria-current", "page");
+  nav.appendChild(a);
+}
+fetch(page).then((r) => { if (!r.ok) throw new Error(page); return r.text(); }).then((md) => {
+  const el = document.getElementById("doc");
+  el.innerHTML = marked.parse(md, { gfm: true });
+  for (const t of el.querySelectorAll("table")) { const w = document.createElement("div"); w.className = "table"; t.replaceWith(w); w.appendChild(t); }
+  const h = el.querySelector("h1");
+  document.title = (h ? h.textContent + " · " : "") + "Knowledge Base";
+}).catch(() => { document.getElementById("doc").textContent = "Could not load " + page + ". Open this page through serve.sh, not as a file."; });
+</script>

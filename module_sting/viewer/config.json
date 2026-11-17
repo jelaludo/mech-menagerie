@@ -1,0 +1,45 @@
+{
+ "name": "ModuleSting",
+ "title": "STING TAIL / MOD-S1",
+ "subtitle": "MODULE \u00b7 TAIL SOCKET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Threat",
+  "Strike",
+  "Sway"
+ ],
+ "start": "Strike",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Threat",
+   1
+  ],
+  [
+   "Strike",
+   2
+  ],
+  [
+   "Sway",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.503,
+  -0.119
+ ],
+ "distance": 3.24,
+ "shadow": [
+  0.71,
+  1.1
+ ],
+ "cell": 0.25,
+ "scale": 1.692
+}

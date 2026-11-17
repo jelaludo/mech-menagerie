@@ -1,0 +1,40 @@
+{
+ "name": "ModulePincer",
+ "title": "PINCER / MOD-P1",
+ "subtitle": "MODULE \u00b7 WRIST SOCKET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Snap",
+  "Grab"
+ ],
+ "start": "Snap",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Snap",
+   2
+  ],
+  [
+   "Grab",
+   2
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.171,
+  0.007
+ ],
+ "distance": 1.1,
+ "shadow": [
+  0.18,
+  0.22
+ ],
+ "cell": 0.05,
+ "scale": 0.577
+}

@@ -1,0 +1,60 @@
+{
+ "name": "FootG01",
+ "title": "GORILLA FOOT / PES-G1",
+ "subtitle": "FOOT STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Showcase",
+  "Step",
+  "Toes",
+  "Tiptoe",
+  "Grasp",
+  "Ankle"
+ ],
+ "start": "Showcase",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Showcase",
+   1
+  ],
+  [
+   "Step",
+   4
+  ],
+  [
+   "Toes",
+   1
+  ],
+  [
+   "Tiptoe",
+   1
+  ],
+  [
+   "Grasp",
+   1
+  ],
+  [
+   "Ankle",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.22,
+  0.105
+ ],
+ "distance": 1.42,
+ "shadow": [
+  0.56,
+  0.64
+ ],
+ "cell": 0.05,
+ "scale": 0.456
+}

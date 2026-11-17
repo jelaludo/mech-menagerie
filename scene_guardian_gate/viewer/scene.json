@@ -1,0 +1,14 @@
+{
+ "note": "Where each model stands in the scene viewer. Metres, Y up, models face +Z; turn is degrees about the vertical. scripts/scene.py holds the same layout for the rendered stills.",
+ "center": [0.0, 1.75, 0.3],
+ "distance": 15.5,
+ "models": {
+  "torii": {"name": "ToriiT01", "path": "../../torii_t01/viewer/assets/"},
+  "shisa": {"name": "ShisaS01", "path": "../../shisa_s01/viewer/assets/"}
+ },
+ "items": [
+  {"model": "torii", "position": [0, 0, 0], "motion": "Still"},
+  {"model": "shisa", "position": [2.55, 0.32, 1.42], "turn": -13, "motion": "SitOpen"},
+  {"model": "shisa", "position": [-2.55, 0.32, 1.42], "turn": 13, "motion": "SitShut", "offset": 1.7}
+ ]
+}

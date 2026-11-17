@@ -1,0 +1,314 @@
+<meta charset="utf-8">
+<title>Red Witness Figure</title>
+<meta name="copyright" content="© 2026 Jelaludo. All rights reserved.">
+<meta name="robots" content="noai, noimageai">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://jelaludo.github.io/mech-menagerie/terms.html">
+<link rel="license" href="../../terms.html">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* layout: one full-bleed WebGL stage; the HUD is three small corner labels floating over it */
+:root {
+  color-scheme: dark;
+  --bg: #0c0e11;            /* stage, edge of frame */
+  --bg-glow: #232830;       /* stage, behind the helmet */
+  --fg: #dfe3e8;
+  --dim: #808a96;
+  --line: rgba(223, 227, 232, 0.18);
+  --panel: rgba(12, 14, 17, 0.55);
+  --accent: #ff4d38;        /* the optics' sensor red */
+  --hazard: #f2a31c;        /* filter-housing stripe orange */
+  --font-display: "Saira Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-mono); font-size: 12px; overflow: hidden; }
+#stage { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; outline: none; }
+
+.hud {
+  position: fixed; inset: 0; pointer-events: none; display: grid;
+  grid-template: "name hint" auto ". ." 1fr "read ctrl" auto / 1fr auto;
+  gap: 12px;
+  padding-block: calc(14px + env(safe-area-inset-top, 0px)) calc(14px + env(safe-area-inset-bottom, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  transition: opacity 0.35s ease;
+}
+.hud.off { opacity: 0; }
+.hud.off * { pointer-events: none !important; }
+.name { grid-area: name; font-family: var(--font-display); line-height: 1; }
+.name b { display: block; font-weight: 600; font-size: 22px; letter-spacing: 0.14em; }
+.name b i { font-style: normal; color: var(--accent); }
+.name span { display: block; margin-top: 5px; font-weight: 500; font-size: 12px; letter-spacing: 0.3em; color: var(--dim); }
+.hint { grid-area: hint; align-self: start; text-align: right; color: var(--dim); font-size: 11px; line-height: 1.6;
+  transition: opacity 1.2s ease; }
+.hint.fade { opacity: 0; }
+.read { grid-area: read; align-self: end; min-width: 0; font-variant-numeric: tabular-nums; line-height: 1.7; }
+.read .big { font-family: var(--font-display); font-weight: 600; font-size: 30px; letter-spacing: 0.06em; line-height: 1; }
+.read .big small { font-size: 13px; letter-spacing: 0.22em; color: var(--dim); margin-left: 6px; }
+.read .sub { color: var(--dim); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ctrl { grid-area: ctrl; align-self: end; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; pointer-events: auto; }
+.seg { display: flex; border: 1px solid var(--line); background: var(--panel); backdrop-filter: blur(6px); }
+.seg button { all: unset; box-sizing: border-box; min-width: 34px; height: 30px; padding: 0 10px; text-align: center;
+  font: 500 11px/30px var(--font-mono); letter-spacing: 0.08em; color: var(--dim); cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button:hover { color: var(--fg); }
+.seg button[aria-pressed="true"] { color: var(--bg); background: var(--fg); }
+.seg.lod button[aria-pressed="true"] { background: var(--accent); color: #140402; }
+.seg button:focus-visible { outline: 2px solid var(--hazard); outline-offset: 2px; }
+.seg .tag { padding: 0 9px; font: 500 10px/30px var(--font-mono); letter-spacing: 0.18em; color: var(--dim); border-right: 1px solid var(--line); }
+#load { position: fixed; inset: 0; display: grid; place-items: center; pointer-events: none; text-align: center;
+  font: 500 11px/1.8 var(--font-mono); letter-spacing: 0.24em; color: var(--dim); transition: opacity 0.6s ease;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+#load.done { opacity: 0; }
+#load b { display: block; color: var(--fg); font-family: var(--font-display); font-size: 18px; letter-spacing: 0.3em; font-weight: 600; }
+@media (max-width: 520px) {
+  .hud { grid-template: "name" auto "." 1fr "read" auto "ctrl" auto / 1fr; }
+  .hint { display: none; }
+  .ctrl { justify-content: flex-start; }
+  .read .big { font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .hud, .hint, #load { transition: none; } }
+</style>
+
+<canvas id="stage" tabindex="0" aria-label="Interactive 3D view of the Red Witness figure"></canvas>
+<div id="load"><div><b>RED WITNESS</b><span id="loadmsg">LOADING ASSET</span></div></div>
+
+<div class="hud" id="hud">
+  <div class="name"><b>RED <i>/</i> WITNESS</b><span>FULL FIGURE · GAME ASSET</span><br><a href="../../" style="display:inline-block;margin-top:10px;pointer-events:auto;color:var(--dim);text-decoration:none;font:500 11px/1 var(--font-mono);letter-spacing:0.16em">‹ ALL MODELS</a><a href="../../terms.html" style="display:inline-block;margin-top:10px;pointer-events:auto;color:var(--dim);text-decoration:none;font:500 11px/1 var(--font-mono);letter-spacing:0.16em;margin-left:16px">© JELALUDO · TERMS</a></div>
+  <div class="hint" id="hint">drag to orbit · scroll to zoom · right-drag to pan<br>2–4 level of detail · W wire (press again: wire only) · R spin · H hide</div>
+  <div class="read">
+    <div class="big"><span id="tris">—</span><small>TRIS</small></div>
+    <div class="sub" id="sub">carbon skeleton · fusiform muscle bundles</div>
+  </div>
+  <div class="ctrl">
+    <div class="seg lod" role="group" aria-label="Level of detail">
+      <span class="tag">LOD</span>
+      <button id="lod0" aria-pressed="false" style="display:none">0</button><button id="lod1" aria-pressed="true">1</button><button id="lod2" aria-pressed="false">2</button><button id="lod3" aria-pressed="false">3</button>
+    </div>
+    <div class="seg" role="group" aria-label="View options">
+      <button id="wire" aria-pressed="false">WIRE</button><button id="spin" aria-pressed="true">SPIN</button><button id="glow" aria-pressed="true">GLOW</button>
+    </div>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "./vendor/three/build/three.module.min.js",
+  "three/addons/": "./vendor/three/jsm/"
+} }
+</script>
+<script type="module">
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+
+const $ = (id) => document.getElementById(id);
+const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const ASSETS = "assets/";
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const canvas = $("stage");
+
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 0.78;
+
+const scene = new THREE.Scene();
+{
+  const c = document.createElement("canvas");
+  c.width = c.height = 512;
+  const g = c.getContext("2d");
+  const grad = g.createRadialGradient(256, 230, 10, 256, 256, 380);
+  grad.addColorStop(0, css("--bg-glow"));
+  grad.addColorStop(1, css("--bg"));
+  g.fillStyle = grad;
+  g.fillRect(0, 0, 512, 512);
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  scene.background = t;
+}
+scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.03).texture;
+const key = new THREE.DirectionalLight(0xfff1e2, 2.5);
+key.position.set(2.5, 4.0, 4.0);
+const rim = new THREE.DirectionalLight(0x9fc4ff, 1.5);
+rim.position.set(-3.0, 3.0, -3.5);
+scene.add(key, rim, new THREE.HemisphereLight(0xdfe6f2, 0x2a2c30, 0.9));
+
+const CENTER = new THREE.Vector3(0, 1.04, 0);
+const camera = new THREE.PerspectiveCamera(30, 1, 0.05, 60);
+camera.position.set(1.55, 1.38, 4.05);
+const controls = new OrbitControls(camera, canvas);
+controls.target.copy(CENTER);
+controls.enableDamping = true;
+controls.dampingFactor = 0.07;
+controls.minDistance = 0.45;
+controls.maxDistance = 14;
+controls.autoRotate = !reduced;
+controls.autoRotateSpeed = 0.6;
+controls.update();
+
+{ // contact shadow on the floor
+  const c = document.createElement("canvas");
+  c.width = c.height = 256;
+  const g = c.getContext("2d");
+  const grad = g.createRadialGradient(128, 128, 14, 128, 128, 128);
+  grad.addColorStop(0, "rgba(0,0,0,0.62)");
+  grad.addColorStop(1, "rgba(0,0,0,0)");
+  g.fillStyle = grad;
+  g.fillRect(0, 0, 256, 256);
+  const m = new THREE.Mesh(new THREE.PlaneGeometry(1.7, 1.2),
+    new THREE.MeshBasicMaterial({ map: new THREE.CanvasTexture(c), transparent: true, depthWrite: false }));
+  m.rotation.x = -Math.PI / 2;
+  m.position.y = -0.002;
+  scene.add(m);
+}
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.26, 0.4, 1.0);
+composer.addPass(bloom);
+composer.addPass(new OutputPass());
+
+function resize() {
+  const w = canvas.clientWidth || innerWidth, h = canvas.clientHeight || innerHeight;
+  renderer.setSize(w, h, false);
+  composer.setSize(w, h);
+  camera.aspect = w / h;
+  camera.fov = w < h * 0.7 ? 34 : 30;
+  camera.updateProjectionMatrix();
+}
+addEventListener("resize", resize);
+resize();
+
+// ---- assets ----
+function bytes(b64) {
+  const bin = atob(b64), out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out.buffer;
+}
+const getJSON = (file) => fetch(ASSETS + file).then((r) => { if (!r.ok) throw new Error(file); return r.json(); });
+const texLoader = new THREE.TextureLoader();
+const maxAniso = renderer.capabilities.getMaxAnisotropy();
+function tex(prefix, name, srgb, res) {
+  return new Promise((ok, fail) => texLoader.load(ASSETS + prefix + "_" + name + "_" + res + ".jpg", (t) => {
+    t.flipY = false;
+    t.colorSpace = srgb ? THREE.SRGBColorSpace : THREE.NoColorSpace;
+    t.anisotropy = maxAniso;
+    ok(t);
+  }, undefined, () => fail(new Error("texture " + name))));
+}
+const loadSet = (res) => Promise.all([tex("RedWitness", "BaseColor", true, res), tex("RedWitness", "Normal", false, res),
+  tex("RedWitness", "ORM", false, res), tex("RedWitness", "Emissive", true, res), tex("RedWitnessBody", "BaseColor", true, res),
+  tex("RedWitnessBody", "Normal", false, res), tex("RedWitnessBody", "ORM", false, res)]);
+
+function helmetMesh(d, mat) {
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.BufferAttribute(new Float32Array(bytes(d.position)), 3));
+  g.setAttribute("normal", new THREE.BufferAttribute(new Float32Array(bytes(d.normal)), 3));
+  g.setAttribute("uv", new THREE.BufferAttribute(new Float32Array(bytes(d.uv)), 2));
+  g.setAttribute("tangent", new THREE.BufferAttribute(new Float32Array(bytes(d.tangent)), 4));
+  const idx = bytes(d.index);
+  g.setIndex(new THREE.BufferAttribute(d.indexBytes === 4 ? new Uint32Array(idx) : new Uint16Array(idx), 1));
+  return new THREE.Mesh(g, mat);
+}
+const lods = new Array(4).fill(null);
+let current = 0, wireOn = false, wireOnly = false, stats = null, texRes = "2K", helmetMat = null, bodyMat = null;
+const wireMat = new THREE.LineBasicMaterial({ color: css("--hazard"), transparent: true, opacity: 0.4 });
+
+async function loadLOD(i) {
+  if (lods[i]) return lods[i];
+  const [fig, helm] = await Promise.all([getJSON("RedWitnessBody_LOD" + i + ".json"), getJSON("RedWitnessHelmet_LOD" + i + ".json")]);
+  const solid = new THREE.Group(), wire = new THREE.Group();
+  const h = helmetMesh(helm, helmetMat);
+  h.position.fromArray(stats && stats.helmet_offset ? stats.helmet_offset : [0, 1.742, -0.012]);
+  const meshes = [helmetMesh(fig, bodyMat), h];
+  for (const m of meshes) {
+    solid.add(m);
+    const w = new THREE.LineSegments(new THREE.WireframeGeometry(m.geometry), wireMat);
+    w.position.copy(m.position);
+    wire.add(w);
+  }
+  scene.add(solid, wire);
+  const s = stats && stats["LOD" + i];
+  lods[i] = { solid, wire, tris: s ? s.triangles : fig.triangles + helm.triangles, body: s ? s.body_hands_feet : fig.triangles,
+    helmet: s ? s.helmet : helm.triangles };
+  return lods[i];
+}
+
+async function show(i) {
+  for (let k = 0; k < 4; k++) $("lod" + k).setAttribute("aria-pressed", String(k === i));
+  const l = await loadLOD(i);
+  current = i;
+  lods.forEach((o, k) => { if (o) { o.solid.visible = k === i && !wireOnly; o.wire.visible = k === i && wireOn; } });
+  wireMat.opacity = wireOnly ? 0.5 : 0.4;
+  bloom.enabled = !wireOnly && $("glow").getAttribute("aria-pressed") === "true";   // glow would fill the lines in
+  scene.children.forEach((o) => { if (o.isMesh) o.visible = !wireOnly; });   // floor and shadow
+  $("tris").textContent = l.tris.toLocaleString("en-US");
+  $("sub").textContent = "LOD" + i + " · body " + l.body.toLocaleString("en-US") + " + helmet " + l.helmet.toLocaleString("en-US") +
+    " · " + (stats ? stats.height_m.toFixed(2) : "2.08") + " m tall · two " + texRes + " texture sets";
+}
+
+async function start() {
+  try {
+    const [[base, normal, orm, emissive, bBase, bNormal, bOrm], st] = await Promise.all([loadSet("2k"),
+      getJSON("figure_stats.json").catch(() => null)]);
+    stats = st;
+    helmetMat = new THREE.MeshStandardMaterial({ map: base, normalMap: normal, aoMap: orm, roughnessMap: orm, metalnessMap: orm,
+      roughness: 1, metalness: 1, emissiveMap: emissive, emissive: 0xffffff, emissiveIntensity: 3.2, envMapIntensity: 0.5 });
+    bodyMat = new THREE.MeshStandardMaterial({ map: bBase, normalMap: bNormal, aoMap: bOrm, roughnessMap: bOrm, metalnessMap: bOrm,
+      roughness: 1, metalness: 1, envMapIntensity: 1.25, aoMapIntensity: 0.5 });
+    await show(1);
+    $("load").classList.add("done");
+    setTimeout(() => $("hint").classList.add("fade"), 9000);
+    if (false) {   // public copy: the 4K textures are not published
+      loadSet("4k").then(([b, n, o, e, bb, bn, bo]) => {
+        const old = [helmetMat.map, helmetMat.normalMap, helmetMat.aoMap, helmetMat.emissiveMap, bodyMat.map, bodyMat.normalMap, bodyMat.aoMap];
+        helmetMat.map = b; helmetMat.normalMap = n; helmetMat.aoMap = helmetMat.roughnessMap = helmetMat.metalnessMap = o;
+        helmetMat.emissiveMap = e; helmetMat.needsUpdate = true;
+        bodyMat.map = bb; bodyMat.normalMap = bn; bodyMat.aoMap = bodyMat.roughnessMap = bodyMat.metalnessMap = bo; bodyMat.needsUpdate = true;
+        old.forEach((t) => t.dispose());
+        texRes = "4K";
+        show(current);
+      }).catch(() => {});
+    }
+  } catch (err) {
+    $("loadmsg").textContent = "COULD NOT LOAD " + String(err.message || err).toUpperCase() + " · SERVE THIS FOLDER OVER HTTP";
+  }
+}
+start();
+
+// ---- HUD ----
+function setToggle(id, on) { $(id).setAttribute("aria-pressed", String(on)); }
+function toggleWire() {                                              // off -> drawn over the model -> the wireframe alone -> off
+  if (!wireOn) wireOn = true; else if (!wireOnly) wireOnly = true; else wireOn = wireOnly = false;
+  setToggle("wire", wireOn);
+  $("wire").textContent = wireOnly ? "WIRE ONLY" : "WIRE";
+  if (lods[current]) show(current);
+}
+function toggleSpin() { controls.autoRotate = !controls.autoRotate; setToggle("spin", controls.autoRotate); }
+function toggleGlow() { bloom.enabled = !bloom.enabled; setToggle("glow", bloom.enabled); }
+for (let k = 0; k < 4; k++) $("lod" + k).addEventListener("click", () => helmetMat && show(k));
+$("wire").addEventListener("click", toggleWire);
+$("spin").addEventListener("click", toggleSpin);
+$("glow").addEventListener("click", toggleGlow);
+setToggle("spin", controls.autoRotate);
+addEventListener("keydown", (e) => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key.toLowerCase();
+  if (k >= "2" && k <= "4" && helmetMat) show(Number(k) - 1);
+  else if (k === "w") toggleWire();
+  else if (k === "r") toggleSpin();
+  else if (k === "g") toggleGlow();
+  else if (k === "h") $("hud").classList.toggle("off");
+  else if (k === "f") { const p = document.documentElement.requestFullscreen?.(); if (p && p.catch) p.catch(() => {}); }
+});
+canvas.addEventListener("pointerdown", () => $("hint").classList.add("fade"), { once: true });
+renderer.setAnimationLoop(() => { controls.update(); composer.render(); });
+</script>
+

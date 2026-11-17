@@ -1,0 +1,65 @@
+{
+ "name": "HandG01",
+ "title": "GORILLA HAND / MANUS-G1",
+ "subtitle": "HAND STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Showcase",
+  "Knuckle",
+  "Flex",
+  "Grip",
+  "Hook",
+  "Pinch",
+  "Wrist"
+ ],
+ "start": "Showcase",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Showcase",
+   1
+  ],
+  [
+   "Knuckle",
+   2
+  ],
+  [
+   "Flex",
+   2
+  ],
+  [
+   "Grip",
+   1
+  ],
+  [
+   "Hook",
+   1
+  ],
+  [
+   "Pinch",
+   1
+  ],
+  [
+   "Wrist",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.183,
+  -0.0
+ ],
+ "distance": 1.18,
+ "shadow": [
+  0.39,
+  0.23
+ ],
+ "cell": 0.05,
+ "scale": 0.615
+}

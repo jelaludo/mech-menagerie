@@ -1,0 +1,320 @@
+<meta charset="utf-8">
+<title>Guardian Gate</title>
+<meta name="copyright" content="© 2026 Jelaludo. All rights reserved.">
+<meta name="robots" content="noai, noimageai">
+<meta name="tdm-reservation" content="1">
+<meta name="tdm-policy" content="https://jelaludo.github.io/mech-menagerie/terms.html">
+<link rel="license" href="../../terms.html">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Shared menagerie viewer. Everything specific to one animal comes from config.json and assets/stats.json next to this page.
+   layout: one full-bleed WebGL stage; the HUD is three small corner labels floating over it */
+:root {
+  color-scheme: dark;
+  --bg: #0c0e11;            /* stage, edge of frame */
+  --bg-glow: #262b33;       /* stage, behind the model */
+  --fg: #dfe3e8;
+  --dim: #808a96;
+  --line: rgba(223, 227, 232, 0.18);
+  --panel: rgba(12, 14, 17, 0.55);
+  --accent: #45b8ff;        /* the optics' sensor blue */
+  --hazard: #f2a31c;        /* wireframe + focus ring */
+  --font-display: "Saira Condensed", "Arial Narrow", "Helvetica Neue", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-mono); font-size: 12px; overflow: hidden; }
+#stage { position: fixed; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; outline: none; }
+
+.hud {
+  position: fixed; inset: 0; pointer-events: none; display: grid;
+  grid-template: "name hint" auto ". ." 1fr "read ctrl" auto / 1fr auto;
+  gap: 12px;
+  padding-block: calc(14px + env(safe-area-inset-top, 0px)) calc(14px + env(safe-area-inset-bottom, 0px));
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  transition: opacity 0.35s ease;
+}
+.hud.off { opacity: 0; }
+.hud.off * { pointer-events: none !important; }
+.name { grid-area: name; font-family: var(--font-display); line-height: 1; }
+.name b { display: block; font-weight: 600; font-size: 22px; letter-spacing: 0.14em; }
+.name b i { font-style: normal; color: var(--accent); }
+.name span { display: block; margin-top: 5px; font-weight: 500; font-size: 12px; letter-spacing: 0.3em; color: var(--dim); }
+.name a { display: inline-block; margin-top: 10px; pointer-events: auto; color: var(--dim); text-decoration: none;
+  font: 500 10px/1.4 var(--font-mono); letter-spacing: 0.18em; }
+.name a:hover, .name a:focus-visible { color: var(--fg); outline: none; }
+.hint { grid-area: hint; align-self: start; text-align: right; color: var(--dim); font-size: 11px; line-height: 1.6;
+  transition: opacity 1.2s ease; }
+.hint.fade { opacity: 0; }
+.read { grid-area: read; align-self: end; min-width: 0; font-variant-numeric: tabular-nums; line-height: 1.7; }
+.read .big { font-family: var(--font-display); font-weight: 600; font-size: 30px; letter-spacing: 0.06em; line-height: 1; }
+.read .big small { font-size: 13px; letter-spacing: 0.22em; color: var(--dim); margin-left: 6px; }
+.read .sub { color: var(--dim); font-size: 11px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ctrl { grid-area: ctrl; align-self: end; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; pointer-events: auto;
+  max-width: min(74vw, 900px); }
+.seg { display: flex; border: 1px solid var(--line); background: var(--panel); backdrop-filter: blur(6px); }
+.seg button { all: unset; box-sizing: border-box; min-width: 34px; height: 30px; padding: 0 10px; text-align: center;
+  font: 500 11px/30px var(--font-mono); letter-spacing: 0.08em; color: var(--dim); cursor: pointer; }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button:hover { color: var(--fg); }
+.seg button[aria-pressed="true"] { color: var(--bg); background: var(--fg); }
+.seg.lod button[aria-pressed="true"] { background: var(--accent); color: #03121c; }
+.seg button:focus-visible { outline: 2px solid var(--hazard); outline-offset: 2px; }
+.seg .tag { padding: 0 9px; font: 500 10px/30px var(--font-mono); letter-spacing: 0.18em; color: var(--dim); border-right: 1px solid var(--line); }
+.seg a { display: block; height: 30px; padding: 0 10px; font: 500 11px/30px var(--font-mono); letter-spacing: 0.08em; color: var(--dim);
+  text-decoration: none; }
+/* export menu: a short list of downloads that opens above the controls */
+.menu { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  width: min(420px, calc(100vw - 32px)); border: 1px solid var(--line); background: rgba(12, 14, 17, 0.9); backdrop-filter: blur(8px);
+  pointer-events: auto; }
+.menu[hidden] { display: none; }
+.menu h2 { margin: 0; padding: 9px 12px; font: 500 10px/1.4 var(--font-mono); letter-spacing: 0.18em; color: var(--dim);
+  border-bottom: 1px solid var(--line); }
+.menu a { display: flex; justify-content: space-between; gap: 14px; padding: 10px 12px; color: var(--fg); text-decoration: none;
+  font: 400 12px/1.4 var(--font-mono); border-bottom: 1px solid var(--line); }
+.menu a:last-of-type { border-bottom: 0; }
+.menu a:hover, .menu a:focus-visible { background: var(--accent); color: #03121c; outline: none; }
+.menu a span { color: var(--dim); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.menu a:hover span, .menu a:focus-visible span { color: #03121c; }
+.menu p { margin: 0; padding: 9px 12px; color: var(--dim); font-size: 11px; line-height: 1.5; border-top: 1px solid var(--line); }
+#load { position: fixed; inset: 0; display: grid; place-items: center; pointer-events: none; text-align: center;
+  font: 500 11px/1.8 var(--font-mono); letter-spacing: 0.24em; color: var(--dim); transition: opacity 0.6s ease;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+#load.done { opacity: 0; }
+#load b { display: block; color: var(--fg); font-family: var(--font-display); font-size: 18px; letter-spacing: 0.3em; font-weight: 600; }
+@media (max-width: 520px) {
+  .hud { grid-template: "name" auto "." 1fr "read" auto "ctrl" auto / minmax(0, 1fr); }
+  .seg { flex-wrap: wrap; max-width: 100%; }
+  .seg button, .seg .tag { border-bottom: 1px solid var(--line); margin-bottom: -1px; }
+  .hint { display: none; }
+  .ctrl { justify-content: flex-start; max-width: 100%; min-width: 0; }
+  .menu { bottom: calc(190px + env(safe-area-inset-bottom, 0px)); }
+  .read .big { font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .hud, .hint, #load { transition: none; } }
+</style>
+
+<canvas id="stage" tabindex="0" aria-label="Interactive 3D view of the scene"></canvas>
+<div id="load"><div><b>GUARDIAN GATE</b><span id="loadmsg">LOADING SCENE</span></div></div>
+
+<div class="hud" id="hud">
+  <div class="name"><b>GUARDIAN <i>/</i> GATE</b><span>SCENE · TWO SHISA AND A TORII</span><a href="../../">‹ ALL MODELS</a><a href="../../terms.html" style="margin-left:16px">© JELALUDO · TERMS</a></div>
+  <div class="hint" id="hint">drag to orbit · scroll to zoom · right-drag to pan<br>space pause · R spin · G glow · H hide</div>
+  <div class="read">
+    <div class="big"><span id="tris">—</span><small>TRIS</small></div>
+    <div class="sub" id="sub">open mouth on the right, closed on the left</div>
+  </div>
+  <div class="ctrl">
+    <div class="seg" role="group" aria-label="The models in this scene">
+      <span class="tag">MODELS</span><a href="../../shisa_s01/viewer/">SHISA</a><a href="../../torii_t01/viewer/">TORII</a>
+    </div>
+    <div class="seg" role="group" aria-label="View options">
+      <button id="spin" aria-pressed="true">SPIN</button><button id="glow" aria-pressed="true">GLOW</button>
+    </div>
+  </div>
+</div>
+
+<script type="importmap">
+{ "imports": {
+  "three": "../../kit/viewer/vendor/three/build/three.module.min.js",
+  "three/addons/": "../../kit/viewer/vendor/three/jsm/"
+} }
+</script>
+<script type="module">
+// A scene made of models that are already built: nothing is stored here but where they stand and which motion each plays.
+// It reads the other models' viewer files, so open it through the project's serve.sh, not from this folder alone.
+import * as THREE from "three";
+import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+
+const $ = (id) => document.getElementById(id);
+const layout = await fetch("scene.json").then((r) => { if (!r.ok) throw new Error("scene.json"); return r.json(); })
+  .catch((e) => { $("loadmsg").textContent = "COULD NOT LOAD SCENE.JSON · OPEN THIS PAGE THROUGH THE PROJECT'S SERVE.SH"; throw e; });
+const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const canvas = $("stage");
+
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: "high-performance" });
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 0.80;
+
+const scene = new THREE.Scene();
+{
+  const c = document.createElement("canvas");
+  c.width = c.height = 512;
+  const g = c.getContext("2d");
+  const grad = g.createRadialGradient(256, 230, 10, 256, 256, 380);
+  grad.addColorStop(0, css("--bg-glow"));
+  grad.addColorStop(1, css("--bg"));
+  g.fillStyle = grad;
+  g.fillRect(0, 0, 512, 512);
+  const t = new THREE.CanvasTexture(c);
+  t.colorSpace = THREE.SRGBColorSpace;
+  scene.background = t;
+}
+scene.environment = new THREE.PMREMGenerator(renderer).fromScene(new RoomEnvironment(), 0.03).texture;
+const key = new THREE.DirectionalLight(0xfff1e2, 2.2);
+key.position.set(2.5, 4.0, 4.0);
+const rim = new THREE.DirectionalLight(0x9fc4ff, 1.5);
+rim.position.set(-3.0, 3.0, -3.5);
+scene.add(key, rim, new THREE.HemisphereLight(0xdfe6f2, 0x2a2c30, 0.9));
+
+const CENTER = new THREE.Vector3().fromArray(layout.center);
+const camera = new THREE.PerspectiveCamera(30, 1, 0.1, 200);
+const VIEW_DIR = new THREE.Vector3(0.42, 0.13, 0.90).normalize();
+const controls = new OrbitControls(camera, canvas);
+controls.target.copy(CENTER);
+controls.enableDamping = true;
+controls.dampingFactor = 0.07;
+controls.minDistance = 1.0;
+controls.maxDistance = 40;
+controls.autoRotate = !reduced;
+controls.autoRotateSpeed = 0.35;
+
+{ // floor: a faint grid that fades out, and a soft shadow under the whole group
+  const c = document.createElement("canvas");
+  c.width = c.height = 128;
+  const g = c.getContext("2d");
+  g.strokeStyle = "rgba(223,227,232,0.11)";
+  g.lineWidth = 2;
+  g.strokeRect(0, 0, 128, 128);
+  const grid = new THREE.CanvasTexture(c);
+  grid.wrapS = grid.wrapT = THREE.RepeatWrapping;
+  grid.repeat.set(30, 30);
+  grid.anisotropy = renderer.capabilities.getMaxAnisotropy();
+  const radial = (inner, a0) => {
+    const f = document.createElement("canvas");
+    f.width = f.height = 256;
+    const fg = f.getContext("2d");
+    const grad = fg.createRadialGradient(128, 128, inner, 128, 128, 128);
+    grad.addColorStop(0, a0);
+    grad.addColorStop(1, a0.startsWith("#") ? "#000" : "rgba(0,0,0,0)");
+    fg.fillStyle = grad;
+    fg.fillRect(0, 0, 256, 256);
+    return new THREE.CanvasTexture(f);
+  };
+  const floor = new THREE.Mesh(new THREE.PlaneGeometry(30, 30),
+    new THREE.MeshBasicMaterial({ map: grid, alphaMap: radial(20, "#fff"), transparent: true, depthWrite: false }));
+  floor.rotation.x = -Math.PI / 2;
+  floor.position.y = -0.004;
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(10, 6.5),
+    new THREE.MeshBasicMaterial({ map: radial(14, "rgba(0,0,0,0.55)"), transparent: true, depthWrite: false }));
+  shadow.rotation.x = -Math.PI / 2;
+  shadow.position.set(0, -0.002, 0.5);
+  scene.add(floor, shadow);
+}
+
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+const bloom = new UnrealBloomPass(new THREE.Vector2(1, 1), 0.26, 0.4, 1.0);
+composer.addPass(bloom);
+composer.addPass(new OutputPass());
+function resize() {
+  const w = canvas.clientWidth || innerWidth, h = canvas.clientHeight || innerHeight;
+  renderer.setSize(w, h, false);
+  composer.setSize(w, h);
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  // far enough back to fit the gate's width on a tall screen
+  camera.position.copy(controls.target).addScaledVector(VIEW_DIR, layout.distance * Math.min(2.6, Math.max(1, 1.45 / camera.aspect)));
+}
+addEventListener("resize", resize);
+resize();
+controls.update();
+
+// ---- the models: one material per texture set, shared by every copy of that model ----
+const texLoader = new THREE.TextureLoader();
+const maxAniso = renderer.capabilities.getMaxAnisotropy();
+const tex = (base, name, srgb, res) => new Promise((ok, fail) => texLoader.load(base + "_" + name + "_" + res + ".jpg", (t) => {
+  t.flipY = false;
+  t.colorSpace = srgb ? THREE.SRGBColorSpace : THREE.NoColorSpace;
+  t.anisotropy = maxAniso;
+  ok(t);
+}, undefined, () => fail(new Error(base.split("/").pop() + " " + name))));
+const loadSet = (base, res) => Promise.all([tex(base, "BaseColor", true, res), tex(base, "Normal", false, res), tex(base, "ORM", false, res),
+  tex(base, "Emissive", true, res)]);
+const materials = {};
+async function material(model) {
+  if (!materials[model.name]) {
+    materials[model.name] = loadSet(model.path + model.name, "2k").then(([b, n, o, e]) => new THREE.MeshStandardMaterial({ map: b, normalMap: n,
+      aoMap: o, roughnessMap: o, metalnessMap: o, roughness: 1, metalness: 1, emissiveMap: e, emissive: 0xffffff, emissiveIntensity: 3.0,
+      envMapIntensity: 1.1, aoMapIntensity: 0.7 }));
+  }
+  return materials[model.name];
+}
+const gltfLoader = new GLTFLoader();
+const mixers = [];
+let tris = 0, bones = 0, paused = false;
+async function place(item) {
+  const model = layout.models[item.model];
+  const [mat, gltf] = await Promise.all([material(model), gltfLoader.loadAsync(model.path + model.name + "_rig_LOD" + (item.lod || 1) + ".glb")]);
+  gltf.scene.traverse((o) => {
+    if (o.isSkinnedMesh) { o.material = mat; o.frustumCulled = false; tris += o.geometry.index.count / 3; bones += o.skeleton.bones.length; }
+  });
+  gltf.scene.position.fromArray(item.position);              // metres, Y up; the models face +Z
+  gltf.scene.rotation.y = THREE.MathUtils.degToRad(item.turn || 0);
+  scene.add(gltf.scene);
+  const clip = gltf.animations.find((c) => c.name === item.motion);
+  if (clip) {
+    const mixer = new THREE.AnimationMixer(gltf.scene);
+    const action = mixer.clipAction(clip);
+    action.play();
+    action.time = (item.offset || 0) % clip.duration;        // so the two do not breathe in step
+    mixers.push(mixer);
+  } else if (item.motion) throw new Error(model.name + " has no motion " + item.motion);
+}
+
+try {
+  await Promise.all(layout.items.map(place));
+  $("tris").textContent = Math.round(tris).toLocaleString("en-US");
+  $("sub").textContent = layout.items.length + " models · " + bones + " bones · open mouth on the right, closed on the left";
+  $("load").classList.add("done");
+  setTimeout(() => $("hint").classList.add("fade"), 9000);
+  if (false) {   // public copy: the 4K textures are not published       // sharper textures once it is showing
+    for (const model of Object.values(layout.models)) {
+      const mat = await materials[model.name];
+      loadSet(model.path + model.name, "4k").then(([b, n, o, e]) => {
+        const old = [mat.map, mat.normalMap, mat.aoMap, mat.emissiveMap];
+        mat.map = b; mat.normalMap = n; mat.aoMap = mat.roughnessMap = mat.metalnessMap = o; mat.emissiveMap = e;
+        mat.needsUpdate = true;
+        old.forEach((t) => t.dispose());
+      }).catch(() => {});
+    }
+  }
+} catch (err) {
+  $("loadmsg").textContent = "COULD NOT LOAD " + String(err.message || err).toUpperCase() + " · OPEN THIS PAGE THROUGH THE PROJECT'S SERVE.SH";
+}
+
+// ---- HUD ----
+const setToggle = (id, on) => $(id).setAttribute("aria-pressed", String(on));
+const toggleSpin = () => { controls.autoRotate = !controls.autoRotate; setToggle("spin", controls.autoRotate); };
+const toggleGlow = () => { bloom.enabled = !bloom.enabled; setToggle("glow", bloom.enabled); };
+$("spin").addEventListener("click", toggleSpin);
+$("glow").addEventListener("click", toggleGlow);
+setToggle("spin", controls.autoRotate);
+addEventListener("keydown", (e) => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const k = e.key.toLowerCase();
+  if (k === " ") { e.preventDefault(); paused = !paused; }
+  else if (k === "r") toggleSpin();
+  else if (k === "g") toggleGlow();
+  else if (k === "h") $("hud").classList.toggle("off");
+});
+canvas.addEventListener("pointerdown", () => $("hint").classList.add("fade"), { once: true });
+const clock = new THREE.Clock();
+renderer.setAnimationLoop(() => {
+  const dt = Math.min(clock.getDelta(), 0.1) * (paused ? 0 : 1);
+  for (const m of mixers) m.update(dt);
+  controls.update();
+  composer.render();
+});
+</script>
+

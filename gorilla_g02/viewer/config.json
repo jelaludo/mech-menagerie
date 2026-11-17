@@ -1,0 +1,65 @@
+{
+ "name": "GorillaG02",
+ "title": "GORILLA / G-02",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Charge",
+  "ChestBeat",
+  "Stand",
+  "BipedWalk",
+  "Sit",
+  "Sleep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Charge",
+   8
+  ],
+  [
+   "ChestBeat",
+   1
+  ],
+  [
+   "Stand",
+   1
+  ],
+  [
+   "BipedWalk",
+   5
+  ],
+  [
+   "Sit",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  0.95,
+  0.038
+ ],
+ "distance": 6.12,
+ "shadow": [
+  1.88,
+  2.0
+ ],
+ "cell": 0.5,
+ "scale": 2.433
+}

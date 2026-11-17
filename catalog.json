@@ -1,0 +1,385 @@
+{
+ "note": "Landing page data. status: built | next | planned. For built models, `stats` points at the file the build writes; the page reads live numbers from it.",
+ "models": [
+  {
+   "id": "01",
+   "name": "Feline C-07",
+   "class": "Quadruped · digitigrade",
+   "collection": "menagerie",
+   "status": "built",
+   "href": "feline_c07/viewer/",
+   "stats": "feline_c07/viewer/assets/stats.json",
+   "thumb": "feline_c07/viewer/thumb.jpg"
+  },
+  {
+   "id": "02",
+   "name": "Gorilla G-02",
+   "class": "Knuckle-walker · biped plan",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "gorilla_g02/viewer/thumb.jpg",
+   "href": "gorilla_g02/viewer/",
+   "stats": "gorilla_g02/viewer/assets/stats.json"
+  },
+  {
+   "id": "03",
+   "name": "Malinois RMK-9",
+   "class": "Quadruped · digitigrade",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "malinois_rmk9/viewer/thumb.jpg",
+   "href": "malinois_rmk9/viewer/",
+   "stats": "malinois_rmk9/viewer/assets/stats.json"
+  },
+  {
+   "id": "04",
+   "name": "Mechanical Shisa S-01",
+   "class": "Quadruped · guardian",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "shisa_s01/viewer/thumb.jpg",
+   "href": "shisa_s01/viewer/",
+   "stats": "shisa_s01/viewer/assets/stats.json"
+  },
+  {
+   "id": "05",
+   "name": "Horse H-01",
+   "class": "Quadruped · unguligrade",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "horse_h01/viewer/thumb.jpg",
+   "href": "horse_h01/viewer/",
+   "stats": "horse_h01/viewer/assets/stats.json"
+  },
+  {
+   "id": "06",
+   "name": "Humanoid Athlete H-01",
+   "class": "Biped",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "humanoid_h01/viewer/thumb.jpg",
+   "href": "humanoid_h01/viewer/",
+   "stats": "humanoid_h01/viewer/assets/stats.json"
+  },
+  {
+   "id": "07",
+   "name": "Bear Ursus-01",
+   "class": "Quadruped · plantigrade",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "bear_u01/viewer/thumb.jpg",
+   "href": "bear_u01/viewer/",
+   "stats": "bear_u01/viewer/assets/stats.json"
+  },
+  {
+   "id": "08",
+   "name": "Komodo Dragon K-01",
+   "class": "Quadruped · sprawling",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "komodo_k01/viewer/thumb.jpg",
+   "href": "komodo_k01/viewer/",
+   "stats": "komodo_k01/viewer/assets/stats.json"
+  },
+  {
+   "id": "09",
+   "name": "Snake S-01",
+   "class": "Serpentine · modular",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "snake_s01/viewer/thumb.jpg",
+   "href": "snake_s01/viewer/",
+   "stats": "snake_s01/viewer/assets/stats.json"
+  },
+  {
+   "id": "10",
+   "name": "Scorpion S-01",
+   "class": "Arachnid · 8 legs, pincers, sting",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "scorpion_s01/viewer/thumb.jpg",
+   "href": "scorpion_s01/viewer/",
+   "stats": "scorpion_s01/viewer/assets/stats.json"
+  },
+  {
+   "id": "11",
+   "name": "Praying Mantis S-01",
+   "class": "Insectoid · 4 legs, raptorial arms",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "mantis_s01/viewer/thumb.jpg",
+   "href": "mantis_s01/viewer/",
+   "stats": "mantis_s01/viewer/assets/stats.json"
+  },
+  {
+   "id": "12",
+   "name": "Jumping Spider J-01",
+   "class": "Arachnid · 8 legs, jumps",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "spider_j01/viewer/thumb.jpg",
+   "href": "spider_j01/viewer/",
+   "stats": "spider_j01/viewer/assets/stats.json"
+  },
+  {
+   "id": "13",
+   "name": "Octopus S-01",
+   "class": "Cephalopod · 8 arms",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "octopus_s01/viewer/thumb.jpg",
+   "href": "octopus_s01/viewer/",
+   "stats": "octopus_s01/viewer/assets/stats.json"
+  },
+  {
+   "id": "14",
+   "name": "Velociraptor VRP-01",
+   "class": "Biped · theropod, sickle claw",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "raptor_v01/viewer/thumb.jpg",
+   "href": "raptor_v01/viewer/",
+   "stats": "raptor_v01/viewer/assets/stats.json"
+  },
+  {
+   "id": "15",
+   "name": "Giant Mosquito IN-006",
+   "class": "Insectoid · 6 legs, 4 wings, flies",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "mosquito_in006/viewer/thumb.jpg",
+   "href": "mosquito_in006/viewer/",
+   "stats": "mosquito_in006/viewer/assets/stats.json"
+  },
+  {
+   "id": "16",
+   "name": "Mechanical Toad MT-AN004",
+   "class": "Jumping amphibian · spring hind legs, pad feet",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "toad_t01/viewer/thumb.jpg",
+   "href": "toad_t01/viewer/",
+   "stats": "toad_t01/viewer/assets/stats.json"
+  },
+  {
+   "id": "17",
+   "name": "X6-Crawler MM-03-X6",
+   "class": "Hexaradial · 6 limbs, sensor stalk",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "crawler_x6/viewer/thumb.jpg",
+   "href": "crawler_x6/viewer/",
+   "stats": "crawler_x6/viewer/assets/stats.json"
+  },
+  {
+   "id": "19",
+   "name": "Kami Dragon KD-01",
+   "class": "Dragon · walks and flies",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "dragon_kd01/viewer/thumb.jpg",
+   "href": "dragon_kd01/viewer/",
+   "stats": "dragon_kd01/viewer/assets/stats.json"
+  },
+  {
+   "id": "18",
+   "name": "MK-07B Valkyr",
+   "class": "Piloted frame · 9.8 m, cockpit for H-01",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "valkyr_mk07/viewer/thumb.jpg",
+   "href": "valkyr_mk07/viewer/",
+   "stats": "valkyr_mk07/viewer/assets/stats.json"
+  },
+  {
+   "id": "H1",
+   "name": "Dexterous Hand MANUS-01",
+   "class": "Hand · 23 axes, solved pinches",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/h1_hand.jpg",
+   "href": "hand_m01/viewer/",
+   "stats": "hand_m01/viewer/assets/stats.json"
+  },
+  {
+   "id": "H2",
+   "name": "Gorilla Hand MANUS-G1",
+   "class": "Hand · gorilla table, knuckle guards",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/h2_gorilla_hand.jpg",
+   "href": "hand_g01/viewer/",
+   "stats": "hand_g01/viewer/assets/stats.json"
+  },
+  {
+   "id": "P1",
+   "name": "Prehensile Foot PES-01",
+   "class": "Foot · opposable great toe, 22 axes",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/p1_foot.jpg",
+   "href": "foot_p01/viewer/",
+   "stats": "foot_p01/viewer/assets/stats.json"
+  },
+  {
+   "id": "P2",
+   "name": "Gorilla Foot PES-G1",
+   "class": "Foot · gorilla table, thumb-like great toe",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/p2_gorilla_foot.jpg",
+   "href": "foot_g01/viewer/",
+   "stats": "foot_g01/viewer/assets/stats.json"
+  },
+  {
+   "id": "M1",
+   "name": "Raptorial Claw MOD-C1",
+   "class": "Module · wrist · from the mantis",
+   "collection": "modules",
+   "status": "built",
+   "thumb": "hub/thumbs/module_claw.jpg",
+   "href": "module_claw/viewer/",
+   "stats": "module_claw/viewer/assets/stats.json"
+  },
+  {
+   "id": "M2",
+   "name": "Pincer MOD-P1",
+   "class": "Module · wrist · from the scorpion",
+   "collection": "modules",
+   "status": "built",
+   "thumb": "hub/thumbs/module_pincer.jpg",
+   "href": "module_pincer/viewer/",
+   "stats": "module_pincer/viewer/assets/stats.json"
+  },
+  {
+   "id": "M3",
+   "name": "Sting Tail MOD-S1",
+   "class": "Module · tail · from the scorpion",
+   "collection": "modules",
+   "status": "built",
+   "thumb": "hub/thumbs/module_sting.jpg",
+   "href": "module_sting/viewer/",
+   "stats": "module_sting/viewer/assets/stats.json"
+  },
+  {
+   "id": "M4",
+   "name": "Tentacle MOD-T1",
+   "class": "Module · shoulder, wrist or tail · from the octopus",
+   "collection": "modules",
+   "status": "built",
+   "thumb": "hub/thumbs/module_tentacle.jpg",
+   "href": "module_tentacle/viewer/",
+   "stats": "module_tentacle/viewer/assets/stats.json"
+  },
+  {
+   "id": "M5",
+   "name": "Pilot Cockpit CP-01",
+   "class": "Module · Valkyr chest · seats H-01",
+   "collection": "modules",
+   "status": "built",
+   "thumb": "cockpit_c01/viewer/thumb.jpg",
+   "href": "cockpit_c01/viewer/",
+   "stats": "cockpit_c01/viewer/assets/stats.json"
+  },
+  {
+   "id": "W1",
+   "name": "Humanoid in a Gi",
+   "class": "Wardrobe · H-01 in the jiu-jitsu gi J-01",
+   "collection": "wardrobe",
+   "status": "built",
+   "thumb": "humanoid_gi/viewer/thumb.jpg",
+   "href": "humanoid_gi/viewer/",
+   "stats": "humanoid_gi/viewer/assets/stats.json"
+  },
+  {
+   "id": "W2",
+   "name": "Red Witness in a Gi",
+   "class": "Wardrobe · the Red Witness in the jiu-jitsu gi J-01",
+   "collection": "wardrobe",
+   "status": "built",
+   "thumb": "red_witness_gi/viewer/thumb.jpg",
+   "href": "red_witness_gi/viewer/",
+   "stats": "red_witness_gi/viewer/assets/stats.json"
+  },
+  {
+   "id": "E1",
+   "name": "Humanoid · Raptorial Claws",
+   "class": "Humanoid H-01 wearing M1 at both wrists",
+   "collection": "modules",
+   "status": "built",
+   "thumb": "mod_humanoid_raptor/viewer/thumb.jpg",
+   "href": "mod_humanoid_raptor/viewer/",
+   "stats": "mod_humanoid_raptor/viewer/assets/stats.json"
+  },
+  {
+   "id": "E2",
+   "name": "Humanoid · Tentacle Arms",
+   "class": "Humanoid H-01 wearing M4 from both shoulders",
+   "collection": "modules",
+   "status": "built",
+   "thumb": "mod_humanoid_tentacle/viewer/thumb.jpg",
+   "href": "mod_humanoid_tentacle/viewer/",
+   "stats": "mod_humanoid_tentacle/viewer/assets/stats.json"
+  },
+  {
+   "id": "E3",
+   "name": "Mantis · Pincers and Sting",
+   "class": "Mantis S-01 wearing M2 at both wrists and M3 on its abdomen",
+   "collection": "modules",
+   "status": "built",
+   "thumb": "mod_mantis_scorpion/viewer/thumb.jpg",
+   "href": "mod_mantis_scorpion/viewer/",
+   "stats": "mod_mantis_scorpion/viewer/assets/stats.json"
+  },
+  {
+   "id": "F1",
+   "name": "Gate Procession",
+   "class": "Film · one minute, eleven animals",
+   "collection": "scenes",
+   "status": "built",
+   "thumb": "film_gate_procession/poster.jpg",
+   "href": "film_gate_procession/",
+   "spec": "59.5 s · 1920×1080 · 24 fps · Cycles"
+  },
+  {
+   "id": "S1",
+   "name": "Guardian Gate",
+   "class": "Scene · two Shisa and a torii",
+   "collection": "scenes",
+   "status": "built",
+   "thumb": "scene_guardian_gate/viewer/thumb.jpg",
+   "href": "scene_guardian_gate/viewer/",
+   "stats": "scene_guardian_gate/viewer/stats.json"
+  },
+  {
+   "id": "T1",
+   "name": "Mechanical Torii T-01",
+   "class": "Structure · shrine gate with two plinths",
+   "collection": "scenes",
+   "status": "built",
+   "thumb": "torii_t01/viewer/thumb.jpg",
+   "href": "torii_t01/viewer/",
+   "stats": "torii_t01/viewer/assets/stats.json"
+  },
+  {
+   "id": "RW",
+   "name": "Red Witness · Helmet",
+   "class": "Helmet · hard surface",
+   "collection": "red-witness",
+   "status": "built",
+   "href": "red_witness_helmet/viewer/index.html",
+   "stats": "red_witness_helmet/viewer/assets/stats.json",
+   "thumb": "hub/thumbs/rw_helmet.jpg"
+  },
+  {
+   "id": "RW",
+   "name": "Red Witness · Figure",
+   "class": "Biped · static",
+   "collection": "red-witness",
+   "status": "built",
+   "href": "red_witness_helmet/viewer/figure.html",
+   "stats": "red_witness_helmet/viewer/assets/figure_stats.json",
+   "thumb": "hub/thumbs/rw_figure.jpg"
+  }
+ ]
+}

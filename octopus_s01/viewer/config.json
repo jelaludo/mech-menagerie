@@ -1,0 +1,55 @@
+{
+ "name": "OctopusS01",
+ "title": "OCTOPUS / S-01",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Crawl",
+  "Reach",
+  "Display",
+  "Swim",
+  "Sleep"
+ ],
+ "start": "Crawl",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Crawl",
+   5
+  ],
+  [
+   "Reach",
+   1
+  ],
+  [
+   "Display",
+   1
+  ],
+  [
+   "Swim",
+   4
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  0.675,
+  -0.003
+ ],
+ "distance": 4.35,
+ "shadow": [
+  2.58,
+  2.57
+ ],
+ "cell": 0.25,
+ "scale": 1.527
+}

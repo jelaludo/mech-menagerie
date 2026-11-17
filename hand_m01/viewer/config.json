@@ -1,0 +1,65 @@
+{
+ "name": "HandM01",
+ "title": "HAND / MANUS-01",
+ "subtitle": "HAND STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Showcase",
+  "Flex",
+  "Ripple",
+  "Pinch",
+  "Count",
+  "Grip",
+  "Wrist"
+ ],
+ "start": "Showcase",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Showcase",
+   1
+  ],
+  [
+   "Flex",
+   2
+  ],
+  [
+   "Ripple",
+   2
+  ],
+  [
+   "Pinch",
+   1
+  ],
+  [
+   "Count",
+   1
+  ],
+  [
+   "Grip",
+   1
+  ],
+  [
+   "Wrist",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.127,
+  -0.0
+ ],
+ "distance": 0.82,
+ "shadow": [
+  0.25,
+  0.16
+ ],
+ "cell": 0.05,
+ "scale": 0.427
+}

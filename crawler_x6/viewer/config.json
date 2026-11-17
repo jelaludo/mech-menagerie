@@ -1,0 +1,60 @@
+{
+ "name": "CrawlerX6",
+ "title": "X6-CRAWLER / MM-03",
+ "subtitle": "RECONNAISSANCE PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45d8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Strafe",
+  "Turn",
+  "Survey",
+  "Probe",
+  "Sleep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   6
+  ],
+  [
+   "Strafe",
+   6
+  ],
+  [
+   "Turn",
+   1
+  ],
+  [
+   "Survey",
+   1
+  ],
+  [
+   "Probe",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  0.4,
+  -0.0
+ ],
+ "distance": 2.58,
+ "shadow": [
+  2.93,
+  2.69
+ ],
+ "cell": 0.25,
+ "scale": 1.512
+}

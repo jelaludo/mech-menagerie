@@ -1,0 +1,50 @@
+{
+ "name": "MantisS01",
+ "title": "MANTIS / S-01",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Strike",
+  "Threat",
+  "Groom"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Strike",
+   1
+  ],
+  [
+   "Threat",
+   1
+  ],
+  [
+   "Groom",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.85,
+  -0.065
+ ],
+ "distance": 5.47,
+ "shadow": [
+  2.2,
+  3.62
+ ],
+ "cell": 0.5,
+ "scale": 2.14
+}

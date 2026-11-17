@@ -1,0 +1,55 @@
+{
+ "name": "SnakeS01",
+ "title": "SNAKE / S-01",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Slither",
+  "Rush",
+  "Rear",
+  "Strike",
+  "Coil"
+ ],
+ "start": "Slither",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Slither",
+   4
+  ],
+  [
+   "Rush",
+   8
+  ],
+  [
+   "Rear",
+   1
+  ],
+  [
+   "Strike",
+   1
+  ],
+  [
+   "Coil",
+   1
+  ]
+ ],
+ "sleep": "Coil",
+ "center": [
+  0.0,
+  0.45,
+  0.116
+ ],
+ "distance": 4.43,
+ "shadow": [
+  2.07,
+  5.11
+ ],
+ "cell": 0.25,
+ "scale": 1.422
+}

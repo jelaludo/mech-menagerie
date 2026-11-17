@@ -1,0 +1,55 @@
+{
+ "name": "ToadT01",
+ "title": "TOAD / MT-AN004",
+ "subtitle": "ROBOT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45d8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Hop",
+  "Jump",
+  "Call",
+  "Snap"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Hop",
+   3
+  ],
+  [
+   "Jump",
+   2
+  ],
+  [
+   "Call",
+   1
+  ],
+  [
+   "Snap",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.26,
+  0.076
+ ],
+ "distance": 1.67,
+ "shadow": [
+  0.93,
+  0.92
+ ],
+ "cell": 0.1,
+ "scale": 0.546
+}

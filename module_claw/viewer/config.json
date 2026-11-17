@@ -1,0 +1,40 @@
+{
+ "name": "ModuleClaw",
+ "title": "CLAW / MOD-C1",
+ "subtitle": "MODULE \u00b7 WRIST SOCKET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Strike",
+  "Clamp"
+ ],
+ "start": "Strike",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Strike",
+   2
+  ],
+  [
+   "Clamp",
+   2
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.144,
+  0.096
+ ],
+ "distance": 0.93,
+ "shadow": [
+  0.22,
+  0.41
+ ],
+ "cell": 0.05,
+ "scale": 0.486
+}

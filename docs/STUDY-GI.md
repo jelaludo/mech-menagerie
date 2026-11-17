@@ -519,7 +519,34 @@ Still wrong: the jacket reads boxy and the sleeves big (the figure's barrel ches
 fold is deep; the pants balloon at the knee over the big calves; nothing swings; the rolls sink the gi into the floor;
 the arms are held 10 degrees out in every motion, which the bare figure does not do.
 
-## 14. Sources
+## 14. The host changed: H-01's neck (2026-11-17)
+
+The user's first note on the third iteration was "a little bit of clipping at the neck on the back/neck actuators, but
+these are tricky and the most non-human like part of our model". The next day they changed the host rather than the
+gi: H-01's trapezius rose at about 49 degrees from the top of the shoulder to the back of the skull, and the
+sternomastoid from the sternum to behind the ear, so four actuators passed up through the collar ring. Both pairs now
+take hold of the foot of the neck column (the top of the spine): the trapezius runs almost level, about 10 degrees,
+and the sternomastoid runs up from the sternum to the front of the column (`humanoid_h01/README.md`). Then the gi was
+checked twice, the same check as section 12:
+
+| | 2026-11-16 (old neck) | new neck, jacket as draped before | new neck, jacket draped on it (built) |
+|---|---|---|---|
+| body through the gi: Box, Wave | 2 and 5 points, to 21 mm (back of the collar) | none | none |
+| body through the gi: arms up, out, forward | 4 to 6 points, to 48 mm | 0 to 2 points | none |
+| body through the gi: rolls | 10 to 15 points, to 38 mm | 4 to 6 points, to 22 mm | 4 to 7 points, to 38 mm |
+| pants through the jacket: rolls; jump | 8 to 14 points, to 53 mm; 7 points, 39 mm | the same | 4 to 7 points, to 34 mm; 1 point, 25 mm |
+| belt tails into the skirt: rolls; crouch | 31 to 40 points, to 41 mm; 26 points, 35 mm | the same | 21 to 33 points, to 21 mm; 14 points, 7 mm |
+| clips with anything through (of 13) | 10 | 5 | 5 |
+
+The neck alone emptied the collar: nothing comes through it in any everyday clip or stress pose. The redrape, made
+round the new neck, gave a smaller neckline (the collar band 1,200 vertices against 1,360) and halved the layer and
+belt problems, which shows the old jacket had been shaped round the old actuators all the way down. What the rolls
+still show sits in two places, and only at their extremes: the wrist collar, which moves with the hand, under the end
+of the sleeve when the wrist bends hard; and the trapezius's inner ends, now under the back of the collar, when the
+neck bends hard in the front and back rolls. Pictures: `gi_j01/renders/qa/h01_collar_before_*.png`,
+`h01_collar_after_*.png`; numbers: `gi_j01/renders/motion/motion_check_2026-11-17_newneck.txt`.
+
+## 15. Sources
 
 - [IBJJF uniform rules](https://ibjjf.com/uniform)
 - [IJF, Judogi: much more than armour](https://www.ijf.org/history/judo-culture/2244)

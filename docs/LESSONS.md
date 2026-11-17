@@ -303,6 +303,20 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   plane and the tucked target swung that plane upward. Trailing the feet down and back fixed it. The overlap check
   found it first (mane against upper arm).
 
+- **Fit a pose to points measured off the sheet; do not guess its angles.** The Western Dragon's wing has seven angles
+  for its plane and wrist. Guessed, the standing wings crossed over each other in an X with their tips 17 m up. A fit
+  of the wrist and the four finger tips to points read off the sheet (random starts, then a simplex, with a pull
+  towards sensible angles) gave the sheet's raised wing at the first try, and a folded state fitted the same way lay
+  close enough to it to blend smoothly.
+- **A fan closes by angle, not along a line.** A tag blends weight along one line; a sail between two finger spars
+  needs every vertex weighted by its angle between them. `MD.vw` carries such weights through merging and mirroring,
+  and the sail then closes like a fan. Build it open: closing compresses it, opening a sail built closed stretches it.
+- **A large animal's girdles go further out.** The dragon's hips and shoulders were set at the cage's wall, as the
+  Komodo's are; at this size the leg cages are a metre thick and the overlap check counted 28 muscle triangles in the
+  trunk in the run. Moving the joints 0.5 to 0.75 m out took it to 12.
+- **Beat shallower near the ground.** The first downstroke of the take-off put a wing tip 0.55 m under the floor while
+  the body was still low; the beat now grows with the height.
+
 - **Garments are built closed, not sewn.** In the gi spike, two flat panels sewn shut across 0.8 m never closed (gaps
   of 9 to 24 cm, 94% stretch); the same panels wrapped round the body with their seams shared hung cleanly at 1%
   stretch. Blender's sewing springs only close short gaps.
@@ -383,6 +397,11 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
 - **A fix in motion can uncover a fault at rest.** Making the belt's tails follow the skirt stopped them sinking in
   the walk, and the close-up then showed the collar band coming through a tail in every frame. Look at the frame again
   after every fix.
+- **When a garment keeps clipping on one part, question the part.** H-01's trapezius rose steeply to the skull through
+  the gi's collar, and three iterations of weights and hiding only shrank the clip. Moving the actuators to the foot of
+  the neck column (a change to the host, the user's call) emptied the collar in every clip at once, and redraping on the
+  new body halved the layer problems lower down: a garment draped round a part carries that part's shape everywhere.
+  Redrape after any change to the host, then measure both drapes.
 
 ## Film
 

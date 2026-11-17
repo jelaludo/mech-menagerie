@@ -4,7 +4,7 @@ The shared Python package is `kit/menagerie/`. An animal imports it and supplies
 
 | Module | Holds |
 |---|---|
-| `core.py` | mesh container `MD`, interpolation, plates, lathes, tubes |
+| `core.py` | mesh container `MD` (its `vw` holds explicit skin weights for chosen vertices, carried through `merge`, `transformed` and mirroring; they replace what the tags give), interpolation, plates, lathes, tubes |
 | `parts.py` | the mechanical parts |
 | `anatomy.py` | assemblies made of parts |
 | `materials.py` | weathered materials and the shared palette |
@@ -18,7 +18,8 @@ The shared Python package is `kit/menagerie/`. An animal imports it and supplies
 | `dress.py` | a host wearing a draped garment set: `Dress(H, data, prefix, ...)` skins every layer with the robust transfer (pants from the body, jacket from the body and the pants, band and belt from the jacket), unposes it to the rest pose, gives it thickness and UVs, removes the pants under the skirt and the body under the gi (`cull`), and its `build` is a dressed model's; settings for a host: `knee_fade`, `skirt_centre_low`, `sleeve_bones` (the sleeves follow the arm only), `openings="seen"` (only edges that show the body are openings; a body point that sees a lapel or neck edge within 15 cm stays). `rig(H, u)` adds the `gi` bone. Used by `humanoid_gi` and `red_witness_gi` |
 | `cockpit.py` | `Cockpit`: a pilot's pod for a seated H-01-sized humanoid (octagonal ribbed shell, reclined seat, harness, grips, footrest); origin at the pilot's hip point. `seated_pose(H)` seats H-01 in it; `Passenger(H, pose, hip_at)` carries a humanoid inside another model, bound in that pose, its bones renamed and hung from a host bone, with `pose(T)` to animate it with poses written for its own skeleton |
 | `modules.py` | parts that fit more than one body: `Claw`, `Pincer`, `StingTail`, `Tentacle`, their motion objects, `equip` / `loadout` / `frame` / `mount`, `coupling`, and `Equipped`, which lays module poses over a host's clips |
-| `motions.py` | stock motion sets: `Quadruped`, `Canine`, `Shisa`, `Ape`, `Silverback`, `Equine`, `Biped`; `Sprawler`, `Anuran` (the toad: walk, hop, jump, tongue), `Theropod` (the raptor: walk, run, slash, pounce), `Ursine`, `Mantid`, `Culicid` (the mosquito: six legs and flight); `Manus` and `ApeManus` (hands: poses, solved pinches and grips, the knuckle stance), `Pes` (the foot: ground contact, step, tiptoe, clamp grip), `WithHands` (adds mounted hands to any set); `Arachnid` (the eight-leg walk) with `Salticid`, `Scorpion`, `Octopus` and `Hexapod` (the six-legged crawler); `Serpent`; `Dragon` (a long chain body on four sprawling legs: walk, run, roar, take off, fly as a travelling wave, lie down); `Frame` (a piloted frame: the biped set slowed, plus a hatch); `Recorded` and `Combined` for retargeted clips |
+| `ala.py` | the bat's wing for a dragon or a wyvern: `Wing` (an arm of two caged bones, a hand of finger spars, a sail of braided sleeve with actuator bundles on it, a perforated frame along the scalloped trailing edge, claws, a hooked thumb), its bones, and `pose(state)` for any state of the wing (see below) |
+| `motions.py` | stock motion sets: `Quadruped`, `Canine`, `Shisa`, `Ape`, `Silverback`, `Equine`, `Biped`; `Sprawler`, `Anuran` (the toad: walk, hop, jump, tongue), `Theropod` (the raptor: walk, run, slash, pounce), `Ursine`, `Mantid`, `Culicid` (the mosquito: six legs and flight); `Manus` and `ApeManus` (hands: poses, solved pinches and grips, the knuckle stance), `Pes` (the foot: ground contact, step, tiptoe, clamp grip), `WithHands` (adds mounted hands to any set); `Arachnid` (the eight-leg walk) with `Salticid`, `Scorpion`, `Octopus` and `Hexapod` (the six-legged crawler); `Serpent`; `Dragon` (a long chain body on four sprawling legs: walk, run, roar, take off, fly as a travelling wave, lie down); `WingedDragon` (the Dragon with a pair of `ala.Wing`s: folded on the ground, thrown open to roar, opened and closed (`Unfurl`), beating in flight with the body held straight; `TakeOff` leaps, climbs, flies and lands); `Frame` (a piloted frame: the biped set slowed, plus a hatch); `Recorded` and `Combined` for retargeted clips |
 | `pipeline.py` | the build from animal module to exported asset |
 | `checks.py`, `../check.py`, `../ground.py`, `../overlap.py`, `../regress.py` | clearance and ground checks at rest; lowest point during every motion; muscles cutting through the body; regression against a saved baseline |
 | `../strip.py`, `../tune.py` | a contact sheet of one motion (many small frames on one image); the ground and overlap checks for several trial settings of a motion at once |
@@ -150,6 +151,27 @@ and the coupling (`stub`: a shin, with the heel tendon and two front actuators c
 `foot.contacts()` lists the points that can bear on the ground; `pes.standing(foot)` is the matrix that stands it on
 a model's floor. Tables: `pes.TOES`, `pes.HALLUX` (the humanoid's), `pes.APE_TOES`, `pes.APE_HALLUX` (a gorilla's).
 
+## The wing (`ala.py`)
+
+`Wing(shoulder, rest, humerus, forearm, fingers, heel, k, bundles)` is one wing, the left, in the body's frame. The arm
+(humerus, forearm) lies in one plane; the hand turns on the wrist and carries a fan of finger spars and a heel spar
+lying back along the forearm. A pose is a **state**, a dict of degrees:
+
+| Key | Meaning |
+|---|---|
+| `tilt`, `sweep`, `pitch` | how the arm's plane is turned on the body: from upright towards the side (90 = level), back about the vertical, the leading edge up |
+| `arm`, `fore` | the humerus and the forearm in that plane, from its long axis towards the front |
+| `flex`, `roll` | the wrist: the hand turned in the plane, and rolled about the forearm so the fan can hang outward |
+| `fingers` | each finger in the hand, from the forearm's line towards the front (negative: behind) |
+
+The wing is built in its `rest` state. `pose(state, side)` gives each bone's local turn (`wing_arm`, `wing_fore`,
+`wing_hand`, `wing_f1..`) for any other state, the right wing mirrored; `blend(a, b, e)` mixes two states; `points(state)`
+gives the shoulder, elbow, wrist, tips and heel, which is what a fit uses. Every vertex of a bay's sail and frame is
+weighted by its angle between the two spars of the bay (through `MD.vw`), and each bundle by the angle of its axis, so
+closing the fingers closes the sail like a fan. Build it spread: closing compresses the sail, opening a sail built
+closed would stretch it and its texture. The Western Dragon's rest and folded states were fitted to the wrist and four
+tips measured off its sheet (`docs/LESSONS.md`).
+
 ## Modules (`modules.py`)
 
 | Call | Does |
@@ -203,7 +225,7 @@ metal, then chips, rubbed edges, scratches, cavity dirt, dust, and optional brai
 | `DENSITY` | texel boost per segment, e.g. `{"head": 1.45}` |
 | `FOCUS` | close-up cameras: `{"head" / "actuator" / "paw": (target, distance)}` |
 | `FRAMES` | joint frames for the clearance check |
-| `LENS`, `ACCENT`, `LOD_RATIO`, `SUBTITLE`, `VIEW_HEIGHT`, `CELL`, `START`, `SLEEP_CLIP` | optional; `CELL` is the viewer's floor-grid square in metres, `START` the motion the viewer opens on |
+| `LENS`, `ACCENT`, `LOD_RATIO`, `SUBTITLE`, `VIEW_HEIGHT`, `CELL`, `START`, `SLEEP_CLIP`, `UV_MARGIN` | optional; `CELL` is the viewer's floor-grid square in metres, `START` the motion the viewer opens on; `UV_MARGIN` the packing margin (default 0.0016 of the sheet; a very large animal with thousands of small islands wants less) |
 
 ## Pipeline options
 

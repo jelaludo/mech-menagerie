@@ -1,0 +1,65 @@
+{
+ "name": "DragonWD01",
+ "title": "WESTERN DRAGON / DRK-WD-01",
+ "subtitle": "HEAVY QUADRUPEDAL WINGED PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Run",
+  "Roar",
+  "Unfurl",
+  "TakeOff",
+  "Fly",
+  "Sleep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Run",
+   6
+  ],
+  [
+   "Roar",
+   1
+  ],
+  [
+   "Unfurl",
+   1
+  ],
+  [
+   "TakeOff",
+   1
+  ],
+  [
+   "Fly",
+   6
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  12.0,
+  -2.817
+ ],
+ "distance": 77.28,
+ "shadow": [
+  40.26,
+  47.5
+ ],
+ "cell": 4.0,
+ "scale": 24.675
+}

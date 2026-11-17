@@ -1,7 +1,7 @@
 # Humanoid in a Gi
 
-**Status (2026-11-16): third iteration.** Skinned with the robust transfer layer by layer, the covered pants and body
-removed, and checked in every clip (`../docs/STUDY-GI.md` sections 11 and 12; QA verdict below).
+**Status (2026-11-17): fourth pass, on H-01's new neck.** Skinned with the robust transfer layer by layer, the covered
+pants and body removed, and checked in every clip (`../docs/STUDY-GI.md` sections 11, 12 and 14; QA verdict below).
 
 Humanoid H-01 wearing the jiu-jitsu gi J-01: jacket, pants, collar band and black belt. The first card of the
 WARDROBE collection.
@@ -34,44 +34,53 @@ WARDROBE collection.
   into the skirt: walk, jog and run 1 to 2 points (8 to 12 mm) before, none now; rolls 56 to 63 points (36 to 52 mm)
   before, 31 to 40 (35 to 41 mm) now. The dress step itself now lives in the kit (`../kit/menagerie/dress.py`), shared with Red Witness in a Gi;
   this model rebuilds identically from it.
+- **H-01's new neck** (2026-11-17, at the user's request): H-01's trapezius and sternomastoid actuators used to rise
+  to the skull through the collar, and showed through the back of it in the wave and the guard. They now take hold of
+  the foot of the neck column (`../humanoid_h01/README.md`), and only the column comes out of the collar. The jacket
+  was draped again on the new neck (its neckline is smaller: the collar band has 1,200 vertices against 1,360) and the
+  gi rebuilt from it; the pants are the same drape. Pictures: `../gi_j01/renders/qa/h01_collar_before_*.png` and
+  `h01_collar_after_*.png`.
 - Materials: matte cotton twill (`C_gi`), black cotton (`C_belt`).
 
 ## Checked in motion
 
 `../gi_j01/tools/motion_check.py -- stress` skins the model the way an engine does, in every clip and in five stress
-poses, and counts body points and pants points that come through the cloth where it would show.
+poses, and counts body points and pants points that come through the cloth where it would show, and how far the
+belt's tails sink into the skirt.
 
-| | body through the gi | pants through the jacket | stretch, 99th percentile (pants / jacket) |
-|---|---|---|---|
-| At rest | none | none | 1.0 / 1.0 |
-| Idle, Walk, Grasp | 0 to 3 points, at most 3 mm | 0 | 1.1 to 1.6 / 1.1 to 2.1 |
-| Jog, Run | 1 point, 3 to 8 mm | 0 | 1.6 to 1.8 / 2.4 to 2.6 |
-| Box, Wave | 3 to 5 points, 12 to 21 mm (back of the collar) | Box 1 point, 2 mm | 1.1 to 1.5 / 2.5 to 2.9 |
-| Crouch | 0 | 0 | 2.2 / 1.7 |
-| Jump | 9 points, 28 mm | 6 points, 35 mm | 2.6 / 3.6 |
-| Ukemi (four rolls) | 10 to 16 points, 23 to 39 mm | 8 to 15 points, 28 to 57 mm (centre of the waist, under the flaps) | 2.4 to 2.6 / 3.0 to 4.2 |
+| | body through the gi | pants through the jacket | belt tails into the skirt | stretch, 99th percentile (pants / jacket) |
+|---|---|---|---|---|
+| At rest | none | none | none | 1.0 / 1.0 |
+| Idle, Walk, Jog, Run, Grasp | none | none | none | 1.1 to 1.8 / 1.1 to 2.6 |
+| Box, Wave | none | none | none | 1.1 to 1.5 / 2.5 to 2.7 |
+| Crouch | none | none | 14 points, 7 mm | 2.2 / 1.7 |
+| Jump | 4 points, 13 mm (a wrist collar under its cuff) | 1 point, 25 mm | 25 points, 12 mm | 2.6 / 3.4 |
+| Ukemi (four rolls) | 4 to 7 points, 17 to 38 mm (the wrist collars under the cuffs; in the front and back rolls the trapezius's inner ends under the back of the collar) | 4 to 7 points, 13 to 34 mm (centre of the waist, under the flaps) | 21 to 33 points, 12 to 21 mm | 2.4 to 2.6 / 3.0 to 3.6 |
+| Stress: arms up, out, forward; head turned | none | none | none | 1.0 / 1.3 to 3.6 |
+| Stress: knee up | none | 10 points, 41 mm | 30 points, 18 mm | 2.3 / 2.0 |
 
-Yesterday's version, same check: pants through the jacket 117 mm in the walk, 128 mm running, 188 mm crouching,
-103 mm in the guard; body through 73 mm in the guard. Full table in the study, section 12.
+Against 2026-11-16's version (H-01's old neck, the same check): body through the gi in Box and Wave 2 and 5 points
+(to 21 mm, at the back of the collar), now none; in the rolls 10 to 15 points (to 38 mm), now 4 to 7; with the arms
+up, out or forward 4 to 6 points (to 48 mm), now none; pants through the jacket in the rolls 8 to 14 points (to
+53 mm), now 4 to 7 (to 34 mm), and in the jump 7 points (39 mm), now 1; the belt's tails in the rolls 31 to 40 points
+(35 to 41 mm), now 21 to 33 (12 to 21 mm). The new neck alone, with the jacket as draped before, already took Box,
+Wave and the stress poses to zero; the redrape on it did most of the rest
+(`../gi_j01/renders/motion/motion_check_2026-11-17_newneck.txt`; the version before:
+`motion_check_2026-11-16_evening.txt`; two days ago the pants came through 117 mm in the walk, study section 12).
 
-The check gained a third test that evening, the belt's tails sinking into the skirt: none in the walk, jog, run, box
-and wave; crouch and jump 26 and 32 points (to 36 mm); rolls 31 to 40 points (35 to 41 mm). It also now measures depth
-along the cloth's smoothed normals and leaves out the head, hands and feet; the numbers above moved by a point at most
-(`../gi_j01/renders/motion/motion_check_2026-11-16_evening.txt`).
-
-## QA verdict (2026-11-16)
+## QA verdict (2026-11-17)
 
 The gate of `../docs/QA.md` (adapted from arjun988/blender-skills, MIT).
 
 **Result: SHIP WITH NOTES.** No blockers; the majors are known, measured and listed with a plan.
 
-**Budgets:** LOD0 121,060 triangles against the hero character budget of 50,000 to 100,000: about a fifth over (H-01
-alone is 101,264; the gi adds about 34,000 and hides 14,000 of the body). LOD1 / 2 / 3: 60,499 / 30,224 / 14,301
+**Budgets:** LOD0 121,085 triangles against the hero character budget of 50,000 to 100,000: about a fifth over (H-01
+alone is 101,264; the gi adds about 34,000 and hides 14,000 of the body). LOD1 / 2 / 3: 60,515 / 30,240 / 14,491
 (50 / 25 / 12%). Texture 9.4 px/cm at 4K (H-01 alone 13.4).
 
-**Checks:** rebuild baseline re-saved (intended change); the viewer loads all 14 motions without errors; LODs pass
-(silhouette overlap with LOD0 0.991 to 0.999, no new holes); floor contact is H-01's own except in the rolls; the
-motion check is the table above.
+**Checks:** rebuild baseline re-saved (intended change: H-01's neck and the redrape); the viewer loads all 14 motions
+without errors; LODs pass (silhouette overlap with LOD0 0.992 to 0.999, no new holes); floor contact is H-01's own
+except in the rolls; the motion check is the table above.
 
 **Screenshots:** hero three-quarter and orthographic views (`renders/`), the viewer's beauty, wireframe and guard pose
 (`../gi_j01/renders/qa/`), the LOD sheet (`renders/lod_check.png`), against the reference sculpt
@@ -82,18 +91,18 @@ motion check is the table above.
 **Majors:**
 1. Over the triangle budget. Plan: ship LOD1 (60k) as the in-game default, or drop the cloth's inner skin where it is
    never seen.
-2. The rolls (shipped clips): pants through the front flaps at the centre of the waist, 8 to 15 points up to 5.7 cm
-   (white on white), and the body through in a few places by 2 to 4 cm, mostly at the back of the neck.
-3. The wave and the guard: H-01's neck parts through the back of the collar by up to 2.1 cm (5 points, for a moment);
-   in the guard 3 points up to 1.2 cm.
-4. Against the reference the shoulders and the back read bulky and lumpy: H-01's deltoid and back actuators under the
+2. The rolls (shipped clips): pants through the front flaps at the centre of the waist, 4 to 7 points up to 3.4 cm
+   (white on white), and the body through in a few places by 2 to 4 cm: the wrist collars under the cuffs when the
+   wrist bends hard, and in the front and back rolls the trapezius's inner ends under the back of the collar.
+3. Against the reference the shoulders and the back read bulky and lumpy: H-01's deltoid and back actuators under the
    cloth, and the folds the drape leaves in the back. The front reads right.
 
-**Minors:** the jump (6 pants points up to 3.5 cm, the head's base against the collar up to 2.8 cm); the armholes
-stretch up to 3.9 times with the arms up (an arms-down bind pose); in the front roll the skirt sinks up to 4.5 cm
-further into the floor than H-01 does (no floor collision for the cloth).
+**Minors:** the jump (1 pants point, 2.5 cm; 4 body points at a wrist collar, 1.3 cm); the armholes stretch up to
+3.6 times with the arms up (an arms-down bind pose); in the front roll the skirt sinks up to 4.5 cm further into the
+floor than H-01 does (no floor collision for the cloth).
 
-**Notes:** nothing swings (no secondary motion).
+**Notes:** nothing swings (no secondary motion). Fixed since 2026-11-16: H-01's neck parts through the back of the
+collar in the wave (5 points, 2.1 cm) and the guard (3 points, 1.2 cm), by moving H-01's neck actuators.
 
 **Retest after** any change to the weights, the hiding or the drape: the motion check with `stress`, `kit/lod_check.py`,
 the viewer test.
@@ -102,11 +111,12 @@ the viewer test.
 
 - **The gi does not swing.** It is skinned, not simulated: the skirt, the sleeves and the belt's tails move with
   the bones under them and nothing else. Baking each clip's cloth motion onto extra bones is the next stage.
-- **The back of the collar:** H-01's neck actuators run from the shoulders to the head outside the collar ring, and
-  show by up to 2 cm in the wave.
-- **The rolls and the jump** still put a few pants points through the front flaps at the centre of the waist (8 to
-  15 points, up to 5 cm; white through white) and the body through in a few places (2 to 4 cm), and the belt's tails
-  sink up to 4 cm into the skirt in the rolls, the jump and the crouch.
+- **The back of the collar in the rolls:** the trapezius's inner ends lie under the back of the collar and come
+  through it by up to 3 cm when the neck bends hard in the front and back rolls (everywhere else H-01's new neck keeps
+  them under it).
+- **The rolls and the jump** still put a few pants points through the front flaps at the centre of the waist (4 to
+  7 points, up to 3.4 cm; white through white), the wrist collars through the cuffs by up to 4 cm when the wrist bends
+  hard, and the belt's tails sink up to 2 cm into the skirt in the rolls, the jump and the crouch.
 - **The skirt stretches a little between the legs** in the walk: it follows the pants so the pants cannot come
   through it.
 - **The armholes stretch with the arms up:** H-01 is skinned arms down; an A-pose bind would halve it.

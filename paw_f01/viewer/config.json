@@ -1,0 +1,46 @@
+{
+ "name": "PawF01",
+ "title": "PAW / PES-F1",
+ "subtitle": "PAW STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Step",
+  "Flex",
+  "Stamp"
+ ],
+ "start": "Step",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Step",
+   4
+  ],
+  [
+   "Flex",
+   1
+  ],
+  [
+   "Stamp",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.16,
+  0.049
+ ],
+ "distance": 1.03,
+ "shadow": [
+  0.25,
+  0.31
+ ],
+ "cell": 0.05,
+ "scale": 0.285,
+ "props": []
+}

@@ -1,0 +1,46 @@
+{
+ "name": "HandC01",
+ "title": "HAND / MANUS-C1",
+ "subtitle": "HAND STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Rake",
+  "Ripple",
+  "Wrist"
+ ],
+ "start": "Rake",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Rake",
+   2
+  ],
+  [
+   "Ripple",
+   2
+  ],
+  [
+   "Wrist",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.145,
+  -0.0
+ ],
+ "distance": 0.94,
+ "shadow": [
+  0.29,
+  0.18
+ ],
+ "cell": 0.05,
+ "scale": 0.489,
+ "props": []
+}

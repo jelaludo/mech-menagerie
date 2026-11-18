@@ -395,6 +395,15 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   the other spread; forward kinematics put both hands at 0.655 m out, mirror images. The near arm pointed at the camera.
 - **A recorded clip carries moves, not heights.** H-01's walk retargeted to the Medusa, whose ankles stand 26 cm up on
   heels, kept her within 7 mm of the floor unchanged: the pelvis is recorded as an offset from rest.
+- **A borrowed step fits only the foot it was written for.** The Minotaur's walk rolls the foot about a hoof's toe
+  0.37 m ahead of the ankle; on the Oni's dragon feet, whose claws reach 0.55 m, it drove them up to 202 mm through the
+  floor, and moving the pivot out only halved it (the swing pitches the foot toes-down too). Measure the new foot's
+  reach against the clip's, or plant the foot afterwards: `motions.Planted` turns it toes-up about the ankle just
+  enough. Then make the foot a word: `kit/menagerie/feet.py` carries each foot's ankle height, reach and ground
+  wrappers with it, and the Oni's gorilla feet and hooves stood on the floor on their first build.
+- **Search a pose numerically when it collides.** The raised club went through the Oni's head in the roar (596
+  triangles); scoring the club's clearance from the head at seventeen wrist angles found 95 degrees (1.04 m clear)
+  in one run.
 - **A rigid grip cannot change in the hand.** Carried with the thumb toward the tip, a spear held overhand by the head
   needs to lie end for end in the fist; there is no way from one to the other but letting go. The Valkyrie tosses it
   (`Spearman.flight`), and every clip starts and ends in the carry so the viewer's crossfade never has to turn the
@@ -525,6 +534,9 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   into black squares that flicker over everything. Thirty published files had a few such vertices; the Wyvern's LOD1,
   which the public site opens on, showed it first. The pipeline now mends every export (`menagerie/gltfmend.py`) and
   the publisher refuses a file with a zero tangent.
+- **Tell the browser to ask again.** The local server sent no cache headers, so a browser kept an old catalog and the
+  Medusa's card did not appear for the user although the server had it. `hub/server.py` now sends
+  `Cache-Control: no-cache` with every file.
 - **Test the copy people see, at the level it opens on.** The local checks used LOD0; the public viewer starts at LOD1.
 
 - Artifacts do not serve `.glb`; a local server does. The local viewer loads GLB directly.

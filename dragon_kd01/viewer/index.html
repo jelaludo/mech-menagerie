@@ -120,6 +120,7 @@ body { background: var(--bg); color: var(--fg); font-family: var(--font-mono); f
     <div class="seg" role="group" aria-label="View options">
       <button id="wire" aria-pressed="false">WIRE</button><button id="spin" aria-pressed="true">SPIN</button><button id="glow" aria-pressed="true">GLOW</button>
     </div>
+    <div class="seg" role="group" aria-label="Props" id="props" hidden></div>
     <div class="seg" role="group" aria-label="Export">
       <button id="export" aria-pressed="false" aria-haspopup="true" aria-controls="xmenu">LICENCE</button>
     </div>
@@ -292,6 +293,12 @@ const lods = new Array(4).fill(null);
 let current = 0, wireOn = false, wireOnly = false, stats = null, texRes = "2K", mat = null, motion = cfg.start, paused = false, auto = false, autoT = 0;
 const MOTIONS = cfg.motions;
 const PLAYLIST = cfg.playlist;             // [motion, loops] in the order CONTINUOUS plays them
+const PROPS = cfg.props || [];             // [{bone, label}]: things held on a bone of their own (a weapon) that can be put away
+const propOn = {};
+for (const p of PROPS) {
+  propOn[p.bone] = true;
+  try { const v = localStorage.getItem("prop:" + cfg.name + ":" + p.bone); if (v !== null) propOn[p.bone] = v === "1"; } catch (e) {}
+}
 const EYES = 3.0;
 const wireMat = new THREE.MeshBasicMaterial({ color: css("--hazard"), wireframe: true, transparent: true, opacity: 0.35 });
 const gltfLoader = new GLTFLoader();
@@ -314,7 +321,9 @@ async function loadLOD(i) {
   const actions = {};
   for (const clip of gltf.animations) actions[clip.name] = mixer.clipAction(clip);
   const s = stats && stats["LOD" + i];
-  lods[i] = { root: gltf.scene, solid, wire, mixer, actions, active: null,
+  const propBones = {};
+  for (const p of PROPS) propBones[p.bone] = solid.skeleton.getBoneByName(THREE.PropertyBinding.sanitizeNodeName(p.bone));
+  lods[i] = { root: gltf.scene, solid, wire, mixer, actions, active: null, propBones,
     tris: s ? s.triangles : solid.geometry.index.count / 3, bones: solid.skeleton.bones.length };
   return lods[i];
 }
@@ -451,6 +460,27 @@ function toggleWire() {                                              // off -> d
 }
 function toggleSpin() { controls.autoRotate = !controls.autoRotate; setToggle("spin", controls.autoRotate); }
 function toggleGlow() { bloom.enabled = !bloom.enabled; setToggle("glow", bloom.enabled); }
+function toggleProp(bone, on) {                                      // a prop put away: its bone shrunk to nothing (the hand keeps its grip)
+  propOn[bone] = on === undefined ? !propOn[bone] : on;
+  setToggle("p_" + bone, propOn[bone]);
+  try { localStorage.setItem("prop:" + cfg.name + ":" + bone, propOn[bone] ? "1" : "0"); } catch (e) {}
+}
+function applyProps(l) {
+  for (const p of PROPS) { const b = l.propBones[p.bone]; if (b) b.scale.setScalar(propOn[p.bone] ? 1 : 1e-4); }
+}
+for (const p of PROPS) {
+  const b = document.createElement("button");
+  b.id = "p_" + p.bone;
+  b.textContent = p.label;
+  b.title = "Show or put away the " + p.label.toLowerCase() + " (P)";
+  b.setAttribute("aria-pressed", String(propOn[p.bone]));
+  b.addEventListener("click", () => toggleProp(p.bone));
+  $("props").appendChild(b);
+}
+if (PROPS.length) {
+  $("props").hidden = false;
+  $("hint").insertAdjacentText("beforeend", " · P " + PROPS.map((p) => p.label.toLowerCase()).join(", "));
+}
 for (const name of MOTIONS) {
   const b = document.createElement("button");
   b.id = "m_" + name;
@@ -481,6 +511,7 @@ addEventListener("keydown", (e) => {
   else if (k === "r") toggleSpin();
   else if (k === "g") toggleGlow();
   else if (k === "h") $("hud").classList.toggle("off");
+  else if (k === "p" && PROPS.length) { const on = !PROPS.every((p) => propOn[p.bone]); for (const p of PROPS) toggleProp(p.bone, on); }
   else if (k === "f") { const p = document.documentElement.requestFullscreen?.(); if (p && p.catch) p.catch(() => {}); }
 });
 canvas.addEventListener("pointerdown", () => $("hint").classList.add("fade"), { once: true });
@@ -488,6 +519,7 @@ renderer.setAnimationLoop(() => {
   const dt = Math.min(clock.getDelta(), 0.1) * (paused ? 0 : 1);
   const l = lods[current];
   if (l) l.mixer.update(dt);
+  if (l && PROPS.length) applyProps(l);
   if (auto) stepPlaylist(dt);
   if (mat) mat.emissiveIntensity = EYES * eyeLevel();
   const clip = stats && stats.rig && stats.rig.clips[motion];

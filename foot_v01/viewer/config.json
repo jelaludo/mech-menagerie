@@ -1,0 +1,46 @@
+{
+ "name": "FootV01",
+ "title": "FOOT / PES-V1",
+ "subtitle": "FOOT STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Step",
+  "Flex",
+  "Stamp"
+ ],
+ "start": "Step",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Step",
+   4
+  ],
+  [
+   "Flex",
+   1
+  ],
+  [
+   "Stamp",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.35,
+  0.126
+ ],
+ "distance": 2.25,
+ "shadow": [
+  0.71,
+  0.95
+ ],
+ "cell": 0.1,
+ "scale": 0.745,
+ "props": []
+}

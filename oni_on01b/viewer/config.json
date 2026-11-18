@@ -1,0 +1,66 @@
+{
+ "name": "OniON01B",
+ "title": "ONI / ON-01B HOOFED",
+ "subtitle": "JAPANESE DEMON UNIT \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Charge",
+  "Roar",
+  "Stomp",
+  "Smash",
+  "Sweep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Charge",
+   4
+  ],
+  [
+   "Roar",
+   1
+  ],
+  [
+   "Stomp",
+   1
+  ],
+  [
+   "Smash",
+   1
+  ],
+  [
+   "Sweep",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.85,
+  0.583
+ ],
+ "distance": 11.91,
+ "shadow": [
+  3.07,
+  3.39
+ ],
+ "cell": 0.5,
+ "scale": 5.387,
+ "props": [
+  {
+   "bone": "club",
+   "label": "KANAB\u014c"
+  }
+ ]
+}

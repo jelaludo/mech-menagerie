@@ -1,0 +1,46 @@
+{
+ "name": "FootD01",
+ "title": "FOOT / PES-D1",
+ "subtitle": "FOOT STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Step",
+  "Flex",
+  "Stamp"
+ ],
+ "start": "Step",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Step",
+   4
+  ],
+  [
+   "Flex",
+   1
+  ],
+  [
+   "Stamp",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.325,
+  0.14
+ ],
+ "distance": 2.09,
+ "shadow": [
+  0.96,
+  1.32
+ ],
+ "cell": 0.1,
+ "scale": 0.944,
+ "props": []
+}

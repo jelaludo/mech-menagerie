@@ -1,0 +1,46 @@
+{
+ "name": "BootB01",
+ "title": "BOOT / CALCEUS-01",
+ "subtitle": "BOOT STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Step",
+  "Flex",
+  "Stamp"
+ ],
+ "start": "Step",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Step",
+   4
+  ],
+  [
+   "Flex",
+   1
+  ],
+  [
+   "Stamp",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.325,
+  0.073
+ ],
+ "distance": 2.09,
+ "shadow": [
+  0.36,
+  0.64
+ ],
+ "cell": 0.1,
+ "scale": 0.999,
+ "props": []
+}

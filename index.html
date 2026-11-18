@@ -34,6 +34,20 @@ nav { display: flex; flex-wrap: wrap; gap: 8px; }
 nav a { display: block; padding: 0 12px; border: 1px solid var(--line); color: var(--fg); text-decoration: none;
   font: 500 11px/32px var(--font-mono); letter-spacing: 0.12em; }
 nav a:hover, nav a:focus-visible { background: var(--fg); color: var(--bg); outline: none; }
+/* search: a sticky bar under the header that narrows every collection at once */
+.find { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; margin: 0 -2px;
+  padding: 12px 2px; background: var(--bg); border-bottom: 1px solid var(--line); }
+.find input { flex: 1 1 260px; min-width: 0; height: 36px; padding: 0 12px; background: var(--panel); color: var(--fg);
+  border: 1px solid var(--line); border-radius: 0; font: 400 13px/36px var(--font-mono); letter-spacing: 0.02em; }
+.find input::placeholder { color: var(--dim); }
+.find input:focus-visible { outline: none; border-color: var(--accent); }
+.find input::-webkit-search-cancel-button { filter: invert(0.6); }
+.find .count { color: var(--dim); font-size: 12px; letter-spacing: 0.06em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.find kbd { font: 500 10px/16px var(--font-mono); padding: 0 5px; border: 1px solid var(--line); color: var(--dim); }
+@media (hover: none), (max-width: 600px) { .find kbd { display: none; } }
+section[hidden], .card[hidden] { display: none; }
+.none { margin: 32px 0; color: var(--dim); }
+.none[hidden] { display: none; }
 h2 { margin: 40px 0 4px; font: 600 20px/1.1 var(--font-display); letter-spacing: 0.2em; }
 h2 + p { margin: 0 0 16px; color: var(--dim); }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; align-items: start; }
@@ -95,29 +109,49 @@ footer a { color: var(--fg); }
     </nav>
   </header>
 
-  <h2>MECHANICAL MENAGERIE</h2>
-  <p>One shared kit of parts, one body plan per animal.</p>
-  <div class="grid" id="menagerie"></div>
+  <div class="find" role="search">
+    <input id="q" type="search" autocomplete="off" spellcheck="false" aria-label="Search the models"
+      placeholder="Search: name, number or kind (dragon, hoof, 23, built, concept)">
+    <span class="count" id="count" aria-live="polite"></span>
+    <kbd title="Press / to search">/</kbd>
+  </div>
+  <p class="none" id="none" hidden>Nothing matches. Try fewer words, or press Esc to clear.</p>
 
-  <h2>HANDS, FEET, PAWS AND TALONS</h2>
-  <p>Studies of the extremities in the same language, to be mounted on the models.</p>
-  <div class="grid" id="parts"></div>
+  <section>
+    <h2>MECHANICAL MENAGERIE</h2>
+    <p>One shared kit of parts, one body plan per animal.</p>
+    <div class="grid" id="menagerie"></div>
+  </section>
 
-  <h2>MODULES</h2>
-  <p>Parts taken out of the animals that fit more than one body, and bodies wearing them. First hosts: the humanoid and the mantis.</p>
-  <div class="grid" id="modules"></div>
+  <section>
+    <h2>HANDS, FEET, PAWS, HOOVES AND TALONS</h2>
+    <p>The extremities as studies of their own, each the kit's part an animal wears, ready to be mounted on another.</p>
+    <div class="grid" id="parts"></div>
+  </section>
 
-  <h2>WARDROBE</h2>
-  <p>Clothes drafted from each body's own measurements and draped with cloth simulation. First: the jiu-jitsu gi on the humanoid.</p>
-  <div class="grid" id="wardrobe"></div>
+  <section>
+    <h2>MODULES</h2>
+    <p>Parts taken out of the animals that fit more than one body, and bodies wearing them. First hosts: the humanoid and the mantis.</p>
+    <div class="grid" id="modules"></div>
+  </section>
 
-  <h2>SCENES</h2>
-  <p>Built models set together, and the things they stand beside.</p>
-  <div class="grid" id="scenes"></div>
+  <section>
+    <h2>WARDROBE</h2>
+    <p>Clothes drafted from each body's own measurements and draped with cloth simulation. First: the jiu-jitsu gi on the humanoid.</p>
+    <div class="grid" id="wardrobe"></div>
+  </section>
 
-  <h2>RED WITNESS</h2>
-  <p>The first builds: a helmet, then a full figure wearing it.</p>
-  <div class="grid" id="red-witness"></div>
+  <section>
+    <h2>SCENES</h2>
+    <p>Built models set together, and the things they stand beside.</p>
+    <div class="grid" id="scenes"></div>
+  </section>
+
+  <section>
+    <h2>RED WITNESS</h2>
+    <p>The first builds: a helmet, then a full figure wearing it.</p>
+    <div class="grid" id="red-witness"></div>
+  </section>
 
   <footer>© 2026 Jelaludo. All rights reserved. The models, textures, animations and renders are shown for viewing only, as reduced copies: they may not be downloaded, reused, resold or used to train AI. The full-detail models are sold separately. <a href="terms.html">Terms of use and third-party notices</a></footer>
 </main>
@@ -221,7 +255,52 @@ function card(m) {
   return card;
 }
 
+// ---- search: every word must appear in a card's number, name, kind, collection, folder or status ----
+const fold = (t) => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+const STATUS_WORDS = { built: "built open", next: "next in progress", planned: "planned concept not built" };
+const q = document.getElementById("q"), count = document.getElementById("count"), none = document.getElementById("none");
+const cards = [];
+
+function haystack(m, section) {
+  const folder = (m.href || "").split("/")[0];
+  return fold([m.id, m.name, m.class, section, folder, STATUS_WORDS[m.status] || m.status].join(" "));
+}
+
+function filter() {
+  const words = fold(q.value).split(/\s+/).filter(Boolean);
+  let shown = 0;
+  for (const c of cards) {
+    const hit = words.every((w) => c.text.includes(w));
+    c.el.hidden = !hit;
+    shown += hit;
+  }
+  for (const sec of document.querySelectorAll("main section")) sec.hidden = !sec.querySelector(".card:not([hidden])");
+  count.textContent = words.length ? shown + " of " + cards.length : cards.length + " models";
+  none.hidden = shown > 0 || !cards.length;
+  const url = new URL(location.href);                                // the search is part of the address: shareable, kept on reload
+  if (words.length) url.searchParams.set("q", q.value.trim()); else url.searchParams.delete("q");
+  history.replaceState(null, "", url);
+}
+
+q.value = new URLSearchParams(location.search).get("q") || "";
+q.addEventListener("input", filter);
+q.addEventListener("keydown", (e) => { if (e.key === "Escape") { q.value = ""; filter(); q.blur(); } });
+document.addEventListener("keydown", (e) => {
+  if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return;
+  const t = e.target;
+  if (t.closest && t.closest("input, textarea, select, [contenteditable]")) return;
+  e.preventDefault();
+  q.focus();
+  q.select();
+});
+
 fetch("catalog.json").then((r) => r.json()).then((cat) => {
-  for (const m of cat.models) document.getElementById(m.collection).appendChild(card(m));
+  for (const m of cat.models) {
+    const grid = document.getElementById(m.collection);
+    const el = card(m);
+    grid.appendChild(el);
+    cards.push({ el, text: haystack(m, grid.closest("section").querySelector("h2").textContent) });
+  }
+  filter();
 }).catch(() => { document.querySelector("main").insertAdjacentHTML("beforeend", "<p>Could not read catalog.json. Open this page through serve.sh, not as a file.</p>"); });
 </script>

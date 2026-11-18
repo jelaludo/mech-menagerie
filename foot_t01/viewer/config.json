@@ -1,0 +1,46 @@
+{
+ "name": "FootT01",
+ "title": "FOOT / PES-T1",
+ "subtitle": "FOOT STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Step",
+  "Flex",
+  "Stamp"
+ ],
+ "start": "Step",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Step",
+   4
+  ],
+  [
+   "Flex",
+   1
+  ],
+  [
+   "Stamp",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.1,
+  -0.001
+ ],
+ "distance": 0.64,
+ "shadow": [
+  0.25,
+  0.37
+ ],
+ "cell": 0.02,
+ "scale": 0.218,
+ "props": []
+}

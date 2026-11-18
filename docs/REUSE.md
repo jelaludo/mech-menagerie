@@ -50,7 +50,7 @@ one 8K set; the pipeline packs one set today, so this is the first kit change th
 | Sprawling quadruped | 08 Komodo (built), 16 Toad (built) | limbs stick out sideways | Komodo: added `Rig.solve3` (3D legs), the `Sprawler` gait, `carapace`, `tongue`; see the Komodo study. Toad: the Komodo's solver and tongue, the scorpion's `muscle_link` limbs, the mantis's eyes, the spider's on-the-spot leap; adds `pad_foot`, a four-bone hind leg whose foot rolls onto its toes, and the `Anuran` motions |
 | Theropod | 14 Velociraptor (built) | 2 digitigrade legs (four joints, the feline's hind leg) under a level trunk; arms posed | the feline's trunk, hind leg, paw and tail, the horse's `Column` neck, the Komodo's skull tables and `carapace`; adds `claw_hand`, `sickle_toe` (its own bone), a gait `follow` option and the `Theropod` motions (walk, run, slash, an on-the-spot pounce) |
 | Piloted frame | 18 MK-07B Valkyr (built) | the humanoid's plan at 5.16 times the size | second build, in the kit's own language: the crawler's `cage_limb` for every limb bone, a lattice torso, the gorilla-table `manus.Hand`, the biped motions at half speed (`Frame`); adds `shield` (perforated carbon armour on posts), a cockpit tub and seat sized for H-01, and a `hatch` bone. Next for it: shields of more than one shape, H-01 seated in it, loadouts, a second texture set |
-| Biped | 06 Humanoid (built), 23 Valkyrie (built); 02 Gorilla to be redone here | arms hang, legs carry | the torso is the horse's `Column` stood upright; added `open_hand` and the `Biped` motions. The Valkyrie is H-01's plan and hands at 2.38 m with H-01's recorded locomotion scaled to her legs; her armour is the series' shields, her winged helmet and skirt the eagle's feathers; adds `arma` (spear, round shield) and the `Spearman` motions (with `flight`: a prop tossed from one grip to another). The Valkyrie V-02 Winged is V-01 with `shield=False, wings=True`: the eagle's `FeatherWing` at 0.7, mounted along her spine with the wing's new `body=` frame, and the `WingedSpearman` motions. H-02 is H-01 with the lats on the thorax and PES-01 feet (`foot="pes"`, the toes kept on the ground by `GroundedToes`). The Minotaur (24) is the same plan made massive at 3.2 m, its proportions fitted to the sheet's views with `kit/compare.py`: the hands at twice their size as gauntlets, the lizards' skull tables as a bull's head, new `an.horn` and `an.meander_band`, a hoof block on a three-joint leg, and the `Taurus` motions (the biped's solver: walk, charge, roar, stomp, smash). The Medusa (26) is the Valkyrie's plan at 2.48 m on high heels (`an.heeled_boot`, the toe boxes kept on the ground by `GroundedToes`) with H-01's recorded walk, jog and run unchanged; her hair is eighteen small Snake S-01s (`crinis`), her hands MANUS-01 made slender with claws, her face a smooth mask under a hood of the skull tables, the Minotaur's meander as an oval belt and down her panels (`meander_strip`), and the `Gorgon` motions (`Spearman`'s arm setting split out as `Reaching`) |
+| Biped | 06 Humanoid (built), 23 Valkyrie (built); 02 Gorilla to be redone here | arms hang, legs carry | the torso is the horse's `Column` stood upright; added `open_hand` and the `Biped` motions. The Valkyrie is H-01's plan and hands at 2.38 m with H-01's recorded locomotion scaled to her legs; her armour is the series' shields, her winged helmet and skirt the eagle's feathers; adds `arma` (spear, round shield) and the `Spearman` motions (with `flight`: a prop tossed from one grip to another). The Valkyrie V-02 Winged is V-01 with `shield=False, wings=True`: the eagle's `FeatherWing` at 0.7, mounted along her spine with the wing's new `body=` frame, and the `WingedSpearman` motions. H-02 is H-01 with the lats on the thorax and PES-01 feet (`foot="pes"`, the toes kept on the ground by `GroundedToes`). The Minotaur (24) is the same plan made massive at 3.2 m, its proportions fitted to the sheet's views with `kit/compare.py`: the hands at twice their size as gauntlets, the lizards' skull tables as a bull's head, new `an.horn` and `an.meander_band`, a hoof block on a three-joint leg, and the `Taurus` motions (the biped's solver: walk, charge, roar, stomp, smash). The Medusa (26) is the Valkyrie's plan at 2.48 m on high heels (`calceus.Boot`, the toe boxes kept on the ground by `GroundedToes`) with H-01's recorded walk, jog and run unchanged; her hair is eighteen small Snake S-01s (`crinis`), her hands MANUS-01 made slender with claws, her face a smooth mask under a hood of the skull tables, the Minotaur's meander as an oval belt and down her panels (`meander_strip`), and the `Gorgon` motions (`Spearman`'s arm setting split out as `Reaching`). Her boots are the kit's `calceus.Boot`; the Valkyrie wears them with `foot="heel"` (everything above the ankle lifted onto the heels, her recorded clips `Settled` onto the floor) |
 | Long dragon | 19 Kami Dragon (built), 19B Kami-Ryu (built: a variant, the same chain drawn out to 56 modules, 13.7 m) | the Komodo's sprawling legs (solved in 3D) under one chain of 26 body modules | no new assembly: the snake's `serpent_segment` for neck, body and tail, the crawler's `cage_limb`, the Valkyr's `shield`, the Komodo's foot and skull tables, `spike` antlers. Adds the `Dragon` motions, which pose the chain by how steeply each module points, so the same code walks, flies and lies down |
 | Cervid | 25 Stag (built) | four four-joint legs, a long neck column, a trunk with a keel | the horse's plan (trunk, neck column, skull tables, legs, `Equine` gaits) taller and finer; adds `antler` (the crown), `an.cloven_hoof`, the `C_brass` material for rivets, titanium bands laid on the trunk's surface, and the `Cervine` motions; fitted with `kit/compare.py` |
 | Bird | 22 Eagle (built) | two four-joint legs (the raptor's, solved in the side plane) under a `Column` body; two feathered wings | the humanoid's `Column` as a lattice body, the raptor's legs and gait, the lizards' skull tables with a hooked beak, the crawler's `cage_limb`; the dragons' wing (`ala.Wing`) becomes `FeatherWing`, the dexterous hand (`manus.Hand`) becomes the `Talon`. Adds `pluma` (feathers, plumage) and the `Aquiline` motions. The Valkyrie's wing-pack and the feathered skirt are the next use of `pluma` |
@@ -132,6 +132,7 @@ the interface and four parts taken out of the animals.
 | `StingTail` | the scorpion's `bundle_tail` | `sting_01`…`sting_06` | rest, wind, lash, arch; `strike_pose(t)` | Sting Tail MOD-S1 |
 | `Tentacle` | the octopus's arm, along any path | one a module, any of them the host's own | straight, hang, coil, grip, lift; `ripple_pose(t)` | Tentacle MOD-T1 |
 | `manus.Hand`, `pes.Foot` | new | palm or sole, digits | see their own cards | MANUS-01, MANUS-G1, PES-01, PES-G1 |
+| `calceus.Boot` | new, after the Medusa's sheet (2026-11-18) | the foot's own bone and `toe` | through the host's clips (`GroundedToes`, `Settled`) | Heeled Boot CALCEUS-01 |
 
 ### Hosts and sockets
 
@@ -145,12 +146,37 @@ Nothing is modelled in a variant, and the host built with its defaults is unchan
 | Humanoid H-01 | `arm` (from the shoulder) | `arm` | `tentacle` | Humanoid · Tentacle Arms |
 | Mantis S-01 | `wrist` (the femur's end) | `blade` (its own tibia) | `pincer` | Mantis · Pincers and Sting |
 | Mantis S-01 | `tail` (the end of the abdomen) | nothing | `sting` | the same model |
+| Valkyrie V-01 | `foot` | `plain` (her flat foot) | `heel` (`calceus.Boot`: she stands 12 cm higher; everything above the ankle is lifted) | ready, no variant built yet: `equip("ValkyrieV01", foot="heel")` |
+| Valkyrie V-01 | `shield`, `wings` | shield, no wings | no shield, the eagle's wings | Valkyrie V-02 Winged |
+| Humanoid H-01 | `foot` | `plain` | `pes` (PES-01) | Humanoid H-02 |
+| Oni ON-01 | `foot` | `ape` (PES-G1) | any of `feet.NAMES`: `hoof_block`, `dragon`, `cloven`, `hoof`, `plain`, `pes`, `heel`, `paw` | Oni ON-01B Hoofed (`hoof_block`) |
 
 How each host makes its modules move: the humanoid's boxing clip throws a claw open with each punch and clamps it as
 the arm comes back; its tentacle arms run through the shoulder, elbow and wrist, so three of each tentacle's seven
 modules keep the arm's bone names and follow every recorded motion, and the other four carry a slow wave. The mantis
 snaps its pincers shut on its strike while the tail winds back and lashes over its back, and draws the tail right
 back in the threat display to clear the raised wing case.
+
+### The extremities as studies (2026-11-18)
+
+The parts that are not modules yet (a builder in `anatomy.py`, called at a joint with a size `k`) are shown on their
+own by `kit/menagerie/studies.py`: the part under a stub of its limb, on a `foot` bone (and `toes` across a plane, and
+rigid extras), moved by `motions.ExtremityStudy`. Cards: Horse Hoof UNGULA-01 (`an.hoof`), Cloven Hoof UNGULA-02
+(`an.cloven_hoof`), Hoof Block UNGULA-03 (`an.hoof_block`, out of the Minotaur), Webbed Foot PES-T1 (`an.pad_foot`),
+Feline Paw PES-F1 (`an.paw`), Dragon Foot PES-D1 (`an.dragon_foot`), Raptor Foot PES-V1 (`an.paw` and
+`an.sickle_toe`), Heeled Boot CALCEUS-01, and Clawed Hand MANUS-C1 (`manus.Hand(claws=True)`). A study shows what can
+be taken; to wear one on another animal, call its builder at that animal's joint with its own `k` (as the dog, the
+shisa and the Komodo take the cat's paw), or give it the module interface as the boot has.
+
+### Feet by name (2026-11-18)
+
+`kit/menagerie/feet.py` puts every foot behind one interface, so swapping feet is a word, not a rebuild of the leg. A
+`Footing` knows the ankle height it needs (`h`), builds itself and its bones under an ankle, and wraps the host's
+motion set so it meets the ground (`fit`: `GroundedToes` for toes, `Planted` for a rigid foot that would dip,
+`Settled` for a clip that floats). The host moves its ankle to `h` (the shin reaches down or up; the figure keeps its
+height) or, to stand taller on it, lifts everything above the ankle (a heel). The Oni was the first host: his dragon
+feet became gorilla feet and hooves without touching his legs, and both stood on the floor within 6 mm on the first
+build. H-01's `pes` and the Valkyrie's `heel` sockets predate it and could be moved onto it.
 
 ### What a host has to give, beyond a socket
 

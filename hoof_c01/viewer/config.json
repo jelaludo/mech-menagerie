@@ -1,0 +1,46 @@
+{
+ "name": "HoofC01",
+ "title": "HOOF / UNGULA-02",
+ "subtitle": "HOOF STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Step",
+  "Flex",
+  "Stamp"
+ ],
+ "start": "Step",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Step",
+   4
+  ],
+  [
+   "Flex",
+   1
+  ],
+  [
+   "Stamp",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.3,
+  0.032
+ ],
+ "distance": 1.93,
+ "shadow": [
+  0.18,
+  0.26
+ ],
+ "cell": 0.1,
+ "scale": 0.752,
+ "props": []
+}

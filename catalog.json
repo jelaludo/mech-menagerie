@@ -292,6 +292,26 @@
    "stats": "medusa_md01/viewer/assets/stats.json"
   },
   {
+   "id": "31",
+   "name": "Oni ON-01",
+   "class": "Japanese demon unit · 3.2 m, gorilla feet, a kanabō you can put away",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "oni_on01/viewer/thumb.jpg",
+   "href": "oni_on01/viewer/",
+   "stats": "oni_on01/viewer/assets/stats.json"
+  },
+  {
+   "id": "31B",
+   "name": "Oni ON-01B Hoofed",
+   "class": "The Oni on the Minotaur's hooves (a foot socket: one word)",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "oni_on01b/viewer/thumb.jpg",
+   "href": "oni_on01b/viewer/",
+   "stats": "oni_on01b/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",
@@ -322,6 +342,16 @@
    "stats": "hand_g01/viewer/assets/stats.json"
   },
   {
+   "id": "H3",
+   "name": "Clawed Hand MANUS-C1",
+   "class": "Hand · slender fingers, hooked claw caps: the Medusa's",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/h3_clawed_hand.jpg",
+   "href": "hand_c01/viewer/",
+   "stats": "hand_c01/viewer/assets/stats.json"
+  },
+  {
    "id": "P1",
    "name": "Prehensile Foot PES-01",
    "class": "Foot · opposable great toe, 22 axes",
@@ -342,6 +372,46 @@
    "stats": "foot_g01/viewer/assets/stats.json"
   },
   {
+   "id": "P3",
+   "name": "Webbed Foot PES-T1",
+   "class": "Foot · five fanned digits, round pads: the toad's",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/p3_toad_foot.jpg",
+   "href": "foot_t01/viewer/",
+   "stats": "foot_t01/viewer/assets/stats.json"
+  },
+  {
+   "id": "P4",
+   "name": "Feline Paw PES-F1",
+   "class": "Paw · armoured toes, claws, a pad: the cat's, the dog's",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/p4_feline_paw.jpg",
+   "href": "paw_f01/viewer/",
+   "stats": "paw_f01/viewer/assets/stats.json"
+  },
+  {
+   "id": "P5",
+   "name": "Dragon Foot PES-D1",
+   "class": "Foot · splayed toes, long claws, a dew claw: the dragons'",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/p5_dragon_foot.jpg",
+   "href": "foot_d01/viewer/",
+   "stats": "foot_d01/viewer/assets/stats.json"
+  },
+  {
+   "id": "P6",
+   "name": "Raptor Foot PES-V1",
+   "class": "Foot · two grounding toes and a sickle claw: the raptor's",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/p6_raptor_foot.jpg",
+   "href": "foot_v01/viewer/",
+   "stats": "foot_v01/viewer/assets/stats.json"
+  },
+  {
    "id": "U1",
    "name": "Raptor Talon UNGUIS-01",
    "class": "Talon · the eagle's foot, built from the hand",
@@ -350,6 +420,46 @@
    "thumb": "hub/thumbs/u1_talon.jpg",
    "href": "talon_u01/viewer/",
    "stats": "talon_u01/viewer/assets/stats.json"
+  },
+  {
+   "id": "U2",
+   "name": "Horse Hoof UNGULA-01",
+   "class": "Hoof · fetlock, pastern, a shod hoof: the horse's",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/u2_horse_hoof.jpg",
+   "href": "hoof_h01/viewer/",
+   "stats": "hoof_h01/viewer/assets/stats.json"
+  },
+  {
+   "id": "U3",
+   "name": "Cloven Hoof UNGULA-02",
+   "class": "Hoof · two claws with pads, dew claws: the stag's",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/u3_cloven_hoof.jpg",
+   "href": "hoof_c01/viewer/",
+   "stats": "hoof_c01/viewer/assets/stats.json"
+  },
+  {
+   "id": "U4",
+   "name": "Hoof Block UNGULA-03",
+   "class": "Hoof · a cloven block under a heavy pastern: the Minotaur's",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/u4_hoof_block.jpg",
+   "href": "hoof_b01/viewer/",
+   "stats": "hoof_b01/viewer/assets/stats.json"
+  },
+  {
+   "id": "B1",
+   "name": "Heeled Boot CALCEUS-01",
+   "class": "Boot · slim heel, pointed toe box, the Greek key: the Medusa's",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/b1_heeled_boot.jpg",
+   "href": "boot_b01/viewer/",
+   "stats": "boot_b01/viewer/assets/stats.json"
   },
   {
    "id": "M1",

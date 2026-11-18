@@ -1,0 +1,61 @@
+{
+ "name": "CrocodileCR01",
+ "title": "CROCODILE / CR-01",
+ "subtitle": "SEMI-AQUATIC PREDATOR PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Run",
+  "Threat",
+  "TailWhip",
+  "Tripod",
+  "Bask"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Run",
+   8
+  ],
+  [
+   "Threat",
+   1
+  ],
+  [
+   "TailWhip",
+   1
+  ],
+  [
+   "Tripod",
+   1
+  ],
+  [
+   "Bask",
+   1
+  ]
+ ],
+ "sleep": "Bask",
+ "center": [
+  0.0,
+  1.246,
+  0.118
+ ],
+ "distance": 17.92,
+ "shadow": [
+  11.69,
+  20.67
+ ],
+ "cell": 0.5,
+ "scale": 8.201,
+ "props": []
+}

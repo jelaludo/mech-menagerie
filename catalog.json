@@ -292,6 +292,16 @@
    "stats": "medusa_md01/viewer/assets/stats.json"
   },
   {
+   "id": "30",
+   "name": "Giant Crocodile CR-01",
+   "class": "Semi-aquatic predator · 12.8 m, the Komodo made 4.1 times larger and meaner",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "crocodile_cr01/viewer/thumb.jpg",
+   "href": "crocodile_cr01/viewer/",
+   "stats": "crocodile_cr01/viewer/assets/stats.json"
+  },
+  {
    "id": "31",
    "name": "Oni ON-01",
    "class": "Japanese demon unit · 3.2 m, gorilla feet, a kanabō you can put away",

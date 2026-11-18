@@ -35,6 +35,9 @@ shoulder) and the kit applies it where it belongs:
 | Motion distances (stride, lift, body drop) | × `u` | gaits scale with leg length |
 | Lights, cameras, floor, viewer stage | from the bounding box | no per-animal staging |
 
+One exception, by request: a variant that is the same animal larger may enlarge the whole build (the Komodo's `size`
+socket, used by the Giant Crocodile at 4.1), accepting that its rods, rings and joints grow with it.
+
 Texture budget is the one thing that does not scale for free. One 4K set gives the feline 15 px/cm. A 2.4 m bear has about
 five times the surface, which is about 7 px/cm. For animals above roughly `u = 2`, plan two 4K sets (front and rear halves) or
 one 8K set; the pipeline packs one set today, so this is the first kit change the bear or horse will need.
@@ -149,6 +152,7 @@ Nothing is modelled in a variant, and the host built with its defaults is unchan
 | Valkyrie V-01 | `foot` | `plain` (her flat foot) | `heel` (`calceus.Boot`: she stands 12 cm higher; everything above the ankle is lifted) | ready, no variant built yet: `equip("ValkyrieV01", foot="heel")` |
 | Valkyrie V-01 | `shield`, `wings` | shield, no wings | no shield, the eagle's wings | Valkyrie V-02 Winged |
 | Humanoid H-01 | `foot` | `plain` | `pes` (PES-01) | Humanoid H-02 |
+| Komodo K-01 | `size`, `head`, `armour`, `tongue`, `grounded` | 1, its own skull, the carapace, a tongue, off | 4.1, a crocodile's skull tables, keeled scutes, none, feet and tail kept out of the floor | Giant Crocodile CR-01 |
 | Oni ON-01 | `foot` | `ape` (PES-G1) | any of `feet.NAMES`: `hoof_block`, `dragon`, `cloven`, `hoof`, `plain`, `pes`, `heel`, `paw` | Oni ON-01B Hoofed (`hoof_block`) |
 
 How each host makes its modules move: the humanoid's boxing clip throws a claw open with each punch and clamps it as

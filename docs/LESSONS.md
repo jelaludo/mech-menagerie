@@ -395,6 +395,9 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   the other spread; forward kinematics put both hands at 0.655 m out, mirror images. The near arm pointed at the camera.
 - **A recorded clip carries moves, not heights.** H-01's walk retargeted to the Medusa, whose ankles stand 26 cm up on
   heels, kept her within 7 mm of the floor unchanged: the pelvis is recorded as an offset from rest.
+- **A small fault grows with the animal.** The Komodo's clips put a foot 11 mm and its tail 39 mm into the floor, which
+  passed at 2.9 m; the crocodile, the Komodo four times larger, put them 45 and 162 mm in. Check the floor again after
+  any enlargement; `Planted` and `TailAbove` (turned on by the Komodo's `grounded` socket) took both to within 3 mm.
 - **A borrowed step fits only the foot it was written for.** The Minotaur's walk rolls the foot about a hoof's toe
   0.37 m ahead of the ankle; on the Oni's dragon feet, whose claws reach 0.55 m, it drove them up to 202 mm through the
   floor, and moving the pivot out only halved it (the swing pitches the foot toes-down too). Measure the new foot's

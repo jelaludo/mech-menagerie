@@ -1,0 +1,55 @@
+{
+ "name": "TalonU01",
+ "title": "TALON / UNGUIS-01",
+ "subtitle": "TALON STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Showcase",
+  "Step",
+  "Knead",
+  "Strike",
+  "Grip"
+ ],
+ "start": "Showcase",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Showcase",
+   1
+  ],
+  [
+   "Step",
+   4
+  ],
+  [
+   "Knead",
+   1
+  ],
+  [
+   "Strike",
+   2
+  ],
+  [
+   "Grip",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.275,
+  0.017
+ ],
+ "distance": 1.77,
+ "shadow": [
+  0.88,
+  1.4
+ ],
+ "cell": 0.1,
+ "scale": 0.833
+}

@@ -1,0 +1,55 @@
+{
+ "name": "MinotaurMN01",
+ "title": "MINOTAUR / MM-MN-01",
+ "subtitle": "COMBAT / GUARDIAN PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Charge",
+  "Roar",
+  "Stomp",
+  "Smash"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Charge",
+   4
+  ],
+  [
+   "Roar",
+   1
+  ],
+  [
+   "Stomp",
+   1
+  ],
+  [
+   "Smash",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.8,
+  0.183
+ ],
+ "distance": 11.59,
+ "shadow": [
+  2.49,
+  2.07
+ ],
+ "cell": 0.5,
+ "scale": 5.625
+}

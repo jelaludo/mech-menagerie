@@ -7,7 +7,19 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
 - **Proportions before parts.** The first feline read as a rat: snout too long, jaw too thin, paws too small. Check a flat
   "clay" render against the concept's side view before adding any detail.
 - **Concept sheets contradict themselves.** The feline sheet says 1,280 mm long but draws 1.75 m at its stated shoulder
-  height. Follow the drawing, and write the conflict down.
+  height. Follow the drawing, and write the conflict down. The Minotaur's "1.45 m" width arrow spans 124 pixels where
+  its shoulders, drawn at the height line's scale, span 133; its front and rear views differ by 0.4 m at the knees.
+- **Check the silhouette against the sheet, not by eye.** `kit/compare.py` renders the views the sheet draws, at its
+  scale, and measures both outlines. The Minotaur's first pass overlapped the front view 0.86 and the side 0.48; the
+  numbers named each fault (horns twice as wide as drawn, a torso standing upright where the sheet's leans forward, back
+  muscles 0.2 m too far out, the ankles half as deep), and four passes brought it to 0.90, 0.88 and 0.68 (the side view
+  is lower because the sheet's arms and head differ in pose). Run on the Valkyrie, it found legs much thinner than her
+  sheet's, a shorter skirt and her A-pose.
+- **A sheet's views crowd each other.** A fist or a hoof of the front view reaches into the side view's box; paint it
+  out (`blank`) or the silhouette's width is wrong. A side view has no centre line to measure: line the silhouettes up
+  by their middles instead. A side view labelled "right" may be drawn facing left (the Minotaur's).
+- **A small render misleads.** The Minotaur's head looked nose-up in a 300-pixel panel; its matrix put the muzzle exactly
+  where the sheet draws it. Measure the point before changing the number.
 - **Thin plates need interior points only where they curve.** Flat link plates triangulate from their outline; curved
   shells (skull, frames) get a grid of about 4% of their span.
 - **Faces must wind outward.** A flat bar swept with the wrong section order shades inside-out. The regression check is

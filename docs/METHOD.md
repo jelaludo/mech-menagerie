@@ -48,6 +48,9 @@ can always be rebuilt, and a change is a number in a file.
 - [ ] `scripts/build.py`: put `scripts/` and `kit/` on the path, `pipeline.run(<animal>, ROOT)`.
 - [ ] Clay rounds until the side and hero views match the sheet.
 - [ ] Clearance check of muscles against frames.
+- [ ] Measure the concept sheet's orthographic views into `SHEET` (pixels per metre from its dimension line, the ground
+  row, a crop and a centre per view) and run `kit/compare.py` after every change of proportion until the silhouettes
+  agree; the sheet's own numbers and its drawing may disagree, and the drawing is what is checked.
 - [ ] `kit/strip.py` for every clip, then `kit/ground.py`, `kit/overlap.py` and `kit/snap.py` (a bone that jumps in one frame is a flash in the viewer); fix reach problems (feet leaving the ground, joints folding the wrong way) and try numbers with `kit/tune.py`.
 - [ ] Full build: `4096 render anim`.
 - [ ] Browser test of the viewer; re-import of the GLB.

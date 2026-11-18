@@ -252,6 +252,16 @@
    "stats": "valkyrie_v01/viewer/assets/stats.json"
   },
   {
+   "id": "24",
+   "name": "Mechanical Minotaur MM-MN-01",
+   "class": "Guardian platform · bull head, hooves, 3.2 m",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "minotaur_mn01/viewer/thumb.jpg",
+   "href": "minotaur_mn01/viewer/",
+   "stats": "minotaur_mn01/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",
@@ -300,6 +310,16 @@
    "thumb": "hub/thumbs/p2_gorilla_foot.jpg",
    "href": "foot_g01/viewer/",
    "stats": "foot_g01/viewer/assets/stats.json"
+  },
+  {
+   "id": "U1",
+   "name": "Raptor Talon UNGUIS-01",
+   "class": "Talon · the eagle's foot, built from the hand",
+   "collection": "parts",
+   "status": "built",
+   "thumb": "hub/thumbs/u1_talon.jpg",
+   "href": "talon_u01/viewer/",
+   "stats": "talon_u01/viewer/assets/stats.json"
   },
   {
    "id": "M1",

@@ -282,6 +282,16 @@
    "stats": "stag_mc03/viewer/assets/stats.json"
   },
   {
+   "id": "26",
+   "name": "Mechanical Medusa MM-MD-01",
+   "class": "Mythic guardian platform · snake-hair crown, claws, heels",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "medusa_md01/viewer/thumb.jpg",
+   "href": "medusa_md01/viewer/",
+   "stats": "medusa_md01/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",

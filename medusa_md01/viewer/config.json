@@ -1,0 +1,60 @@
+{
+ "name": "MedusaMD01",
+ "title": "MEDUSA / MM-MD-01",
+ "subtitle": "MYTHIC GUARDIAN PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Jog",
+  "Run",
+  "Gaze",
+  "Strike",
+  "Slash"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Jog",
+   2
+  ],
+  [
+   "Run",
+   2
+  ],
+  [
+   "Gaze",
+   1
+  ],
+  [
+   "Strike",
+   1
+  ],
+  [
+   "Slash",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.7,
+  -0.082
+ ],
+ "distance": 10.95,
+ "shadow": [
+  1.74,
+  1.32
+ ],
+ "cell": 0.5,
+ "scale": 4.257
+}

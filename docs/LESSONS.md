@@ -26,6 +26,10 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
 - **A sheet's views crowd each other.** A fist or a hoof of the front view reaches into the side view's box; paint it
   out (`blank`) or the silhouette's width is wrong. A side view has no centre line to measure: line the silhouettes up
   by their middles instead. A side view labelled "right" may be drawn facing left (the Minotaur's).
+- **Eighteen small copies cost more than one big one.** The Medusa's hair built from the Snake S-01's module at its
+  own detail came to 187,000 triangles, more than the rest of her. A lightened module (a band, a braided core and a back
+  plate where the Snake has four actuators in a cage) and the heads at lower detail brought it to 80,000; at eight
+  centimetres the cage's bars only read as white stitches anyway.
 - **A small render misleads.** The Minotaur's head looked nose-up in a 300-pixel panel; its matrix put the muzzle exactly
   where the sheet draws it. Measure the point before changing the number.
 - **Thin plates need interior points only where they curve.** Flat link plates triangulate from their outline; curved
@@ -66,6 +70,11 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
 
 ## Materials and baking
 
+- **Read the texel density the build prints.** The Medusa's first bake came out at 1.7 px/cm with 1.9% of the sheet
+  used: a few slivers along the edge of her face mask (three outline points in a near line) lay flat in UV but spanned
+  surface where the mask curves back; averaging island scales blew them up to fill the sheet, and the packer put the
+  rest of her in a corner. The pipeline now gives any triangle that is flat in UV its own unwrap (`unflatten_uv`):
+  32.6% and 6.9 px/cm.
 - **Edge-wear masks treat thin parts as all edge.** An inside-AO distance larger than half the wall thickness turns a
   6 mm strap into one big worn patch. Keep edge distances well under the thinnest wall.
 - **Hide the originals while baking a joined copy.** Coincident geometry crushes the AO map (mean 0.17 instead of 0.5).
@@ -372,6 +381,20 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   hand turned over in one frame (180 degrees at 0.68 s, the flash the user saw). Blend a hand's frame as a whole, the
   short way round, and run `kit/snap.py` on every clip: it flags a bone that turns much further in one frame than in
   the frames either side, which a fast sweep never does.
+- **A wave must close on its clip.** The Medusa's snakes writhed at their own frequencies and every loop seam popped 41
+  to 50 degrees; rounding each wave to a whole number of turns in its clip (and integrating a rate that rises when the
+  snakes are roused, so the phase never jumps) took the fastest turn in the idle to 7 degrees a frame.
+- **Things side by side should move in step.** Snakes given scattered phases moved against their neighbours and passed
+  through them (up to 214 triangles a pair); neighbours nearly in step sway together like hair, a wave running round
+  the crown, and the worst pair in the idle fell to 49. Reared at one point they crowded again (254): each needs its own
+  mark, spaced round a halo.
+- **The least turn flips.** Aimed by the shortest rotation from where each bone pointed, a snake that had to turn nearly
+  end for end flipped 143 degrees in a frame. Turn each bone as a frame (its direction and a second axis carried down
+  the chain without twisting) and nothing near-opposite is ever undefined.
+- **Check the numbers before chasing a pose.** In a three-quarter strip one arm looked tucked against her side while
+  the other spread; forward kinematics put both hands at 0.655 m out, mirror images. The near arm pointed at the camera.
+- **A recorded clip carries moves, not heights.** H-01's walk retargeted to the Medusa, whose ankles stand 26 cm up on
+  heels, kept her within 7 mm of the floor unchanged: the pelvis is recorded as an offset from rest.
 - **A rigid grip cannot change in the hand.** Carried with the thumb toward the tip, a spear held overhand by the head
   needs to lie end for end in the fist; there is no way from one to the other but letting go. The Valkyrie tosses it
   (`Spearman.flight`), and every clip starts and ends in the carry so the viewer's crossfade never has to turn the

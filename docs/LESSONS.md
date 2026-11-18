@@ -15,6 +15,14 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   muscles 0.2 m too far out, the ankles half as deep), and four passes brought it to 0.90, 0.88 and 0.68 (the side view
   is lower because the sheet's arms and head differ in pose). Run on the Valkyrie, it found legs much thinner than her
   sheet's, a shorter skirt and her A-pose.
+- **Fit the silhouette's shape before chasing its bands.** On the stag the widths at ten heights named the crown's
+  faults (narrow at the pedicles where the sheet's beams leave the skull almost level, too wide at the top, a comb from
+  the side), and the overall overlap went from 0.71 to 0.85 in two passes; after that a band is one row of pixels and
+  swings with every tine, and the sheet's own views disagree about the crown (its top view sweeps the tines back where
+  its side view keeps them over the head). Stop when the overlap stops moving and judge the rest in a render.
+- **A check cannot see past its own frame.** The comparison drew only what fell inside each view's box; the stag's box
+  stopped at 2.78 m, so the model "matched" the sheet's height while its antlers rose to 2.97 m. The build's own
+  measurement disagreed, which is how it was found. The tool now flags a silhouette touching its box's edge.
 - **A sheet's views crowd each other.** A fist or a hoof of the front view reaches into the side view's box; paint it
   out (`blank`) or the silhouette's width is wrong. A side view has no centre line to measure: line the silhouettes up
   by their middles instead. A side view labelled "right" may be drawn facing left (the Minotaur's).

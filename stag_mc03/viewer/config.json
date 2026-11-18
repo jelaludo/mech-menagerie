@@ -1,0 +1,65 @@
+{
+ "name": "StagMC03",
+ "title": "STAG / MM-C03",
+ "subtitle": "CERVID PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Trot",
+  "Gallop",
+  "Leap",
+  "Graze",
+  "Bugle",
+  "Spar"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Trot",
+   6
+  ],
+  [
+   "Gallop",
+   9
+  ],
+  [
+   "Leap",
+   2
+  ],
+  [
+   "Graze",
+   1
+  ],
+  [
+   "Bugle",
+   1
+  ],
+  [
+   "Spar",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.45,
+  0.171
+ ],
+ "distance": 9.34,
+ "shadow": [
+  3.2,
+  4.16
+ ],
+ "cell": 0.5,
+ "scale": 4.754
+}

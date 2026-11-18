@@ -262,6 +262,16 @@
    "stats": "minotaur_mn01/viewer/assets/stats.json"
   },
   {
+   "id": "25",
+   "name": "Mechanical Stag MM-C03",
+   "class": "Cervid platform · antler crown, cloven hooves",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "stag_mc03/viewer/thumb.jpg",
+   "href": "stag_mc03/viewer/",
+   "stats": "stag_mc03/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",

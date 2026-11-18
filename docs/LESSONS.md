@@ -404,6 +404,14 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   reach against the clip's, or plant the foot afterwards: `motions.Planted` turns it toes-up about the ankle just
   enough. Then make the foot a word: `kit/menagerie/feet.py` carries each foot's ankle height, reach and ground
   wrappers with it, and the Oni's gorilla feet and hooves stood on the floor on their first build.
+- **Lowering a body: draw it where it was, over a raised floor.** The crocodile's low sprawl (the Komodo's `stance`)
+  keeps every number above the legs and draws the legs to a floor `low` higher, then lowers the whole build onto z = 0.
+  Anything in the kit that places itself against z = 0 rather than against its joint has to be drawn on a zero floor
+  and lifted: `an.paw` aims its claws' tips at z = 0.002, which the lowering put 0.40 m under the feet.
+- **A ground wrapper can hide a fault from the floor check.** Those claws read only 14 mm into the floor in every clip
+  because `Planted` had tipped each foot up about the ankle to lift them. A dip that is the same in every clip, the rest
+  pose included, is the rest geometry: look at the rest mesh's lowest points (`build(q)`, per part) before trusting a
+  wrapped clip's number.
 - **Search a pose numerically when it collides.** The raised club went through the Oni's head in the roar (596
   triangles); scoring the club's clearance from the head at seventeen wrist angles found 95 degrees (1.04 m clear)
   in one run.

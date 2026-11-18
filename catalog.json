@@ -252,6 +252,16 @@
    "stats": "valkyrie_v01/viewer/assets/stats.json"
   },
   {
+   "id": "23B",
+   "name": "Valkyrie V-02 Winged",
+   "class": "Battle platform · the eagle's wings, the spear, no shield",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "valkyrie_v02/viewer/thumb.jpg",
+   "href": "valkyrie_v02/viewer/",
+   "stats": "valkyrie_v02/viewer/assets/stats.json"
+  },
+  {
    "id": "24",
    "name": "Mechanical Minotaur MM-MN-01",
    "class": "Guardian platform · bull head, hooves, 3.2 m",

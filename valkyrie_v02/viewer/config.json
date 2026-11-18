@@ -1,0 +1,85 @@
+{
+ "name": "ValkyrieV02",
+ "title": "VALKYRIE / V-02 WINGED",
+ "subtitle": "ODINIC BATTLE PLATFORM \u00b7 WINGED \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Jog",
+  "Run",
+  "Point",
+  "Toss",
+  "Thrust",
+  "Unfurl",
+  "Fly",
+  "Glide",
+  "Raise",
+  "Jump"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Jog",
+   3
+  ],
+  [
+   "Run",
+   3
+  ],
+  [
+   "Point",
+   1
+  ],
+  [
+   "Toss",
+   1
+  ],
+  [
+   "Thrust",
+   1
+  ],
+  [
+   "Unfurl",
+   1
+  ],
+  [
+   "Fly",
+   4
+  ],
+  [
+   "Glide",
+   1
+  ],
+  [
+   "Raise",
+   1
+  ],
+  [
+   "Jump",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.8,
+  0.114
+ ],
+ "distance": 11.59,
+ "shadow": [
+  7.2,
+  5.49
+ ],
+ "cell": 0.5,
+ "scale": 4.203
+}

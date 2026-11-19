@@ -1,0 +1,56 @@
+{
+ "name": "BoarBR01",
+ "title": "BOAR / BR-01",
+ "subtitle": "TITANIC TUSKER PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Trot",
+  "Charge",
+  "Gore",
+  "Root"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Trot",
+   6
+  ],
+  [
+   "Charge",
+   8
+  ],
+  [
+   "Gore",
+   1
+  ],
+  [
+   "Root",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  2.3,
+  0.656
+ ],
+ "distance": 14.81,
+ "shadow": [
+  8.13,
+  13.16
+ ],
+ "cell": 0.5,
+ "scale": 7.041,
+ "props": []
+}

@@ -442,6 +442,11 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   its hand as built (h0, lat0).
 - **A model's constants share a namespace with the pipeline's settings.** B-REK44 imported the lens material as
   `LENS`, which the pipeline reads as a model's lens colours; import it as `LENS_MAT`.
+- **When a sheet's numbers and its drawing disagree, find out which pose drew it.** The boar's spec (3.4 m at the
+  shoulder, 6.2 m long) is a real boar's proportions; its orthographic views are crouched in a charge, so they are 8 m
+  long at that height. Built standing to the spec, the overlap with the views is low because of the pose, not the model.
+- **A blade's outline makes it a quill or a leaf.** The kit's crest blades taper from the root and, long and swept,
+  read as porcupine quills; the boar's mane needed leaves widest a third of the way out, with a rib and an edge.
 - **Armour over a leg belongs to the leg.** The rhino's scapular and haunch plates first hung off the trunk, 0.3 m
   out to clear the legs' cages, and stood off the body like boards; curved round the upper leg on its own bone they
   sit close and move with it, and nothing on the trunk has to clear them.

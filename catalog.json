@@ -292,6 +292,16 @@
    "stats": "medusa_md01/viewer/assets/stats.json"
   },
   {
+   "id": "28",
+   "name": "Giant Boar BR-01",
+   "class": "Titanic tusker platform · 3.4 m at the shoulder, cloven hooves",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "boar_br01/viewer/thumb.jpg",
+   "href": "boar_br01/viewer/",
+   "stats": "boar_br01/viewer/assets/stats.json"
+  },
+  {
    "id": "30",
    "name": "Giant Crocodile CR-01",
    "class": "Semi-aquatic predator · 12.8 m, the Komodo made 4.1 times larger and meaner",

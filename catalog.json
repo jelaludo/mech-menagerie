@@ -292,6 +292,16 @@
    "stats": "medusa_md01/viewer/assets/stats.json"
   },
   {
+   "id": "27",
+   "name": "Cerberus CB-03",
+   "class": "Tri-headed guardian hound · 2.1 m at the shoulder, chained collar",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "cerberus_cb03/viewer/thumb.jpg",
+   "href": "cerberus_cb03/viewer/",
+   "stats": "cerberus_cb03/viewer/assets/stats.json"
+  },
+  {
    "id": "28",
    "name": "Giant Boar BR-01",
    "class": "Titanic tusker platform · 3.4 m at the shoulder, cloven hooves",
@@ -300,6 +310,16 @@
    "thumb": "boar_br01/viewer/thumb.jpg",
    "href": "boar_br01/viewer/",
    "stats": "boar_br01/viewer/assets/stats.json"
+  },
+  {
+   "id": "29",
+   "name": "Mechanical Hydra MM-HY-03",
+   "class": "Three-headed draconic platform · 32 m, triple cervical cluster",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "hydra_hy03/viewer/thumb.jpg",
+   "href": "hydra_hy03/viewer/",
+   "stats": "hydra_hy03/viewer/assets/stats.json"
   },
   {
    "id": "30",

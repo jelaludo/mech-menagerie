@@ -1,0 +1,56 @@
+{
+ "name": "HydraHY03",
+ "title": "HYDRA / MM-HY-03",
+ "subtitle": "TRI-HEADED DRACONIC PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Run",
+  "Acquire",
+  "Roar",
+  "Sleep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   1
+  ],
+  [
+   "Run",
+   1
+  ],
+  [
+   "Acquire",
+   1
+  ],
+  [
+   "Roar",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  7.0,
+  -1.321
+ ],
+ "distance": 50.13,
+ "shadow": [
+  36.13,
+  57.83
+ ],
+ "cell": 4.0,
+ "scale": 27.012,
+ "props": []
+}

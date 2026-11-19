@@ -442,6 +442,12 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   its hand as built (h0, lat0).
 - **A model's constants share a namespace with the pipeline's settings.** B-REK44 imported the lens material as
   `LENS`, which the pipeline reads as a model's lens colours; import it as `LENS_MAT`.
+- **Several heads read as alive when nothing about them is in step.** The Cerberus's and the Hydra's heads each get
+  their own plan of marks (turned to quickly and held, as eyes do), their own rhythms (panting, sniffing, snapping, a
+  weave up the neck) at different rates and phases, every rate rounded to a whole number of turns in the clip so it
+  still loops; the locomotion clips are several strides long so the heads have time to look about.
+- **A planar leg can splay.** The rig's legs turn about X only; joints set further out towards the foot give a leg that
+  slants outward and still solves in its side plane (the Cerberus's splayed stance).
 - **When a sheet's numbers and its drawing disagree, find out which pose drew it.** The boar's spec (3.4 m at the
   shoulder, 6.2 m long) is a real boar's proportions; its orthographic views are crouched in a charge, so they are 8 m
   long at that height. Built standing to the spec, the overlap with the views is low because of the pose, not the model.

@@ -1,0 +1,56 @@
+{
+ "name": "CerberusCB03",
+ "title": "CERBERUS / CB-03",
+ "subtitle": "TRI-HEADED GUARDIAN \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Trot",
+  "Run",
+  "Bark",
+  "Guard"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   1
+  ],
+  [
+   "Trot",
+   1
+  ],
+  [
+   "Run",
+   1
+  ],
+  [
+   "Bark",
+   1
+  ],
+  [
+   "Guard",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.6,
+  0.101
+ ],
+ "distance": 10.3,
+ "shadow": [
+  5.91,
+  8.25
+ ],
+ "cell": 0.5,
+ "scale": 5.372,
+ "props": []
+}

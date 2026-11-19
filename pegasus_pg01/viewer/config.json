@@ -1,0 +1,81 @@
+{
+ "name": "PegasusPG01",
+ "title": "PEGASUS / PG-01",
+ "subtitle": "MYTHICAL WINGED EQUINE PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Walk",
+  "Trot",
+  "Canter",
+  "Gallop",
+  "Rear",
+  "Unfurl",
+  "TakeOff",
+  "Fly",
+  "Glide",
+  "Paw",
+  "Idle"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Trot",
+   4
+  ],
+  [
+   "Canter",
+   4
+  ],
+  [
+   "Gallop",
+   6
+  ],
+  [
+   "Rear",
+   1
+  ],
+  [
+   "Unfurl",
+   1
+  ],
+  [
+   "TakeOff",
+   1
+  ],
+  [
+   "Fly",
+   4
+  ],
+  [
+   "Glide",
+   1
+  ],
+  [
+   "Paw",
+   1
+  ],
+  [
+   "Idle",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  2.3,
+  -0.264
+ ],
+ "distance": 14.81,
+ "shadow": [
+  12.85,
+  8.77
+ ],
+ "cell": 0.5,
+ "scale": 4.232,
+ "props": []
+}

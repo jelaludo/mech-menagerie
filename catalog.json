@@ -322,6 +322,16 @@
    "stats": "oni_on01b/viewer/assets/stats.json"
   },
   {
+   "id": "32",
+   "name": "Pegasus PG-01",
+   "class": "Mythical winged equine platform · 7.8 m wingspan, the horse with the eagle's wings",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "pegasus_pg01/viewer/thumb.jpg",
+   "href": "pegasus_pg01/viewer/",
+   "stats": "pegasus_pg01/viewer/assets/stats.json"
+  },
+  {
    "id": "34",
    "name": "Iguana IG-01",
    "class": "Reptilian terrain platform · 2.3 m, a walk studied from the green iguana's",

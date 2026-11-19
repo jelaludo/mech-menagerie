@@ -155,6 +155,7 @@ Nothing is modelled in a variant, and the host built with its defaults is unchan
 | Humanoid H-01 | `foot` | `plain` | `pes` (PES-01) | Humanoid H-02 |
 | Komodo K-01 | `size`, `head`, `armour`, `tongue`, `grounded` | 1, its own skull, the carapace, a tongue, off | 4.1, a crocodile's skull tables, keeled scutes, none, feet and tail kept out of the floor | Giant Crocodile CR-01 |
 | Komodo K-01 | `stance` | none (his own legs) | `dict(low=, elbow=, wrist=, knee=, ankle=, splay=(fore, hind), stride=, run_stride=)`: the body sits `low` lower and the legs bend through the given joints (standing on the floor); the body is drawn as always over a floor raised by `low` and lowered onto z = 0 at the end, so nothing above the legs is redrawn; the tail's slope eases so its end keeps its height | Giant Crocodile CR-01 (a low sprawl: the body 0.10 lower, upper limbs nearly level, forearms and shins leaning out) |
+| Horse H-01 | `size`, `wings`, `mane`, `tail` | 1, none, none, segmented | 1.19, the eagle's FeatherWing over the withers (`dict(k=)`, its frame the horse's), feather plates down the neck, a plume of feathers on the tail barrels | Pegasus PG-01 |
 | Oni ON-01 | `foot` | `ape` (PES-G1) | any of `feet.NAMES`: `hoof_block`, `dragon`, `cloven`, `hoof`, `plain`, `pes`, `heel`, `paw` | Oni ON-01B Hoofed (`hoof_block`) |
 
 How each host makes its modules move: the humanoid's boxing clip throws a claw open with each punch and clamps it as

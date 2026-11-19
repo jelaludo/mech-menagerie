@@ -6,6 +6,7 @@
  "motions": [
   "Rest",
   "Hover",
+  "Blink",
   "Scan",
   "Aim",
   "Drift",
@@ -16,6 +17,10 @@
  "playlist": [
   [
    "Hover",
+   1
+  ],
+  [
+   "Blink",
    1
   ],
   [
@@ -43,12 +48,12 @@
  "center": [
   0.0,
   3.2,
-  -0.004
+  0.005
  ],
  "distance": 20.61,
  "shadow": [
   9.09,
-  6.47
+  6.49
  ],
  "cell": 0.5,
  "scale": 8.986,

@@ -426,6 +426,13 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   shoulder height just behind the shoulder; a downstroke past level swept it through the deltoids (270 triangles). The
   Devil's beat runs from high over its back down to level, and its arms fold forward under the chest in flight, clear
   of the membrane that runs down its back.
+- **The overlap check does not test a part against itself.** The Medusa's hip blades and her thigh actuators are both
+  on the thigh, so `kit/overlap.py` never compared them, and the blades sat 41 mm inside the muscles at rest for two
+  revisions until the user saw it. Anything mounted on the same bone as the actuators it covers needs its own
+  clearance measure (vertices against each muscle's fusiform body); a search over each blade's lean then cleared all
+  eight with the roots left where they were.
+- **A clearance score must be able to go negative.** The first search found nothing: its depth started at zero and only
+  took maxima, so "6 mm clear" could never be reached.
 - **Search a pose numerically when it collides.** The raised club went through the Oni's head in the roar (596
   triangles); scoring the club's clearance from the head at seventeen wrist angles found 95 degrees (1.04 m clear)
   in one run.

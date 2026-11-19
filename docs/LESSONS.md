@@ -442,6 +442,12 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   its hand as built (h0, lat0).
 - **A model's constants share a namespace with the pipeline's settings.** B-REK44 imported the lens material as
   `LENS`, which the pipeline reads as a model's lens colours; import it as `LENS_MAT`.
+- **A chord is twice the sine of half the angle.** The Beholder's armour left the eye 22 degrees clear by comparing
+  unit vectors' distance with 2 sin(22): that is the chord of 44 degrees, and a band of leaves vanished either side of
+  the eye. Seen in a close render, not in any count.
+- **Lift shared motion code into a mixin; prove it with the old model.** The Medusa's snake code moved into
+  `motions.Coiling` so the Beholder's stalks could writhe and rear the same way; her regression check came back
+  identical, which is what made the move safe.
 - **Search a pose numerically when it collides.** The raised club went through the Oni's head in the roar (596
   triangles); scoring the club's clearance from the head at seventeen wrist angles found 95 degrees (1.04 m clear)
   in one run.

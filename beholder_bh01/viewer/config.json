@@ -1,0 +1,56 @@
+{
+ "name": "BeholderBH01",
+ "title": "BEHOLDER / BH-01",
+ "subtitle": "ABERRANT OBSERVATION PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Hover",
+  "Scan",
+  "Aim",
+  "Drift",
+  "Gaze",
+  "Bite"
+ ],
+ "start": "Hover",
+ "playlist": [
+  [
+   "Hover",
+   1
+  ],
+  [
+   "Scan",
+   1
+  ],
+  [
+   "Aim",
+   1
+  ],
+  [
+   "Drift",
+   3
+  ],
+  [
+   "Gaze",
+   1
+  ],
+  [
+   "Bite",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  3.2,
+  -0.004
+ ],
+ "distance": 20.61,
+ "shadow": [
+  9.09,
+  6.47
+ ],
+ "cell": 0.5,
+ "scale": 8.986,
+ "props": []
+}

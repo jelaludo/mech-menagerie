@@ -332,6 +332,16 @@
    "stats": "pegasus_pg01/viewer/assets/stats.json"
   },
   {
+   "id": "33",
+   "name": "Beholder BH-01",
+   "class": "Aberrant observation platform · 2.8 m sphere, ten eye-stalks, 5.4 m span",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "beholder_bh01/viewer/thumb.jpg",
+   "href": "beholder_bh01/viewer/",
+   "stats": "beholder_bh01/viewer/assets/stats.json"
+  },
+  {
    "id": "34",
    "name": "Iguana IG-01",
    "class": "Reptilian terrain platform · 2.3 m, a walk studied from the green iguana's",

@@ -255,7 +255,7 @@ const mixers = [];
 let tris = 0, bones = 0, paused = false;
 async function place(item) {
   const model = layout.models[item.model];
-  const [mat, gltf] = await Promise.all([material(model), gltfLoader.loadAsync(model.path + model.name + "_rig_LOD" + (item.lod || 1) + ".glb")]);
+  const [mat, gltf] = await Promise.all([material(model), gltfLoader.loadAsync(model.path + model.name + "_rig_LOD" + Math.max(item.lod || 0, 2) + ".glb")]);
   gltf.scene.traverse((o) => {
     if (o.isSkinnedMesh) { o.material = mat; o.frustumCulled = false; tris += o.geometry.index.count / 3; bones += o.skeleton.bones.length; }
   });

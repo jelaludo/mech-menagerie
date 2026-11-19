@@ -136,6 +136,7 @@ the interface and four parts taken out of the animals.
 | `Tentacle` | the octopus's arm, along any path | one a module, any of them the host's own | straight, hang, coil, grip, lift; `ripple_pose(t)` | Tentacle MOD-T1 |
 | `manus.Hand`, `pes.Foot` | new | palm or sole, digits | see their own cards | MANUS-01, MANUS-G1, PES-01, PES-G1 |
 | `calceus.Boot` | new, after the Medusa's sheet (2026-11-18) | the foot's own bone and `toe` | through the host's clips (`GroundedToes`, `Settled`) | Heeled Boot CALCEUS-01 |
+| `lacerta.Foot` | new, after the Iguana's sheet and the desert iguana's measured foot (2026-11-19) | the foot's own bone and its toes' (`foretoes`, `hindtoes`) | through `motions.Iguana` (ball planted, foot turned out, heel lifted, toes flat) | Iguana IG-01 |
 
 ### Hosts and sockets
 

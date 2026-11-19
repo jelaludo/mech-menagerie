@@ -322,6 +322,16 @@
    "stats": "oni_on01b/viewer/assets/stats.json"
   },
   {
+   "id": "34",
+   "name": "Iguana IG-01",
+   "class": "Reptilian terrain platform · 2.3 m, a walk studied from the green iguana's",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "iguana_ig01/viewer/thumb.jpg",
+   "href": "iguana_ig01/viewer/",
+   "stats": "iguana_ig01/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",
@@ -570,16 +580,6 @@
    "thumb": "mod_mantis_scorpion/viewer/thumb.jpg",
    "href": "mod_mantis_scorpion/viewer/",
    "stats": "mod_mantis_scorpion/viewer/assets/stats.json"
-  },
-  {
-   "id": "F1",
-   "name": "Gate Procession",
-   "class": "Film · one minute, eleven animals",
-   "collection": "scenes",
-   "status": "built",
-   "thumb": "film_gate_procession/poster.jpg",
-   "href": "film_gate_procession/",
-   "spec": "59.5 s · 1920×1080 · 24 fps · Cycles"
   },
   {
    "id": "F2",

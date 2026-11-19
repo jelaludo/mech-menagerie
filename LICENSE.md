@@ -29,7 +29,7 @@ be looked at. Publishing it grants no licence beyond what is written here.
 ## Rights reserved for sale
 
 Jelaludo keeps the exclusive right to sell, license and distribute these models, on Sketchfab, on other stores or
-directly. The viewers show reduced copies for display (levels of detail 1 to 3, 2K textures). The full-detail models
+directly. The viewers show reduced copies for display (levels of detail 2 and 3, 2K textures). The full-detail models
 (level of detail 0, 4K textures, rigged GLB and FBX files) are not published here. If you buy a model, the licence that
 comes with that purchase sets what you may do with the files you bought.
 

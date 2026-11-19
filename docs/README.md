@@ -24,7 +24,7 @@ What we have learned building these assets, written so the next animal starts fr
   kit/viewer/                  the shared web viewer; each build copies it next to its own data
   docs/                        this knowledge base
   hub/server.py                the local server behind serve.sh: static files, plus the feedback notes
-  hub/publish.py               writes the public, display-only copy into _site/ (LOD1-3, 2K, the terms in every page
+  hub/publish.py               writes the public, display-only copy into _site/ (LOD2-3, 2K, the terms in every page
                                and file); hub/publish_check.py opens every page of it, or of the live site
   LICENSE.md, NOTICES.md       the terms (all rights reserved; full-detail models kept for sale) and third-party notices
   feedback/                    notes written on the landing-page cards, one text file per model

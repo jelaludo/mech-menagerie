@@ -1,0 +1,65 @@
+{
+ "name": "IguanaIG01",
+ "title": "IGUANA / IG-01",
+ "subtitle": "REPTILIAN TERRAIN PLATFORM \u00b7 GAME ASSET",
+ "accent": "#f2c230",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Pause",
+  "Run",
+  "Display",
+  "TailWhip",
+  "Bask"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   2
+  ],
+  [
+   "Pause",
+   1
+  ],
+  [
+   "Walk",
+   2
+  ],
+  [
+   "Display",
+   1
+  ],
+  [
+   "Run",
+   6
+  ],
+  [
+   "TailWhip",
+   1
+  ],
+  [
+   "Bask",
+   1
+  ]
+ ],
+ "sleep": "Bask",
+ "center": [
+  0.0,
+  0.348,
+  -0.405
+ ],
+ "distance": 3.28,
+ "shadow": [
+  2.49,
+  3.78
+ ],
+ "cell": 0.25,
+ "scale": 1.183,
+ "props": []
+}

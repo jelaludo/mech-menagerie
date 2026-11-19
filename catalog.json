@@ -552,6 +552,16 @@
    "stats": "eye_c01/viewer/assets/stats.json"
   },
   {
+   "id": "O4",
+   "name": "Iris Optic OCULUS-03",
+   "class": "The Beholder's eye · a lens behind a camera iris diaphragm that blinks, on a gimbal",
+   "collection": "eyes",
+   "status": "built",
+   "thumb": "eye_o03/viewer/thumb.jpg",
+   "href": "eye_o03/viewer/",
+   "stats": "eye_o03/viewer/assets/stats.json"
+  },
+  {
    "id": "M1",
    "name": "Raptorial Claw MOD-C1",
    "class": "Module · wrist · from the mantis",

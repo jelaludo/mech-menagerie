@@ -1,0 +1,46 @@
+{
+ "name": "EyeO01",
+ "title": "EYE / OCULUS-01",
+ "subtitle": "EYE STUDY \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Scan",
+  "Track",
+  "Focus"
+ ],
+ "start": "Idle",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Scan",
+   1
+  ],
+  [
+   "Track",
+   2
+  ],
+  [
+   "Focus",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  0.25,
+  -0.052
+ ],
+ "distance": 1.61,
+ "shadow": [
+  0.55,
+  0.6
+ ],
+ "cell": 0.1,
+ "scale": 0.672,
+ "props": []
+}

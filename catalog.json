@@ -352,6 +352,16 @@
    "stats": "iguana_ig01/viewer/assets/stats.json"
   },
   {
+   "id": "35",
+   "name": "Mechanical Giraffe GF-01",
+   "class": "Long-reach scouting platform · 5.8 m standing, 3.2 m at the shoulder",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "giraffe_gf01/viewer/thumb.jpg",
+   "href": "giraffe_gf01/viewer/",
+   "stats": "giraffe_gf01/viewer/assets/stats.json"
+  },
+  {
    "id": "38",
    "name": "Great Devil DV-01",
    "class": "Archfiend biomechanical platform · 6.8 m standing, 14 m wingspan",

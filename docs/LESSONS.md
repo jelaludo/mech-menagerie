@@ -442,6 +442,12 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   its hand as built (h0, lat0).
 - **A model's constants share a namespace with the pipeline's settings.** B-REK44 imported the lens material as
   `LENS`, which the pipeline reads as a model's lens colours; import it as `LENS_MAT`.
+- **A roll is not mirrored.** The rig mirrors pitches and yaws on the right side but not a turn about the long (Y)
+  axis: the giraffe's splayed forelegs went one out and one under the body until the right side's roll was given the
+  opposite sign. Turning a leg out sideways is -y on the left, +y on the right.
+- **To splay a straight leg onto the floor, solve it long, then roll it.** A leg turned out by an angle a about its
+  shoulder lifts its foot; solving it in its plane to a target (h)(1/cos a - 1) below the floor first, h the shoulder's
+  height over the fetlock, puts the foot back down when it turns (the giraffe's drink).
 - **A chord is twice the sine of half the angle.** The Beholder's armour left the eye 22 degrees clear by comparing
   unit vectors' distance with 2 sin(22): that is the chord of 44 degrees, and a band of leaves vanished either side of
   the eye. Seen in a close render, not in any count.

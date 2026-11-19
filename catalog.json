@@ -352,6 +352,16 @@
    "stats": "devil_dv01/viewer/assets/stats.json"
   },
   {
+   "id": "39",
+   "name": "B-REK44 Recon Biped",
+   "class": "Long-stride recon biped · 2.7 m, the user's B-REK43 in carbon cages and braided actuators",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "brek44/viewer/thumb.jpg",
+   "href": "brek44/viewer/",
+   "stats": "brek44/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",

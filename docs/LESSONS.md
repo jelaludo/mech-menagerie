@@ -433,6 +433,15 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   eight with the roots left where they were.
 - **A clearance score must be able to go negative.** The first search found nothing: its depth started at zero and only
   took maxima, so "6 mm clear" could never be reached.
+- **Blend an arm through a pose that keeps its elbow's bend turning one way.** B-REK44's halt signal blended straight
+  from hanging (the elbow bending forward) to the hand raised by the head (the elbow bending up and back): the upper
+  arm rolled 120 degrees round its own length half way, 38 degrees a frame. Bringing the forearm forward first and then
+  raising the arm turns the bend with the arm; the fastest turn fell to 18 degrees a frame.
+- **A setting without a hand orientation inherits the other's in a blend.** `Reaching.blend` fills a key missing from
+  one setting with the other's value, so a hanging arm given no `h`/`lat` took the raised hand's: give a resting arm
+  its hand as built (h0, lat0).
+- **A model's constants share a namespace with the pipeline's settings.** B-REK44 imported the lens material as
+  `LENS`, which the pipeline reads as a model's lens colours; import it as `LENS_MAT`.
 - **Search a pose numerically when it collides.** The raised club went through the Oni's head in the roar (596
   triangles); scoring the club's clearance from the head at seventeen wrist angles found 95 degrees (1.04 m clear)
   in one run.

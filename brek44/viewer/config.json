@@ -1,0 +1,66 @@
+{
+ "name": "Brek44",
+ "title": "B-REK44",
+ "subtitle": "LONG-STRIDE RECON BIPED \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Survey",
+  "Stealth",
+  "Jog",
+  "Observe",
+  "Run",
+  "Signal"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   3
+  ],
+  [
+   "Survey",
+   1
+  ],
+  [
+   "Stealth",
+   2
+  ],
+  [
+   "Jog",
+   2
+  ],
+  [
+   "Observe",
+   1
+  ],
+  [
+   "Run",
+   2
+  ],
+  [
+   "Signal",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.6,
+  0.057
+ ],
+ "distance": 10.3,
+ "shadow": [
+  1.53,
+  1.0
+ ],
+ "cell": 0.5,
+ "scale": 5.07,
+ "props": []
+}

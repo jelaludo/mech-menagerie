@@ -362,6 +362,16 @@
    "stats": "giraffe_gf01/viewer/assets/stats.json"
   },
   {
+   "id": "36",
+   "name": "Stegosaurus ST-01",
+   "class": "Armoured plate dinosaur platform · 9.0 m, plates to 4.2 m, a spiked tail",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "stegosaurus_st01/viewer/thumb.jpg",
+   "href": "stegosaurus_st01/viewer/",
+   "stats": "stegosaurus_st01/viewer/assets/stats.json"
+  },
+  {
    "id": "38",
    "name": "Great Devil DV-01",
    "class": "Archfiend biomechanical platform · 6.8 m standing, 14 m wingspan",

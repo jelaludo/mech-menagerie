@@ -442,6 +442,9 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   its hand as built (h0, lat0).
 - **A model's constants share a namespace with the pipeline's settings.** B-REK44 imported the lens material as
   `LENS`, which the pipeline reads as a model's lens colours; import it as `LENS_MAT`.
+- **Big feet must be carried level in the swing.** The horse's gait droops the hoof's toe as it swings (`toe`, and
+  `follow` pitches it with the foot); a stegosaur's toe caps reach half a metre ahead of its ankle, and drooped they
+  went 160 mm into the floor. `toe` slightly negative and `follow=0` keep them level.
 - **A roll is not mirrored.** The rig mirrors pitches and yaws on the right side but not a turn about the long (Y)
   axis: the giraffe's splayed forelegs went one out and one under the body until the right side's roll was given the
   opposite sign. Turning a leg out sideways is -y on the left, +y on the right.

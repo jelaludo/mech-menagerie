@@ -1,0 +1,56 @@
+{
+ "name": "StegosaurusST01",
+ "title": "STEGOSAURUS / ST-01",
+ "subtitle": "ARMOURED PLATE PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Charge",
+  "Graze",
+  "Swipe",
+  "Threat"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Charge",
+   6
+  ],
+  [
+   "Graze",
+   1
+  ],
+  [
+   "Swipe",
+   1
+  ],
+  [
+   "Threat",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  2.3,
+  0.232
+ ],
+ "distance": 14.81,
+ "shadow": [
+  9.76,
+  17.04
+ ],
+ "cell": 0.5,
+ "scale": 7.595,
+ "props": []
+}

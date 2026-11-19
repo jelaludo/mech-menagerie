@@ -372,6 +372,16 @@
    "stats": "stegosaurus_st01/viewer/assets/stats.json"
   },
   {
+   "id": "37",
+   "name": "Mechanical Rhinoceros RH-01",
+   "class": "Heavy-assault battering-ram unit · 4.6 m, 2.1 m at the shoulder",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "rhino_rh01/viewer/thumb.jpg",
+   "href": "rhino_rh01/viewer/",
+   "stats": "rhino_rh01/viewer/assets/stats.json"
+  },
+  {
    "id": "38",
    "name": "Great Devil DV-01",
    "class": "Archfiend biomechanical platform · 6.8 m standing, 14 m wingspan",

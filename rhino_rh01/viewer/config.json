@@ -1,0 +1,61 @@
+{
+ "name": "RhinoRH01",
+ "title": "RHINOCEROS / RH-01",
+ "subtitle": "HEAVY-ASSAULT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Trot",
+  "Charge",
+  "Ram",
+  "Scrape",
+  "Graze"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Trot",
+   6
+  ],
+  [
+   "Charge",
+   8
+  ],
+  [
+   "Ram",
+   1
+  ],
+  [
+   "Scrape",
+   1
+  ],
+  [
+   "Graze",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  1.2,
+  0.096
+ ],
+ "distance": 7.73,
+ "shadow": [
+  4.49,
+  6.38
+ ],
+ "cell": 0.5,
+ "scale": 3.538,
+ "props": []
+}

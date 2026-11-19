@@ -442,6 +442,9 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   its hand as built (h0, lat0).
 - **A model's constants share a namespace with the pipeline's settings.** B-REK44 imported the lens material as
   `LENS`, which the pipeline reads as a model's lens colours; import it as `LENS_MAT`.
+- **Armour over a leg belongs to the leg.** The rhino's scapular and haunch plates first hung off the trunk, 0.3 m
+  out to clear the legs' cages, and stood off the body like boards; curved round the upper leg on its own bone they
+  sit close and move with it, and nothing on the trunk has to clear them.
 - **Big feet must be carried level in the swing.** The horse's gait droops the hoof's toe as it swings (`toe`, and
   `follow` pitches it with the foot); a stegosaur's toe caps reach half a metre ahead of its ankle, and drooped they
   went 160 mm into the floor. `toe` slightly negative and `follow=0` keep them level.

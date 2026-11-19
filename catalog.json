@@ -332,6 +332,16 @@
    "stats": "iguana_ig01/viewer/assets/stats.json"
   },
   {
+   "id": "38",
+   "name": "Great Devil DV-01",
+   "class": "Archfiend biomechanical platform · 6.8 m standing, 14 m wingspan",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "devil_dv01/viewer/thumb.jpg",
+   "href": "devil_dv01/viewer/",
+   "stats": "devil_dv01/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",

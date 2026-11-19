@@ -412,6 +412,20 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   because `Planted` had tipped each foot up about the ankle to lift them. A dip that is the same in every clip, the rest
   pose included, is the rest geometry: look at the rest mesh's lowest points (`build(q)`, per part) before trusting a
   wrapped clip's number.
+- **Set a wing by where its parts should go, not by its angles.** The Devil's wing states were first guessed as angles
+  and came out with the fingers pointing forward and up. `Wing.reach` puts the wrist where it is asked with the elbow
+  bent towards a pole; each finger's angle is then the direction it should point, measured in the hand's plane. The
+  pole decides that plane: one with a fore-and-aft component turned the membrane edge-on to the front.
+- **Keep angles on one side of the circle.** Fingers measured with `atan2` came out as 150 degrees in one state and -178
+  in the next; blending the two swung them the long way round (54 degrees a frame). The kit's wing also cut its circle on
+  the dragons' side, so a fan that opens the other way threw its last bay's bundle up past the wrist. Both now follow
+  the way the fan opens.
+- **A floor wrapper will drag a flight down.** `Settled` lowers any clip that never touches the floor, which is every
+  flight: the Devil flew with its wings 0.85 m into the ground. Name the flights (`air=`).
+- **Wings rooted behind the shoulders beat no lower than level.** On an upright figure the wing's upper bone runs at
+  shoulder height just behind the shoulder; a downstroke past level swept it through the deltoids (270 triangles). The
+  Devil's beat runs from high over its back down to level, and its arms fold forward under the chest in flight, clear
+  of the membrane that runs down its back.
 - **Search a pose numerically when it collides.** The raised club went through the Oni's head in the roar (596
   triangles); scoring the club's clearance from the head at seventeen wrist angles found 95 degrees (1.04 m clear)
   in one run.

@@ -1,0 +1,56 @@
+{
+ "name": "ElephantEL01",
+ "title": "ELEPHANT / EL-01",
+ "subtitle": "HEAVY-LIFT PLATFORM \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Amble",
+  "Reach",
+  "Trumpet",
+  "Dust"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Amble",
+   6
+  ],
+  [
+   "Reach",
+   1
+  ],
+  [
+   "Trumpet",
+   1
+  ],
+  [
+   "Dust",
+   1
+  ]
+ ],
+ "sleep": null,
+ "center": [
+  0.0,
+  2.6,
+  1.145
+ ],
+ "distance": 16.74,
+ "shadow": [
+  8.41,
+  11.82
+ ],
+ "cell": 0.5,
+ "scale": 7.038,
+ "props": []
+}

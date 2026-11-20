@@ -462,6 +462,16 @@
    "stats": "chihuahua_c01/viewer/assets/stats.json"
   },
   {
+   "id": "43",
+   "name": "Mechanical Elephant EL-01",
+   "class": "Heavy-lift platform · 4.2 m at the shoulders, an articulated trunk, lattice ears",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "elephant_el01/viewer/thumb.jpg",
+   "href": "elephant_el01/viewer/",
+   "stats": "elephant_el01/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",

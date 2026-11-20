@@ -442,6 +442,15 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   its hand as built (h0, lat0).
 - **A model's constants share a namespace with the pipeline's settings.** B-REK44 imported the lens material as
   `LENS`, which the pipeline reads as a model's lens colours; import it as `LENS_MAT`.
+- **A chain's sideways swing belongs at its root.** Spread along the elephant's trunk, a yaw twisted each hanging
+  module about itself and the trunk barely moved; given to the root bone alone (applied after its pitch), it turns the
+  plane the whole trunk curls in.
+- **Curling a back-curled tip forward first drives it down.** The elephant's trunk hangs with its tip curled back;
+  bending it forward straightens the tip towards the floor before it rises, and it went 0.24 m under. To scoop, curl it
+  further back.
+- **Anything hung on the head sweeps with the head's turns.** The ears, behind the head's pivot, swung into the
+  shoulder armour whenever the head turned; mounted outside it, built turned out along the body, and with the near ear
+  fanned out as the head turns, they clear.
 - **Size a new animal against the roster, not its sheet alone.** The lion is the feline at 2.5 (a big male lion, the
   sheet's 1.3 m within reach), the chihuahua the Malinois at 0.23 (a real toy dog): each sits where a viewer expects it
   next to the horse, the dogs and the cat. Built at the feline's size and multiplied by S, the same assemblies serve

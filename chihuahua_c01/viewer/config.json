@@ -1,0 +1,71 @@
+{
+ "name": "ChihuahuaC01",
+ "title": "CHIHUAHUA / C-01",
+ "subtitle": "TOY DOG \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Trot",
+  "Run",
+  "Bark",
+  "Tilt",
+  "Shiver",
+  "Sit",
+  "Sleep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Trot",
+   6
+  ],
+  [
+   "Run",
+   8
+  ],
+  [
+   "Bark",
+   1
+  ],
+  [
+   "Tilt",
+   1
+  ],
+  [
+   "Shiver",
+   1
+  ],
+  [
+   "Sit",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  0.18,
+  0.028
+ ],
+ "distance": 1.16,
+ "shadow": [
+  0.31,
+  0.52
+ ],
+ "cell": 0.05,
+ "scale": 0.458,
+ "props": []
+}

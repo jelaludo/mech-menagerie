@@ -442,6 +442,26 @@
    "stats": "siamese_lp01/viewer/assets/stats.json"
   },
   {
+   "id": "41",
+   "name": "Lion L-01",
+   "class": "All-terrain big cat · 1.25 m at the withers, a mane of brass-edged leaves",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "lion_l01/viewer/thumb.jpg",
+   "href": "lion_l01/viewer/",
+   "stats": "lion_l01/viewer/assets/stats.json"
+  },
+  {
+   "id": "42",
+   "name": "Chihuahua C-01",
+   "class": "Toy companion dog · 0.15 m at the withers, great ears, yellow accents",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "chihuahua_c01/viewer/thumb.jpg",
+   "href": "chihuahua_c01/viewer/",
+   "stats": "chihuahua_c01/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",

@@ -442,6 +442,12 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   its hand as built (h0, lat0).
 - **A model's constants share a namespace with the pipeline's settings.** B-REK44 imported the lens material as
   `LENS`, which the pipeline reads as a model's lens colours; import it as `LENS_MAT`.
+- **Size a new animal against the roster, not its sheet alone.** The lion is the feline at 2.5 (a big male lion, the
+  sheet's 1.3 m within reach), the chihuahua the Malinois at 0.23 (a real toy dog): each sits where a viewer expects it
+  next to the horse, the dogs and the cat. Built at the feline's size and multiplied by S, the same assemblies serve
+  from 0.15 m to 2.1 m at the withers.
+- **A mane must leave the forelegs room.** The lion's lowest mane leaves, under the neck and in front of the shoulders,
+  were where the forelegs swing; the rings stop short of them, and the stalk carries the head a little higher.
 - **A livery can be laid on after the build, face by face.** The Siamese's cream body and striped seal points are a
   rule per segment (`paint`) over the materials the kit's parts already carry, by where each face is (its height on a
   leg, its place along the tail, its place on the skull in the head's own frame): no part needed a new argument. The

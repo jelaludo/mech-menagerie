@@ -1,0 +1,61 @@
+{
+ "name": "LionL01",
+ "title": "LION / L-01",
+ "subtitle": "ALL-TERRAIN BIG CAT \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Stalk",
+  "Run",
+  "Roar",
+  "Sit",
+  "Sleep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Stalk",
+   2
+  ],
+  [
+   "Run",
+   8
+  ],
+  [
+   "Roar",
+   1
+  ],
+  [
+   "Sit",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  0.95,
+  -0.414
+ ],
+ "distance": 6.36,
+ "shadow": [
+  4.4,
+  7.34
+ ],
+ "cell": 0.5,
+ "scale": 3.202,
+ "props": []
+}

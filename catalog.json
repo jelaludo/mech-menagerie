@@ -432,6 +432,16 @@
    "stats": "brek44/viewer/assets/stats.json"
   },
   {
+   "id": "40",
+   "name": "Lynx Point Siamese LP-01",
+   "class": "House cat · 0.27 m at the withers, cream with seal tabby points, blue optics",
+   "collection": "menagerie",
+   "status": "built",
+   "thumb": "siamese_lp01/viewer/thumb.jpg",
+   "href": "siamese_lp01/viewer/",
+   "stats": "siamese_lp01/viewer/assets/stats.json"
+  },
+  {
    "id": "18",
    "name": "MK-07B Valkyr",
    "class": "Piloted frame · 9.8 m, cockpit for H-01",

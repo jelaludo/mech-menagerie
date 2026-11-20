@@ -1,0 +1,71 @@
+{
+ "name": "SiameseLP01",
+ "title": "SIAMESE / LP-01",
+ "subtitle": "HOUSE CAT \u00b7 GAME ASSET",
+ "accent": "#45b8ff",
+ "motions": [
+  "Rest",
+  "Idle",
+  "Walk",
+  "Stalk",
+  "Run",
+  "Pounce",
+  "Stretch",
+  "Groom",
+  "Meow",
+  "Sleep"
+ ],
+ "start": "Walk",
+ "playlist": [
+  [
+   "Idle",
+   1
+  ],
+  [
+   "Walk",
+   4
+  ],
+  [
+   "Stalk",
+   2
+  ],
+  [
+   "Run",
+   8
+  ],
+  [
+   "Pounce",
+   1
+  ],
+  [
+   "Stretch",
+   1
+  ],
+  [
+   "Groom",
+   1
+  ],
+  [
+   "Meow",
+   1
+  ],
+  [
+   "Sleep",
+   1
+  ]
+ ],
+ "sleep": "Sleep",
+ "center": [
+  0.0,
+  0.275,
+  0.017
+ ],
+ "distance": 1.77,
+ "shadow": [
+  0.57,
+  1.03
+ ],
+ "cell": 0.1,
+ "scale": 0.838,
+ "props": []
+}

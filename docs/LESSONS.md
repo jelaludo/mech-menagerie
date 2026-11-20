@@ -442,6 +442,12 @@ Things that went wrong once, and the rule that came out of each. Newest at the b
   its hand as built (h0, lat0).
 - **A model's constants share a namespace with the pipeline's settings.** B-REK44 imported the lens material as
   `LENS`, which the pipeline reads as a model's lens colours; import it as `LENS_MAT`.
+- **A livery can be laid on after the build, face by face.** The Siamese's cream body and striped seal points are a
+  rule per segment (`paint`) over the materials the kit's parts already carry, by where each face is (its height on a
+  leg, its place along the tail, its place on the skull in the head's own frame): no part needed a new argument. The
+  stripes step along the faces; a part that must be one colour on one side (the ear) is better built as two parts.
+- **A subclass that narrows a method's arguments breaks the base set's calls.** The base `stalk` walks through
+  `self.walk(t, T, stride=...)`; the Siamese's `walk(t)` had to pass those calls through.
 - **Several heads read as alive when nothing about them is in step.** The Cerberus's and the Hydra's heads each get
   their own plan of marks (turned to quickly and held, as eyes do), their own rhythms (panting, sniffing, snapping, a
   weave up the neck) at different rates and phases, every rate rounded to a whole number of turns in the clip so it
